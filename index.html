@@ -1,0 +1,1185 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Landmark Funeral Group — Sales &amp; Production</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1A3666; --ink:#0E1F3D; --green:#87BD67; --green-deep:#54903D;
+  --slate:#6D6E71; --paper:#EDF0F5; --card:#FFFFFF; --rule:#D5DCE6;
+  --brick:#A8503C; --wash:#F6F8FB;
+  --serif:'Spectral',Georgia,'Times New Roman',serif;
+  --sans:'Inter',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--paper); color:var(--ink); font-family:var(--sans);
+  font-size:14px; line-height:1.45; -webkit-font-smoothing:antialiased;
+  font-variant-numeric:tabular-nums;
+}
+.wrap{max-width:1280px;margin:0 auto;padding:0 24px 64px}
+
+/* ---------- eyebrow / label vernacular (echoes logo's letterspaced FUNERAL GROUP) ---- */
+.eyebrow{
+  font-size:10px; font-weight:600; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--slate);
+}
+
+/* ---------------------------- masthead ---------------------------- */
+.mast{background:var(--card); border-bottom:3px solid var(--navy); margin-bottom:0}
+.mast-in{max-width:1280px;margin:0 auto;padding:20px 24px 18px;display:flex;align-items:flex-end;gap:28px;flex-wrap:wrap}
+.mast img{height:56px;width:auto;display:block}
+.mast-t{flex:1;min-width:220px}
+.mast-t h1{
+  font-family:var(--serif); font-weight:600; font-size:26px; margin:2px 0 1px;
+  letter-spacing:-.01em; color:var(--navy);
+}
+.mast-t .sub{font-size:12px;color:var(--slate)}
+.asof{text-align:right;font-size:12px;color:var(--slate);line-height:1.5}
+.asof b{display:block;font-size:15px;color:var(--ink);font-weight:600}
+
+/* ---------------------------- control bar ---------------------------- */
+.controls{
+  background:var(--navy); color:#fff; position:sticky; top:0; z-index:40;
+  box-shadow:0 2px 10px rgba(14,31,61,.16);
+}
+.controls-in{
+  max-width:1280px;margin:0 auto;padding:11px 24px;
+  display:flex;gap:26px;align-items:center;flex-wrap:wrap;
+}
+.cgroup{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.cgroup > .eyebrow{color:rgba(255,255,255,.6)}
+.seg{display:flex;border:1px solid rgba(255,255,255,.28);border-radius:2px;overflow:hidden}
+.seg button{
+  font-family:var(--sans);font-size:12px;font-weight:500;
+  background:transparent;color:rgba(255,255,255,.82);border:0;
+  padding:6px 13px;cursor:pointer;border-right:1px solid rgba(255,255,255,.18);
+}
+.seg button:last-child{border-right:0}
+.seg button:hover{background:rgba(255,255,255,.1);color:#fff}
+.seg button[aria-pressed="true"]{background:var(--green);color:#122A16;font-weight:600}
+select.pick{
+  font-family:var(--sans);font-size:12px;font-weight:500;
+  background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.28);
+  border-radius:2px;padding:6px 9px;cursor:pointer;
+}
+select.pick option{color:#111;background:#fff}
+.tog{display:flex;align-items:center;gap:9px;cursor:pointer;user-select:none;font-size:12px;position:relative}
+.tog .track{
+  width:38px;height:20px;border-radius:11px;background:rgba(255,255,255,.22);
+  position:relative;transition:background .16s;flex:none;
+}
+.tog .track::after{
+  content:"";position:absolute;top:2px;left:2px;width:16px;height:16px;border-radius:50%;
+  background:#fff;transition:transform .16s;
+}
+.tog input{position:absolute;left:0;top:50%;transform:translateY(-50%);
+  width:38px;height:20px;margin:0;opacity:0;cursor:pointer;z-index:2}
+.tog input:checked + .track{background:var(--green)}
+.tog input:checked + .track::after{transform:translateX(18px)}
+.tog input:focus-visible + .track{outline:2px solid #fff;outline-offset:2px}
+.tog .lab{font-weight:500;color:rgba(255,255,255,.92)}
+.tog .hint{color:rgba(255,255,255,.55);font-size:11px}
+
+/* ---------------------------- page tabs ---------------------------- */
+.pagetabs{display:flex;gap:8px;margin:22px 0 0;border-bottom:2px solid var(--rule)}
+.pagetabs button{
+  font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.02em;
+  background:transparent;border:0;border-bottom:3px solid transparent;margin-bottom:-2px;
+  padding:11px 20px;cursor:pointer;color:var(--slate);
+}
+.pagetabs button:hover{color:var(--navy);background:rgba(26,54,102,.04)}
+.pagetabs button[aria-pressed="true"]{color:var(--navy);border-bottom-color:var(--navy)}
+[hidden]{display:none!important}
+
+/* ---------------------------- section headers ---------------------------- */
+.sec{margin-top:34px}
+.sec-h{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--rule);padding-bottom:7px;margin-bottom:18px}
+.sec-h h2{font-family:var(--serif);font-size:19px;font-weight:600;margin:0;color:var(--navy)}
+.sec-h .note{font-size:11.5px;color:var(--slate);margin-left:auto;text-align:right}
+
+/* ---------------------------- KPI cards ---------------------------- */
+.kpis{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.kpi{min-width:0;background:var(--card);border:1px solid var(--rule);border-top:3px solid var(--navy);padding:14px 15px 13px}
+.kpi.accent{border-top-color:var(--green)}
+.kpi .k-lab{font-size:10px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--slate);margin-bottom:7px}
+.kpi .k-val{font-family:var(--serif);font-size:27px;font-weight:600;line-height:1.05;letter-spacing:-.02em;color:var(--ink)}
+.kpi .k-sub{font-size:11.5px;color:var(--slate);margin-top:5px}
+.delta{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:600;margin-top:7px}
+.delta.up{color:var(--green-deep)} .delta.dn{color:var(--brick)} .delta.na{color:var(--slate);font-weight:500}
+.delta .py{font-weight:400;color:var(--slate);font-size:11px}
+
+/* ---------------------------- bridge chart ---------------------------- */
+.bridge{background:var(--card);border:1px solid var(--rule);padding:20px 8px 8px}
+.bridge svg{display:block;width:100%;height:auto}
+.b-legend{display:flex;gap:20px;padding:0 16px 10px;font-size:11px;color:var(--slate);flex-wrap:wrap}
+.b-legend i{display:inline-block;width:11px;height:11px;margin-right:6px;vertical-align:-1px}
+#tip{
+  position:fixed;pointer-events:none;opacity:0;transition:opacity .1s;z-index:90;
+  background:var(--ink);color:#fff;padding:8px 11px;font-size:12px;border-radius:2px;
+  box-shadow:0 4px 14px rgba(0,0,0,.24);white-space:nowrap;
+}
+#tip b{font-family:var(--serif);font-size:14px;display:block;margin-bottom:3px;font-weight:600}
+#tip s{display:block;text-decoration:none;color:rgba(255,255,255,.72);font-size:11px}
+
+/* ---------------------------- insight grid ---------------------------- */
+.ins{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.panel{min-width:0;background:var(--card);border:1px solid var(--rule);padding:15px 16px 14px;display:flex;flex-direction:column}
+.panel h3{font-family:var(--serif);font-size:15px;font-weight:600;margin:0 0 3px;color:var(--navy)}
+.panel .p-sub{font-size:11px;color:var(--slate);margin-bottom:12px;line-height:1.4}
+.panel svg{display:block;width:100%;max-width:100%;height:auto;margin-top:auto}
+.big{font-family:var(--serif);font-size:24px;font-weight:600;color:var(--ink);line-height:1}
+.rowline{display:flex;justify-content:space-between;align-items:baseline;padding:5px 0;border-bottom:1px dotted var(--rule);font-size:12.5px}
+.rowline:last-child{border-bottom:0}
+.rowline .n{font-weight:600}
+.rowline .who{min-width:0;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding-right:10px}
+.pos{color:var(--green-deep)} .neg{color:var(--brick)}
+
+/* waterfall */
+.wf{font-size:11.5px}
+.wf-row{display:grid;grid-template-columns:78px minmax(0,1fr) 74px;gap:8px;align-items:center;margin-bottom:6px}
+.wf-bar{height:16px;background:var(--wash);position:relative}
+.wf-bar span{position:absolute;top:0;bottom:0;background:var(--green)}
+.wf-bar span.d{background:var(--brick)}
+.wf-bar span.base{background:var(--navy)}
+.wf-row .l{color:var(--slate);text-align:right}
+.wf-row .v{font-weight:600;text-align:right}
+
+/* wins */
+.panel.wins{border-left:3px solid var(--green)}
+.win{padding:7px 0;border-bottom:1px dotted var(--rule)}
+.win:last-child{border-bottom:0}
+.win .wh{font-size:13px;font-weight:600;color:var(--green-deep);margin-bottom:2px}
+.win .wd{font-size:11.5px;color:var(--slate);line-height:1.45}
+
+/* ---------------------------- national vs local ---------------------------- */
+.nlgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.nlcard{min-width:0;background:var(--card);border:1px solid var(--rule);padding:15px 16px 14px;grid-column:span 2;position:relative}
+.nlcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px}
+.nlcard.nat::before{background:var(--navy)}
+.nlcard.loc::before{background:var(--green)}
+.nlcard h3{font-family:var(--serif);font-size:16px;font-weight:600;margin:0 0 2px;color:var(--navy)}
+.nlcard .tag{font-size:10px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--slate)}
+.nlhead{display:flex;align-items:baseline;gap:10px;margin:8px 0 12px;flex-wrap:wrap}
+.nlhead .amt{font-family:var(--serif);font-size:26px;font-weight:600;line-height:1;color:var(--ink)}
+.nlhead .shr{font-size:12px;color:var(--slate)}
+.nlstats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px 14px}
+.nlstat{display:flex;justify-content:space-between;gap:8px;padding:5px 0;border-bottom:1px dotted var(--rule);font-size:12.5px}
+.nlstat span:first-child{color:var(--slate);min-width:0}
+.nlstat b{font-weight:600}
+#mixSvg{display:block;width:100%;max-width:100%;height:auto}
+.adopt{display:grid;grid-template-columns:190px minmax(0,1fr) 54px 74px;gap:9px;align-items:center;font-size:12.5px;margin-bottom:5px}
+.adopt .who{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.adopt .bar{height:15px;background:var(--wash);position:relative;overflow:hidden}
+.adopt .bar i{position:absolute;left:0;top:0;bottom:0;background:var(--navy)}
+.adopt .bar u{position:absolute;top:0;bottom:0;border-left:2px dashed var(--slate);opacity:.5}
+.adopt .v{font-weight:600;text-align:right}
+.adopt .gap{text-align:right;font-size:11.5px;color:var(--slate)}
+.adopt.zero .who{color:var(--brick);font-weight:600}
+.fc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.fcbox{border:1px solid var(--rule);padding:12px 14px;background:var(--wash)}
+.fcbox .t{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);margin-bottom:7px}
+.fcline{display:flex;justify-content:space-between;font-size:12.5px;padding:4px 0}
+.fcline b{font-weight:600}
+.fcbox .verdict{font-size:12px;margin-top:9px;padding-top:9px;border-top:1px solid var(--rule);color:var(--ink);line-height:1.5}
+@media (max-width:1080px){.nlgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .nlcard,.nlgrid .panel{grid-column:span 2!important}
+  .fc{grid-template-columns:minmax(0,1fr)}
+  .adopt{grid-template-columns:130px minmax(0,1fr) 48px 62px}}
+
+/* ---------------------------- breakdown table ---------------------------- */
+.tabs{display:flex;gap:0;border-bottom:1px solid var(--rule);margin-bottom:0;flex-wrap:wrap}
+.tabs button{
+  font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
+  background:transparent;border:0;border-bottom:3px solid transparent;
+  padding:10px 15px;cursor:pointer;color:var(--slate);
+}
+.tabs button:hover{color:var(--navy)}
+.tabs button[aria-pressed="true"]{color:var(--navy);border-bottom-color:var(--green)}
+.crumb{font-size:12px;color:var(--slate);padding:9px 0 0}
+.crumb button{
+  font-family:var(--sans);font-size:12px;background:none;border:0;color:var(--navy);
+  cursor:pointer;text-decoration:underline;padding:0 0 0 6px;
+}
+.tw{background:var(--card);border:1px solid var(--rule);border-top:0;overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:12.5px;min-width:900px}
+thead th{
+  background:var(--wash);text-align:right;padding:9px 11px;font-size:10px;font-weight:600;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--slate);
+  border-bottom:1px solid var(--rule);cursor:pointer;white-space:nowrap;position:relative;
+}
+thead th:first-child{text-align:left}
+thead th:hover{color:var(--navy);background:#EDF1F7}
+thead th .ar{opacity:.45;font-size:9px;margin-left:3px}
+tbody td{padding:8px 11px;text-align:right;border-bottom:1px solid #EDF0F5;white-space:nowrap}
+tbody td:first-child{text-align:left;font-weight:500;white-space:normal;min-width:200px}
+tbody tr:hover{background:#F7FAFD}
+tbody tr.drill td:first-child{color:var(--navy);cursor:pointer;text-decoration:underline;text-decoration-color:var(--rule)}
+tfoot td{
+  padding:10px 11px;text-align:right;font-weight:700;border-top:2px solid var(--navy);
+  background:var(--wash);white-space:nowrap;
+}
+tfoot td:first-child{text-align:left;font-family:var(--serif);font-size:13.5px}
+.mini{display:inline-block;width:46px;height:5px;background:var(--wash);vertical-align:1px;margin-right:7px}
+.mini i{display:block;height:100%;background:var(--green)}
+.empty{padding:34px;text-align:center;color:var(--slate);font-size:13px}
+
+.nlbadge{display:inline-block;font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  padding:2px 6px;margin-left:7px;vertical-align:1px;border-radius:2px}
+.nlbadge.n{background:var(--navy);color:#fff}
+.nlbadge.l{background:#E4EFDC;color:#3E6B2C}
+.nlbadge.u{background:#E9ECF1;color:var(--slate)}
+
+/* ---------------------------- footnotes ---------------------------- */
+.notes{margin-top:32px;border-top:1px solid var(--rule);padding-top:16px;font-size:11.5px;color:var(--slate);line-height:1.6}
+.notes h4{font-family:var(--serif);font-size:13px;color:var(--navy);margin:0 0 7px;font-weight:600}
+.notes ul{margin:0;padding-left:17px}
+.notes li{margin-bottom:4px}
+.flag{background:#FFF6E8;border-left:3px solid #D9A13B;padding:9px 13px;font-size:12px;color:#6B4E17;margin-bottom:16px}
+
+@media (max-width:1080px){
+  .kpis{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .ins{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:720px){
+  .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ins{grid-template-columns:minmax(0,1fr)}
+  .mast-in{gap:16px}
+  .asof{text-align:left}
+  .controls{position:static}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@media print{
+  .controls{position:static;box-shadow:none}
+  body{background:#fff}
+  .sec{break-inside:avoid}
+}
+:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+</style>
+
+<header class="mast">
+  <div class="mast-in">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAggAAAFCCAMAAACjCdXGAAAA/1BMVEVecYwxQ1t9wV6Nl6A+WIGYqcO54KUJHEp6hHvCzrVCTmWgy3p8kKn+/v6HvGcZNmZwdXYQKleJwWhobW7S19PU6MiDuVzm6ep9ulunyY8YMlozSGvF17iu05Pk9dbW2+Lb882lqKy51aqUl5iFiY3b5OkkO2bK5ba0t7nFytC1y6hteYyNmKmZprOxusXj6dERLGJ5g4xRZoiEwlx9uWKZuoUlOFhFWHe6w86bxYVGXIN0iaM8VHmIrnGjvY9WZXkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWhSE4AAAAQHRSTlP/////////////////////////////////////////////////////////////////////////////////////73leyQAALIJJREFUeNrtnQl7ojoXgGe5d+72kQplEUStuCta9+pMl///rz4SUJOQhCBgbSfn3mfaurDlzdlyknzRlHxomRysUo7zRT3KDy3WCwCPCoRPJj4Aebv3BBi2q0D4ZAIAaOb8igsMYCgQPpmaj3r3ITcIkbQUCJ/MMhjf8vZuA4IwVCB8rgBgA4CRr3db0TcMBcInE3cTGfyHfOy8RF+xmwqEzwUCVPP5wgb4DVBK2KBAuB055Lb3E2BDEHKqEQXC7UePBsjTu60XBAIArgLhE4kJEAnytsECiRjAVyB8MssAwEEybnj0wUlKcBcVCLcij8dW3XJ0gtO3LN+fTFx3GwnSBOtEI9hKI3weCc4d3A0s6/HRsizTNP0gcF33YABKbMNYr0+vKhA+U/B4bFbDrsdtDQUcfwUCUabhM8UM65PvtzZigW4gzBwaBhBKGQOQCoQbEQdARW+Di8QGCoRPpBEMcKmsgaVA+DRBQwEQDBAoED6JWJmegFBcBcInkQMowkHx4hQFwm2ICYqJbSkQPoVsiykEww4UCJ9BgmIegmEUdhIUCLcRMhSXlgLh44sLbMMtCMJQgfAJQkcAHoYFvUVXgfAJPEVwgMXs72kbFAg34SlGij0nCEbq76EC4WNLCxj1pqb5xICTnTH8VK/TLMBjKBA+tqeI1DoGwhrOdDmcxqKBcf41/uu/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" alt="Landmark Funeral Group">
+    <div class="mast-t">
+      <div class="eyebrow">Executive reporting</div>
+      <h1>Sales &amp; Production Dashboard</h1>
+      <div class="sub" id="scopeline">All regions · all brands · all agents</div>
+    </div>
+    <div class="asof">
+      <span class="eyebrow">Data through</span>
+      <b id="asof">—</b>
+      <span id="asofrange">—</span>
+    </div>
+  </div>
+</header>
+
+<nav class="controls">
+  <div class="controls-in">
+    <div class="cgroup">
+      <span class="eyebrow">Period</span>
+      <div class="seg" id="segBasis" role="group" aria-label="Period type">
+        <button data-b="month">Month</button>
+        <button data-b="quarter">Quarter</button>
+        <button data-b="ytd" aria-pressed="true">Year to date</button>
+        <button data-b="ttm">Trailing 12</button>
+      </div>
+      <select class="pick" id="pickPeriod" aria-label="Select period"></select>
+    </div>
+    <div class="cgroup">
+      <span class="eyebrow">Lead source</span>
+      <div class="seg" id="segScope" role="group" aria-label="Lead source scope">
+        <button data-s="all" aria-pressed="true">All</button>
+        <button data-s="national">National</button>
+        <button data-s="local">Local</button>
+      </div>
+    </div>
+    <label class="tog" for="oapTog">
+      <input type="checkbox" id="oapTog" checked>
+      <span class="track"></span>
+      <span class="lab">Include OAP</span>
+      <span class="hint" id="oapHint"></span>
+    </label>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <div id="flags"></div>
+
+  <nav class="pagetabs" id="pagetabs" role="group" aria-label="Report page">
+    <button data-p="prod" aria-pressed="true">Production summary</button>
+    <button data-p="lead">Lead source attribution</button>
+  </nav>
+
+  <div id="page-prod">
+
+  <section class="sec" id="sec-kpi">
+    <div class="sec-h">
+      <h2>Executive summary</h2>
+      <div class="note" id="kpiNote">—</div>
+    </div>
+    <div class="kpis" id="kpis"></div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h">
+      <h2>Monthly production</h2>
+      <div class="note">Bars are monthly sales · the cable is a 3-month rolling average · towers mark calendar years</div>
+    </div>
+    <div class="bridge">
+      <svg id="bridgeSvg" viewBox="0 0 1180 340" role="img" aria-label="Monthly sales production chart"></svg>
+      <div class="b-legend">
+        <span><i style="background:#87BD67"></i>Monthly sales</span>
+        <span><i style="background:#1A3666"></i>3-month rolling average</span>
+        <span><i style="background:#D5DCE6"></i>Selected period highlighted in full colour, other months muted</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h">
+      <h2>What is driving the numbers</h2>
+      <div class="note" id="insNote">—</div>
+    </div>
+    <div class="ins" id="ins"></div>
+  </section>
+
+
+  <section class="sec" id="sec-breakdown">
+    <div class="sec-h">
+      <h2>Breakdown</h2>
+      <div class="note">Click a region or brand to drill down · click any column heading to sort</div>
+    </div>
+    <div class="tabs" id="tabs" role="group" aria-label="Breakdown level">
+      <button data-l="region" aria-pressed="true">Region</button>
+      <button data-l="brand">Brand</button>
+      <button data-l="fh">Funeral home</button>
+      <button data-l="agent">Sales agent</button>
+      <button data-l="cls">Lead category</button>
+      <button data-l="src">Lead source</button>
+    </div>
+    <div class="crumb" id="crumb"></div>
+    <div class="tw" id="tw"></div>
+  </section>
+
+  </div><!-- /page-prod -->
+
+  <div id="page-lead" hidden>
+
+  <section class="sec">
+    <div class="sec-h">
+      <h2>National vs local lead sources</h2>
+      <div class="note">National lead sources are the ones Precoa funds the marketing for</div>
+    </div>
+    <div class="nlgrid">
+      <div class="nlcard" id="nlNat"></div>
+      <div class="nlcard" id="nlLoc"></div>
+      <div class="panel" style="grid-column:span 2">
+        <h3>Lead mix by month</h3>
+        <div class="p-sub">Share of each month's sales dollars by lead origin. Every month totals 100%.</div>
+        <svg id="mixSvg" viewBox="0 0 720 210" role="img" aria-label="Monthly national versus local lead mix"></svg>
+        <div class="b-legend" style="padding:8px 0 0">
+          <span><i style="background:#1A3666"></i>National</span>
+          <span><i style="background:#87BD67"></i>Local</span>
+          <span><i style="background:#C6CDD8"></i>Not yet attributed</span>
+        </div>
+      </div>
+      <div class="panel" style="grid-column:span 2">
+        <h3>National share by brand</h3>
+        <div class="p-sub">Share of each brand's sales that came from a national lead source, in the selected period. The gap to the leader is where Precoa lead flow has room to grow.</div>
+        <div id="brandAdopt"></div>
+      </div>
+    </div>
+  </section>
+
+  </div><!-- /page-lead -->
+
+</div>
+
+<div id="tip" role="status" aria-live="polite"></div>
+
+<script>
+const DATA = {"meta":{"fh1":"Landmark Funeral Group","dataFrom":"2025-01-02","dataThrough":"2026-07-29","oapAgentFlat":100.0,"oapOverrideFlat":150.0,"zeroSalesExcluded":61,"blankLeadSource":15,"blankLeadSourceDate":"2026-07-29","nlOrder":["Local","National","Unattributed"]},"dims":{"region":["Ohio","Pennsylvania","West Virginia"],"brand":["Cremation Society of Toledo","Eggleston-Meinert and Pavley Funeral Homes","Slater Funeral Group","Sunrise Cremations and Funerals","Toland-Herzig Funeral Homes","Walker Funeral Homes","Ward-Simchak Funeral Home","Waybright Funeral Home","Witzler-Shank Funeral Homes"],"fh":["Cremation Society of Toledo","Duster Funeral Home","Eggleston-Meinert and Pavley Funeral Home - Millbury","Eggleston-Meinert-Pavley Funeral Home - Oregon","Freyvogel-Slater Funeral Directors","Gerner-Wolf-Walker Funeral Home","Maison-Dardenne-Walker Funeral Home","Noll Funeral Home - Beaver","Noll Funeral Home, Inc.","Oregon Chapel","RJ Slater Funeral Home and Cremation Service","Robinson-Walker Funeral Home - Genoa","Robinson-Walker Funeral Home - Oak Harbor","Slater Funeral Group","Slater Funeral and Cremation Services, Inc.  - Burgettstown","Slater Rega Funeral and Cremation Services, Inc.","Sujkowski-Walker Funeral Home","Sunrise Cremations and Funerals","Sunrise Cremations and Funerals - Holland","Sunrise Cremations and Funerals - Walbridge","Toland-Herzig Funeral Homes - Dover","Walker Funeral Home - Toledo","Walker Funeral Homes","Ward-Simchak Funeral Home","Waybright Funeral Home","William Slater II Funeral Services","Witzler-Shank-Walker Perrysburg","Wm. Slater and Sons, Inc."],"agent":["Barnett, Jenny","Coyle, Megan","DeMaison, Molly","Delcoma, John","Gladieux, Joy","Hinton, Rachel","Miller, Stephenie","Muraco, Tony","Reeder, Luke","Ritschard, Robert","Roberts, Emily","Skinner, Julie Graf","Skolnik, Skip","Waldron, Jennifer","Ward, David","Waybright, Ronald"],"cls":["ACEP","After Care","CEP","Digital","Direct Mail","Everything After +","Not yet attributed","Other","VMP","Walk In"],"src":["(not yet attributed)","ACEP","After Care","CEP","Cemetery","Direct Mail","Direct Mail - FH","Direct Mail Phone Append","EverythingAfter+","Fair","Internet","Internet - FH","Internet VMP","Other","Other - FH","Personal Referral","Post Service","Referral","Stepping Stones","Unfunded","Veterans Memorial Program","Visa Preneed Request","Walk-in | Call-in"],"nl":["Local","National","Unattributed"],"fhParent":[0,2,1,1,2,5,5,2,2,8,2,5,5,2,2,2,5,3,3,3,4,5,5,6,7,2,8,2],"brandParent":[0,0,1,0,0,0,0,2,0],"clsNl":[1,0,0,1,1,1,2,0,1,0]},"rows":[["2025-01-02",0,5,11,13,0,3882,1,38.82,0.0,0,9,21],["2025-01-03",0,5,11,13,0,3677,3,418.44,0.0,1,8,20],["2025-01-06",0,5,6,13,0,5612,1,831.14,0.0,0,9,22],["2025-01-06",0,5,6,13,0,5612,1,831.14,0.0,0,9,22],["2025-01-07",0,0,0,10,0,1550,10,210.8,0.0,0,9,22],["2025-01-07",0,0,0,10,0,1500,10,192.0,0.0,0,9,22],["2025-01-07",0,0,0,10,0,1400,1,140.0,0.0,0,9,22],["2025-01-07",0,0,0,10,0,1400,1,131.6,0.0,0,9,22],["2025-01-08",0,0,0,10,1,600,0,100.0,150.0,0,9,22],["2025-01-08",0,0,0,10,1,499,1,100.0,150.0,0,9,22],["2025-01-08",0,0,0,10,1,499,1,100.0,150.0,0,9,22],["2025-01-10",0,0,0,10,0,2000,3,112.0,0.0,0,9,22],["2025-01-10",0,0,0,10,0,2300,1,55.2,0.0,0,9,22],["2025-01-10",0,0,0,10,0,2000,1,120.0,0.0,0,9,22],["2025-01-13",0,0,0,10,1,499,1,100.0,150.0,0,9,22],["2025-01-13",0,0,0,10,1,499,1,100.0,150.0,0,9,22],["2025-01-13",0,5,21,6,0,14713,3,556.15,542.91,0,9,22],["2025-01-13",0,5,21,6,0,14713,3,1174.1,672.38,0,9,22],["2025-01-13",0,5,21,6,0,6872,1,85.9,0.0,0,9,22],["2025-01-14",0,5,11,13,0,8181,1,773.1,0.0,0,9,22],["2025-01-14",0,0,0,6,0,1735,1,29.15,50.31,1,4,5],["2025-01-14",0,5,11,13,0,8181,1,773.1,0.0,0,9,22],["2025-01-16",0,5,21,6,0,5973,1,225.78,314.78,0,1,16],["2025-01-16",0,5,21,6,0,7608,1,95.1,0.0,0,9,22],["2025-01-16",0,5,21,6,0,9843,1,165.36,285.45,0,9,22],["2025-01-20",0,5,12,13,0,9116,20,1350.08,0.0,0,9,22],["2025-01-20",0,0,0,10,1,600,0,100.0,150.0,0,9,22],["2025-01-20",0,3,18,6,0,3395,1,57.04,98.45,0,9,22],["2025-01-20",0,5,16,6,0,11805,1,118.05,0.0,0,9,22],["2025-01-20",0,5,12,13,0,15520,20,2298.51,0.0,0,9,22],["2025-01-21",0,5,5,13,0,13604,1,986.29,0.0,1,4,5],["2025-01-22",0,8,26,13,0,8117,1,588.48,0.0,0,7,19],["2025-01-22",0,5,5,13,0,5085,3,667.66,0.0,1,4,5],["2025-01-22",0,5,5,13,0,5887,3,772.96,0.0,1,4,5],["2025-01-22",0,5,12,13,0,5397,3,897.52,0.0,1,4,6],["2025-01-22",0,0,0,10,0,1885,3,199.81,0.0,0,9,22],["2025-01-22",0,0,0,10,0,1425,3,119.7,0.0,0,9,22],["2025-01-22",0,0,0,10,0,1425,3,102.6,0.0,0,9,22],["2025-01-23",0,0,0,10,1,600,0,100.0,150.0,0,9,22],["2025-01-23",0,5,6,13,0,17511,20,1838.65,0.0,0,9,22],["2025-01-23",0,5,21,6,0,6183,10,779.06,702.39,0,9,22],["2025-01-23",0,0,0,10,1,600,0,100.0,150.0,0,9,22],["2025-01-23",0,0,0,10,1,600,0,100.0,150.0,0,9,22],["2025-01-24",0,5,11,13,0,13313,1,503.23,0.0,0,9,22],["2025-01-27",0,0,0,10,0,1425,1,14.25,0.0,0,9,22],["2025-01-27",0,5,12,13,0,14687,10,3145.96,0.0,0,9,22],["2025-01-27",0,0,0,10,1,499,1,100.0,150.0,0,9,22],["2025-01-28",0,5,5,12,0,6120,10,1101.6,364.75,0,7,13],["2025-01-28",0,5,21,6,0,7128,1,269.44,375.65,0,9,22],["2025-01-28",0,5,5,12,0,6120,10,1101.6,364.75,0,7,13],["2025-01-28",0,5,5,13,0,4660,1,58.25,0.0,1,4,5],["2025-01-28",0,5,5,13,0,3658,1,138.27,0.0,0,9,21],["2025-01-30",0,0,0,10,1,499,1,100.0,150.0,0,9,22],["2025-01-30",0,0,0,10,0,1350,1,126.9,0.0,0,9,22],["2025-01-30",0,5,21,6,0,8870,1,110.88,0.0,0,9,21],["2025-01-31",0,3,17,10,1,600,0,100.0,150.0,1,3,12],["2025-01-31",0,5,11,13,0,5491,1,68.64,0.0,0,7,19],["2025-01-31",0,5,11,13,0,6700,1,485.75,0.0,0,7,13],["2025-02-03",0,5,5,13,0,5466,1,68.33,0.0,0,7,19],["2025-02-03",0,0,0,6,0,1505,1,25.28,43.64,0,7,13],["2025-02-03",0,5,21,6,0,12733,1,213.91,369.26,0,9,22],["2025-02-03",0,0,0,6,0,1505,1,82.17,99.18,0,9,22],["2025-02-03",0,5,11,13,0,6204,1,586.28,0.0,1,0,1],["2025-02-03",0,5,21,6,0,12933,1,488.87,681.57,0,9,22],["2025-02-04",0,5,21,6,0,17453,1,218.16,0.0,0,9,22],["2025-02-04",0,5,5,12,0,6120,5,367.2,140.76,0,7,13],["2025-02-04",0,5,5,12,0,6120,10,624.24,239.29,0,7,13],["2025-02-05",0,5,11,13,0,13885,10,2241.04,0.0,1,0,1],["2025-02-05",0,5,11,13,0,5179,1,636.5,0.0,1,0,1],["2025-02-05",0,5,16,6,0,4733,5,477.09,555.18,0,1,18],["2025-02-05",0,5,11,13,0,13935,10,2249.11,0.0,1,0,1],["2025-02-05",0,8,26,13,0,5610,20,883.58,0.0,1,3,11],["2025-02-05",0,8,26,13,0,5610,20,883.58,0.0,1,3,11],["2025-02-06",0,8,26,13,0,5177,20,815.38,0.0,0,9,22],["2025-02-06",0,5,5,13,0,3955,1,286.74,0.0,0,9,22],["2025-02-06",0,5,6,13,0,13207,20,1386.73,0.0,0,9,22],["2025-02-06",0,8,26,13,0,1470,1,55.57,0.0,0,7,13],["2025-02-07",0,5,6,13,0,1400,1,220.5,0.0,0,9,22],["2025-02-07",0,5,6,13,0,2807,3,495.15,0.0,0,9,22],["2025-02-10",0,0,0,10,0,1450,5,165.3,0.0,0,9,22],["2025-02-10",0,0,0,10,0,1450,5,156.6,0.0,0,9,22],["2025-02-11",0,5,12,13,0,3957,1,623.23,0.0,0,7,17],["2025-02-11",0,0,0,10,1,600,0,100.0,150.0,0,9,22],["2025-02-11",0,5,12,13,0,13294,10,2387.6,0.0,1,8,20],["2025-02-11",0,5,12,13,0,11007,1,798.01,0.0,1,4,5],["2025-02-11",0,5,12,13,0,13244,10,2137.58,0.0,1,8,20],["2025-02-11",0,0,0,10,1,600,0,100.0,150.0,0,9,22],["2025-02-11",0,5,12,13,0,8758,5,1489.74,0.0,1,4,5],["2025-02-11",0,5,12,13,0,3957,1,623.23,0.0,0,7,17],["2025-02-11",0,3,18,6,0,2978,1,250.15,338.0,0,9,22],["2025-02-12",0,3,19,13,0,15706,1,196.33,0.0,0,9,22],["2025-02-14",0,0,0,10,1,499,1,100.0,150.0,0,9,22],["2025-02-14",0,5,21,6,0,6147,20,697.07,603.02,1,0,1],["2025-02-17",0,5,12,13,0,4205,1,52.56,0.0,0,7,13],["2025-02-17",0,0,0,10,0,1350,10,91.8,0.0,0,9,22],["2025-02-17",0,3,19,6,0,1774,5,163.92,193.54,1,4,5],["2025-02-18",0,5,11,13,0,4455,1,659.79,0.0,0,1,18],["2025-02-18",0,5,11,13,0,5286,1,66.08,0.0,1,0,1],["2025-02-19",0,5,21,6,0,13280,1,501.98,699.86,1,4,5],["2025-02-19",0,5,21,6,0,5827,1,97.89,168.98,0,9,21],["2025-02-20",0,5,6,13,0,4983,1,737.98,0.0,0,9,21],["2025-02-21",0,5,6,13,0,14099,1,532.94,0.0,0,9,21],["2025-02-21",0,5,6,13,1,499,1,100.0,150.0,0,9,21],["2025-02-24",0,8,26,13,0,5974,1,734.2,0.0,0,7,13],["2025-02-25",0,5,12,13,0,6799,1,492.93,0.0,1,0,1],["2025-02-25",0,0,0,10,0,1350,3,113.4,0.0,0,9,22],["2025-02-25",0,5,12,13,0,7757,1,733.04,0.0,1,0,1],["2025-02-26",0,0,0,10,0,1475,1,35.4,0.0,0,9,22],["2025-02-26",0,8,26,13,0,15945,3,904.08,0.0,1,5,8],["2025-02-26",0,8,26,13,0,2688,1,330.36,0.0,1,3,11],["2025-02-26",0,8,26,13,0,2688,1,254.02,0.0,1,3,11],["2025-02-27",0,0,0,10,1,600,0,100.0,150.0,0,9,22],["2025-02-27",0,5,11,13,0,16009,5,1109.42,0.0,1,0,1],["2025-02-27",0,0,0,10,0,1725,3,144.9,0.0,0,9,22],["2025-02-27",0,5,11,13,0,14668,5,2495.03,0.0,1,0,1],["2025-02-28",0,0,0,10,0,1325,1,13.25,0.0,0,9,22],["2025-02-28",0,0,0,10,0,1325,1,124.55,0.0,0,9,22],["2025-02-28",0,5,21,6,0,3832,1,209.23,252.53,0,9,22],["2025-03-03",0,5,21,6,0,6098,1,76.23,0.0,0,9,21],["2025-03-03",0,5,21,6,0,1000,1,16.8,29.0,1,4,5],["2025-03-03",0,5,21,6,0,4198,1,158.68,221.23,0,9,22],["2025-03-04",0,3,19,10,0,1615,3,116.28,0.0,1,4,5],["2025-03-04",0,3,19,10,0,1615,3,116.28,0.0,1,4,5],["2025-03-04",0,0,0,10,0,1515,3,109.08,0.0,0,9,22],["2025-03-04",0,0,0,6,0,1630,1,27.38,47.27,0,9,22],["2025-03-05",0,0,0,6,0,1796,1,188.58,167.21,0,9,22],["2025-03-05",0,5,5,13,0,1500,1,56.7,0.0,0,2,3],["2025-03-05",0,5,5,13,0,13702,1,517.94,0.0,1,3,10],["2025-03-05",0,3,19,10,1,600,0,100.0,150.0,1,4,5],["2025-03-05",0,3,19,10,1,600,0,100.0,150.0,1,4,5],["2025-03-07",0,0,0,6,0,1350,1,22.68,39.15,0,9,22],["2025-03-07",0,0,0,6,0,1375,1,75.07,90.61,0,9,22],["2025-03-07",0,5,5,13,0,5246,5,986.25,0.0,1,4,5],["2025-03-10",0,8,9,6,0,7438,1,124.96,215.7,1,0,1],["2025-03-10",0,5,22,6,1,499,1,100.0,150.0,0,7,13],["2025-03-10",0,0,0,10,0,1850,1,23.12,0.0,0,9,22],["2025-03-11",0,0,0,6,0,1400,3,129.36,116.06,0,9,22],["2025-03-11",0,0,0,6,0,1702,1,92.93,112.16,0,9,22],["2025-03-11",0,0,0,10,1,499,1,100.0,150.0,0,9,22],["2025-03-12",0,3,19,6,0,1415,1,118.86,111.64,0,9,22],["2025-03-12",0,5,6,13,0,8199,1,1214.27,0.0,0,9,22],["2025-03-13",0,3,19,6,0,1415,1,118.86,111.64,0,9,22],["2025-03-13",0,5,12,13,0,8332,1,604.07,0.0,0,9,22],["2025-03-14",0,5,12,13,0,7594,10,1530.95,0.0,1,0,1],["2025-03-14",0,0,0,6,0,3662,1,199.95,241.33,0,7,13],["2025-03-14",0,5,12,13,0,8873,10,1732.9,0.0,1,0,1],["2025-03-14",0,0,0,10,1,499,1,100.0,150.0,0,9,22],["2025-03-14",0,0,0,10,0,1425,1,111.15,0.0,0,9,22],["2025-03-17",0,5,21,6,0,12763,1,696.86,841.08,0,9,21],["2025-03-18",0,5,16,6,0,3153,1,264.85,248.77,1,4,5],["2025-03-18",0,5,5,13,0,15584,10,2515.26,0.0,1,4,5],["2025-03-18",0,5,5,13,0,14564,10,2350.63,0.0,1,4,5],["2025-03-18",0,5,6,13,0,7198,1,680.21,0.0,0,9,22],["2025-03-18",0,5,16,6,0,3153,1,264.85,248.77,1,4,5],["2025-03-18",0,3,19,10,1,600,0,100.0,150.0,0,9,22],["2025-03-18",0,1,3,4,0,7276,20,785.81,696.31,1,0,1],["2025-03-18",0,3,19,10,1,600,0,100.0,150.0,0,9,22],["2025-03-19",0,5,5,13,1,499,1,100.0,150.0,1,4,5],["2025-03-19",0,3,19,10,0,5992,10,743.01,0.0,0,7,13],["2025-03-19",0,5,6,13,1,499,1,100.0,150.0,0,9,22],["2025-03-19",0,3,19,10,0,1368,10,169.63,0.0,0,9,22],["2025-03-19",0,5,5,13,1,499,1,100.0,150.0,1,4,5],["2025-03-21",0,5,21,6,0,16295,1,1368.78,1849.48,0,9,21],["2025-03-21",0,3,18,10,0,7042,5,478.86,0.0,0,9,22],["2025-03-21",0,5,21,6,1,499,1,100.0,150.0,0,9,21],["2025-03-21",0,5,12,13,0,14992,1,2361.24,0.0,0,9,22],["2025-03-21",0,3,18,10,1,600,0,100.0,150.0,0,9,22],["2025-03-24",0,8,26,13,0,7912,1,573.62,0.0,0,9,22],["2025-03-24",0,5,11,13,0,5966,1,225.51,0.0,1,0,1],["2025-03-24",0,8,9,6,0,7573,10,1081.42,1055.68,0,9,22],["2025-03-25",0,5,11,13,1,499,1,100.0,150.0,1,0,1],["2025-03-25",0,5,11,13,1,499,1,100.0,150.0,1,0,1],["2025-03-25",0,5,11,13,0,7313,20,767.87,0.0,0,1,16],["2025-03-25",0,5,12,13,0,5422,1,54.22,0.0,0,9,22],["2025-03-25",0,5,11,13,0,7313,20,675.72,0.0,0,1,16],["2025-03-26",0,5,6,13,0,14126,5,1512.89,0.0,0,9,22],["2025-03-26",0,5,21,6,0,8238,3,830.39,790.85,1,4,5],["2025-03-26",0,5,21,6,0,8238,3,830.39,790.85,1,4,5],["2025-03-26",0,8,26,13,0,9431,1,1485.38,0.0,0,9,22],["2025-03-26",0,0,0,6,0,1675,1,175.88,155.94,0,9,22],["2025-03-26",0,0,0,6,0,1675,1,175.88,155.94,0,9,22],["2025-03-27",0,8,26,13,0,5029,1,475.24,0.0,1,3,11],["2025-03-27",0,8,26,13,1,499,1,100.0,150.0,1,3,11],["2025-03-27",0,8,26,13,0,5029,1,475.24,0.0,1,3,11],["2025-03-28",0,8,26,13,0,7449,1,703.93,0.0,0,9,22],["2025-03-31",0,8,26,13,0,8389,1,792.76,0.0,1,0,1],["2025-03-31",0,8,26,13,0,8389,1,792.76,0.0,1,0,1],["2025-03-31",0,8,26,13,0,8644,20,1361.43,0.0,0,7,19],["2025-04-01",0,5,12,13,0,17384,1,1260.34,0.0,0,9,21],["2025-04-01",0,5,12,13,0,19795,1,1435.14,0.0,0,9,21],["2025-04-01",0,8,26,13,1,499,1,100.0,150.0,1,0,1],["2025-04-01",0,8,26,13,1,499,1,100.0,150.0,1,0,1],["2025-04-02",0,0,0,2,0,1556,3,204.3,0.0,0,7,13],["2025-04-02",0,8,26,13,0,6196,1,585.52,0.0,0,9,22],["2025-04-02",0,5,21,6,0,3798,1,398.79,353.59,0,7,13],["2025-04-03",0,0,0,2,0,1971,1,186.26,0.0,0,7,13],["2025-04-03",0,0,0,2,0,1430,1,175.75,0.0,0,7,14],["2025-04-03",0,0,0,2,0,1430,1,135.13,0.0,0,7,14],["2025-04-03",0,5,5,13,0,4278,20,633.57,0.0,1,4,5],["2025-04-03",0,5,11,13,0,11738,3,1541.2,0.0,1,0,1],["2025-04-03",0,5,11,13,0,12033,3,1790.51,0.0,1,0,1],["2025-04-03",0,5,11,13,0,4030,10,723.79,0.0,1,4,7],["2025-04-03",0,5,11,13,0,4030,10,723.79,0.0,1,4,7],["2025-04-03",0,5,12,13,1,499,1,100.0,150.0,0,9,21],["2025-04-03",0,5,12,13,1,499,1,100.0,150.0,0,9,21],["2025-04-04",0,5,16,6,0,13938,1,1463.49,1297.63,0,9,21],["2025-04-04",0,0,0,2,0,1325,1,96.06,0.0,0,7,13],["2025-04-04",0,0,0,2,0,1455,1,137.5,0.0,0,7,13],["2025-04-04",0,5,11,13,0,4682,1,442.45,0.0,1,0,1],["2025-04-04",0,5,11,13,1,499,1,100.0,150.0,1,0,1],["2025-04-04",0,5,11,13,1,499,1,100.0,150.0,1,0,1],["2025-04-07",0,5,11,13,1,499,1,100.0,150.0,1,0,1],["2025-04-07",0,8,26,13,0,4278,1,310.15,0.0,1,0,1],["2025-04-07",0,8,26,13,0,4278,1,310.15,0.0,1,0,1],["2025-04-07",0,5,21,6,0,6858,1,374.45,451.94,1,3,11],["2025-04-07",0,5,21,6,0,8718,1,87.18,0.0,0,9,22],["2025-04-07",0,0,0,6,0,700,1,7.0,0.0,0,7,13],["2025-04-07",0,5,16,6,1,499,1,100.0,150.0,0,9,21],["2025-04-07",0,0,0,6,0,1806,5,204.8,215.09,0,7,13],["2025-04-08",0,8,26,13,1,499,1,100.0,150.0,1,0,1],["2025-04-08",0,8,26,13,1,499,1,100.0,150.0,1,0,1],["2025-04-08",0,0,0,2,0,1567,1,246.8,0.0,1,3,11],["2025-04-08",0,0,0,2,0,1567,1,246.8,0.0,1,3,11],["2025-04-08",0,5,21,6,0,7503,20,850.84,476.44,0,9,22],["2025-04-08",0,5,11,13,0,5966,1,563.79,0.0,1,0,1],["2025-04-08",0,5,21,6,0,7493,1,409.12,493.79,0,9,22],["2025-04-08",0,8,26,13,0,7441,3,846.79,0.0,1,4,6],["2025-04-09",0,5,21,6,0,3938,1,66.16,114.2,0,9,22],["2025-04-09",0,5,21,6,1,499,1,100.0,150.0,0,9,22],["2025-04-09",0,5,11,13,0,7739,20,1146.15,0.0,1,0,1],["2025-04-10",0,5,21,6,0,17185,1,649.59,905.65,0,9,22],["2025-04-11",0,0,0,6,0,1485,3,168.4,173.74,0,9,22],["2025-04-11",0,8,9,6,0,8180,1,858.9,761.56,0,9,22],["2025-04-11",0,5,21,6,0,16695,1,631.07,879.83,0,9,22],["2025-04-11",0,8,26,13,0,5202,1,377.14,0.0,0,9,22],["2025-04-11",0,8,26,13,1,499,1,100.0,150.0,1,0,1],["2025-04-11",0,8,26,13,1,499,1,100.0,150.0,1,0,1],["2025-04-11",0,8,26,13,0,5202,1,377.14,0.0,0,9,22],["2025-04-14",0,5,11,13,0,17164,10,2770.27,0.0,1,0,1],["2025-04-14",0,5,6,13,0,7734,1,96.68,0.0,0,7,17],["2025-04-14",0,5,11,13,0,17435,10,1867.29,0.0,1,0,1],["2025-04-14",0,3,19,8,0,1455,3,161.94,80.03,0,9,22],["2025-04-15",0,5,12,13,0,901,1,85.14,0.0,0,9,21],["2025-04-15",0,5,12,13,0,3297,1,239.03,0.0,0,9,22],["2025-04-15",0,5,12,13,0,4216,3,627.34,0.0,1,4,5],["2025-04-15",0,0,0,8,0,1568,1,98.78,49.39,0,9,22],["2025-04-15",0,5,12,13,0,901,1,85.14,0.0,0,9,21],["2025-04-15",0,5,12,13,0,3297,1,311.57,0.0,0,9,22],["2025-04-15",0,5,12,13,0,4016,1,50.2,0.0,0,7,17],["2025-04-15",0,8,9,6,0,9157,1,499.97,603.45,0,7,13],["2025-04-16",0,3,19,8,0,1505,1,37.93,18.96,0,9,22],["2025-04-16",0,3,18,8,0,6000,1,378.0,189.0,0,9,22],["2025-04-16",0,5,12,13,1,499,1,100.0,150.0,0,9,22],["2025-04-16",0,0,0,8,0,1430,1,141.14,70.64,0,9,22],["2025-04-16",0,5,12,13,1,499,1,100.0,150.0,0,9,22],["2025-04-16",0,5,21,6,0,9260,1,92.6,0.0,0,1,16],["2025-04-17",0,3,18,8,0,3000,1,37.5,0.0,0,9,22],["2025-04-17",0,5,11,13,0,5032,1,618.43,0.0,0,9,22],["2025-04-17",0,5,12,13,0,3717,3,325.24,0.0,0,9,22],["2025-04-17",0,5,11,13,0,10065,1,1490.63,0.0,0,9,21],["2025-04-17",0,5,16,6,0,5438,1,67.98,0.0,1,4,7],["2025-04-21",0,5,5,13,0,5204,1,639.57,0.0,0,9,22],["2025-04-21",0,3,18,8,0,7676,1,76.76,0.0,0,9,22],["2025-04-22",0,5,5,13,1,499,1,100.0,150.0,0,9,22],["2025-04-22",0,0,0,8,0,2105,1,53.05,26.52,0,9,22],["2025-04-22",0,0,0,8,0,2105,1,53.05,26.52,0,9,22],["2025-04-23",0,5,21,6,0,8790,1,87.9,0.0,0,9,21],["2025-04-23",0,3,19,8,0,1375,1,112.61,56.37,0,9,22],["2025-04-24",0,5,21,6,0,3988,1,217.74,262.81,0,7,13],["2025-04-24",0,0,0,8,0,2140,1,26.75,0.0,0,9,22],["2025-04-24",0,0,0,8,0,1350,1,110.56,55.35,0,9,22],["2025-04-24",0,3,19,8,0,1375,1,13.75,0.0,0,9,22],["2025-04-24",0,5,6,13,0,6863,1,1016.41,0.0,0,9,22],["2025-04-24",0,5,6,13,0,7725,1,1144.07,0.0,0,9,22],["2025-04-24",0,5,21,6,0,5753,1,314.11,379.12,1,3,11],["2025-04-24",0,0,0,8,0,1505,1,72.69,36.42,0,9,22],["2025-04-25",0,0,0,8,0,1530,3,134.95,65.94,0,9,22],["2025-04-25",0,0,0,8,0,1530,3,89.96,43.91,0,9,22],["2025-04-25",0,0,0,8,0,1488,1,14.88,0.0,0,9,22],["2025-04-25",0,8,26,13,0,17068,3,2241.03,0.0,1,0,1],["2025-04-25",0,0,0,8,0,1488,1,71.87,36.01,0,9,22],["2025-04-28",0,5,21,6,0,3618,20,410.28,229.74,1,4,5],["2025-04-28",0,5,21,6,0,7065,1,593.46,557.43,0,7,13],["2025-04-28",0,8,26,13,1,499,1,100.0,150.0,1,0,1],["2025-04-29",0,5,5,13,0,10741,3,609.01,0.0,0,9,21],["2025-04-30",0,0,0,6,0,1505,3,151.7,144.48,1,4,5],["2025-04-30",0,0,0,6,0,1505,3,151.7,144.48,1,4,5],["2025-05-01",0,5,11,13,1,499,1,100.0,150.0,1,0,1],["2025-05-01",0,0,0,8,0,1411,3,124.45,60.81,0,9,22],["2025-05-01",0,0,0,8,0,1355,1,13.55,0.0,0,9,22],["2025-05-01",0,0,0,8,0,1411,3,106.67,53.9,0,9,22],["2025-05-01",0,0,0,8,0,1531,1,125.39,62.77,0,9,22],["2025-05-05",0,5,11,13,0,16997,20,2517.26,0.0,1,3,10],["2025-05-05",0,5,21,6,0,7155,1,390.66,471.51,1,0,1],["2025-05-05",0,0,0,8,0,1430,1,14.3,0.0,0,9,22],["2025-05-05",0,0,0,8,0,1630,1,102.69,51.34,0,9,22],["2025-05-06",0,5,21,6,1,499,1,100.0,150.0,1,0,1],["2025-05-06",0,5,21,6,0,16528,10,2221.36,2064.35,1,0,1],["2025-05-06",0,5,21,6,0,20000,1,1092.0,1318.0,0,9,22],["2025-05-06",0,5,21,6,1,499,1,100.0,150.0,1,0,1],["2025-05-06",0,5,21,6,0,10618,10,1337.87,1206.2,1,0,1],["2025-05-06",0,5,12,13,1,499,1,100.0,150.0,1,4,5],["2025-05-06",0,0,0,8,0,1500,1,15.0,0.0,1,3,11],["2025-05-07",0,8,26,13,0,8393,1,608.49,0.0,1,5,8],["2025-05-07",0,5,11,13,0,15790,20,2486.93,0.0,1,0,1],["2025-05-08",0,8,26,13,1,499,1,100.0,150.0,1,0,1],["2025-05-08",0,8,26,13,1,499,1,100.0,150.0,1,0,1],["2025-05-08",0,5,16,6,0,7058,10,889.31,801.79,1,0,1],["2025-05-08",0,3,18,8,0,2622,1,275.31,137.66,0,9,22],["2025-05-08",0,5,16,6,0,7008,10,883.01,796.11,1,4,6],["2025-05-09",0,5,11,13,0,10158,10,1983.86,0.0,0,1,16],["2025-05-09",0,8,26,13,0,6566,1,620.49,0.0,1,0,1],["2025-05-09",0,0,0,8,0,1462,1,144.3,72.22,1,4,5],["2025-05-09",0,5,11,13,1,600,0,100.0,150.0,0,1,16],["2025-05-09",0,8,26,13,0,21492,20,2641.37,0.0,1,0,1],["2025-05-09",0,0,0,8,0,1462,1,119.74,59.94,1,4,5],["2025-05-09",0,3,19,8,0,1555,1,97.97,48.98,1,0,1],["2025-05-09",0,3,19,8,0,1505,1,15.05,0.0,1,0,1],["2025-05-09",0,8,26,13,0,8529,20,1048.21,0.0,1,0,1],["2025-05-09",0,8,26,13,0,6566,1,620.49,0.0,1,0,1],["2025-05-12",0,5,21,6,0,3000,1,37.5,0.0,0,9,22],["2025-05-12",0,0,0,6,0,1649,3,152.37,107.84,0,7,13],["2025-05-13",0,5,21,6,0,4560,1,172.37,240.31,0,9,22],["2025-05-13",0,3,18,8,0,7920,3,881.5,435.6,0,9,22],["2025-05-13",0,5,21,6,0,7155,1,390.66,471.51,1,0,1],["2025-05-13",0,0,0,8,0,1535,1,96.7,48.35,0,9,22],["2025-05-14",0,0,0,8,0,1325,1,83.47,41.74,1,8,20],["2025-05-14",0,5,21,6,0,10693,1,179.64,310.1,1,4,6],["2025-05-20",0,0,0,8,0,75,1,3.62,1.81,0,7,14],["2025-05-20",0,5,21,6,0,4288,1,360.19,338.32,1,4,5],["2025-05-20",0,5,21,6,0,7628,1,128.15,221.21,1,4,6],["2025-05-22",0,0,0,8,0,1509,1,95.07,47.53,0,9,22],["2025-05-22",0,0,0,8,0,1480,1,121.21,60.68,0,7,13],["2025-05-22",0,0,0,8,0,1480,1,121.21,60.68,0,7,13],["2025-05-27",0,5,21,6,0,18773,1,315.39,544.42,0,9,22],["2025-05-27",0,5,21,6,0,2923,1,49.11,84.77,0,9,22],["2025-05-27",0,5,21,6,0,17511,1,175.11,0.0,0,9,22],["2025-05-27",0,5,21,6,0,17173,1,288.51,498.02,0,9,22],["2025-05-28",0,3,19,8,0,4229,10,506.21,253.32,0,9,22],["2025-05-28",0,3,19,8,0,4204,10,194.22,97.11,0,9,22],["2025-05-28",0,8,9,6,0,10535,5,973.43,1149.37,0,9,22],["2025-05-30",0,5,11,13,0,12454,1,470.76,0.0,0,9,22],["2025-05-30",0,8,26,13,0,6342,1,779.43,0.0,0,9,22],["2025-05-30",0,8,26,13,0,6342,1,779.43,0.0,0,9,22],["2025-05-30",0,5,11,13,0,12454,1,155.68,0.0,0,9,22],["2025-06-02",0,0,0,8,0,1455,1,143.61,71.88,0,9,22],["2025-06-02",0,5,5,13,0,8384,1,316.92,0.0,1,4,5],["2025-06-02",0,0,0,8,0,1665,1,104.89,52.45,0,9,22],["2025-06-02",0,5,12,13,0,6628,1,814.58,0.0,0,9,21],["2025-06-03",0,5,21,6,0,10515,5,971.59,982.1,1,4,5],["2025-06-03",0,0,0,8,0,1555,1,19.44,0.0,0,9,22],["2025-06-03",0,0,0,8,0,1505,1,18.81,0.0,0,9,22],["2025-06-04",0,3,18,8,0,4375,1,431.81,216.13,0,9,22],["2025-06-04",0,3,18,8,0,4375,1,459.38,229.69,0,9,22],["2025-06-04",0,0,0,2,0,1375,1,13.75,0.0,0,7,13],["2025-06-04",0,5,21,6,0,11073,1,186.03,321.12,0,9,22],["2025-06-05",0,0,0,8,0,1768,1,144.8,72.49,0,9,22],["2025-06-05",0,3,19,8,0,1535,1,96.7,48.35,1,4,5],["2025-06-06",0,5,5,13,0,10205,10,1647.09,0.0,1,0,1],["2025-06-06",0,5,5,13,0,7293,10,1177.09,0.0,1,0,1],["2025-06-06",0,5,5,13,0,4742,1,448.12,0.0,1,3,10],["2025-06-09",0,8,26,13,0,6874,10,1234.57,0.0,1,0,1],["2025-06-09",0,5,5,13,1,499,1,100.0,150.0,1,0,1],["2025-06-09",0,5,5,13,1,499,1,100.0,150.0,1,0,1],["2025-06-09",0,8,26,13,0,6874,10,1342.49,0.0,1,0,1],["2025-06-09",0,0,0,8,0,1530,1,96.39,48.2,0,9,22],["2025-06-10",0,0,0,8,0,200,1,2.5,0.0,0,9,22],["2025-06-11",0,0,0,8,0,1375,1,13.75,0.0,0,9,22],["2025-06-11",0,0,0,8,0,1325,3,130.78,66.38,0,9,22],["2025-06-11",0,8,9,6,0,12180,1,1278.9,1133.96,0,9,22],["2025-06-11",0,3,19,8,0,20000,1,200.0,0.0,0,9,22],["2025-06-11",0,8,9,6,0,3663,1,307.69,289.01,0,9,22],["2025-06-11",0,5,5,12,0,4210,1,328.38,178.92,0,7,13],["2025-06-11",0,0,0,8,0,1762,3,133.21,67.31,0,9,22],["2025-06-13",0,0,0,8,0,1799,3,136.0,68.72,0,9,22],["2025-06-13",0,5,21,6,0,6496,3,518.38,296.87,1,0,1],["2025-06-16",0,5,12,13,0,17376,10,3393.53,0.0,1,4,5],["2025-06-16",0,5,21,6,0,6496,3,518.38,296.87,1,0,1],["2025-06-16",0,5,21,6,0,11853,1,448.04,624.65,0,1,2],["2025-06-16",0,5,12,13,0,17005,10,3054.1,0.0,1,4,5],["2025-06-16",0,5,11,13,0,4003,1,50.04,0.0,0,1,2],["2025-06-16",0,5,21,6,0,11853,1,199.13,343.74,0,1,2],["2025-06-17",0,8,26,13,0,5035,1,365.04,0.0,0,7,13],["2025-06-17",0,0,0,8,0,1642,1,41.38,20.69,0,9,22],["2025-06-17",0,5,12,13,1,499,1,100.0,150.0,1,4,5],["2025-06-17",0,5,12,13,1,499,1,100.0,150.0,1,4,5],["2025-06-18",0,0,0,8,0,1530,1,38.56,19.28,1,5,8],["2025-06-19",0,5,5,13,0,4825,1,182.38,0.0,0,9,21],["2025-06-19",0,5,5,13,0,4825,1,349.81,0.0,0,9,21],["2025-06-19",0,0,0,8,0,1860,1,117.18,58.59,0,1,2],["2025-06-19",0,0,0,8,0,1537,1,15.37,0.0,0,9,22],["2025-06-23",0,8,26,13,0,5907,5,837.61,0.0,0,9,22],["2025-06-23",0,8,26,13,0,5907,1,428.26,0.0,0,9,22],["2025-06-23",0,5,21,6,0,4033,1,423.46,375.47,1,0,1],["2025-06-23",0,0,0,8,0,1529,1,96.33,48.16,0,9,22],["2025-06-23",0,8,26,13,0,16715,1,208.94,0.0,0,9,21],["2025-06-24",0,5,6,13,0,4783,1,587.83,0.0,1,0,1],["2025-06-24",0,5,5,12,0,6320,1,948.0,303.99,1,0,1],["2025-06-24",0,5,5,12,0,6320,1,948.0,363.4,1,0,1],["2025-06-25",0,3,19,8,0,1535,1,38.68,19.34,0,9,22],["2025-06-25",0,5,5,13,0,7592,3,863.97,0.0,1,0,1],["2025-06-25",0,0,0,8,0,1795,3,135.7,68.57,0,9,22],["2025-06-25",0,5,5,13,0,7913,3,900.5,0.0,1,0,1],["2025-06-25",0,5,12,13,0,20766,1,207.66,0.0,0,9,22],["2025-06-26",0,5,5,13,1,499,1,100.0,150.0,1,0,1],["2025-06-26",0,5,5,13,1,499,1,100.0,150.0,1,0,1],["2025-06-26",0,0,0,8,1,499,1,100.0,150.0,0,9,22],["2025-06-27",0,5,5,13,0,7318,3,1290.9,0.0,1,0,1],["2025-06-27",0,5,5,13,0,6747,3,767.81,0.0,1,4,5],["2025-06-30",0,5,21,6,1,499,1,100.0,150.0,1,0,1],["2025-06-30",0,5,5,13,1,499,1,100.0,150.0,1,0,1],["2025-06-30",0,5,21,6,0,5148,1,281.08,339.25,1,0,1],["2025-06-30",0,5,21,6,1,499,1,100.0,150.0,1,0,1],["2025-06-30",0,5,5,13,0,8614,1,107.68,0.0,1,0,1],["2025-06-30",0,5,5,13,0,12401,10,2500.04,0.0,1,0,1],["2025-06-30",0,3,18,8,0,3160,1,152.63,76.47,0,9,22],["2025-06-30",0,5,16,6,0,3900,1,65.52,113.1,0,9,22],["2025-06-30",0,5,21,6,0,4444,1,55.55,0.0,0,9,22],["2025-06-30",0,5,5,13,0,13206,10,2131.45,0.0,1,0,1],["2025-07-01",0,0,0,8,0,1665,1,104.89,52.45,0,9,22],["2025-07-01",0,5,21,6,0,12070,3,1216.66,1158.72,1,0,1],["2025-07-01",0,8,26,13,0,9863,20,1212.16,0.0,1,0,1],["2025-07-01",0,8,26,13,0,9913,20,1561.3,0.0,1,0,1],["2025-07-02",0,5,21,6,0,3885,3,391.61,372.96,1,0,1],["2025-07-02",0,0,0,8,0,1642,3,96.55,47.13,1,3,10],["2025-07-02",0,0,0,8,0,1795,1,113.08,56.54,0,9,22],["2025-07-03",0,0,0,8,0,1502,1,94.63,47.31,0,9,22],["2025-07-03",0,3,18,8,1,499,1,100.0,150.0,0,9,22],["2025-07-03",0,0,0,8,0,1502,1,37.85,18.93,0,9,22],["2025-07-07",0,5,21,6,0,6495,3,736.53,759.91,1,0,1],["2025-07-07",0,5,21,6,0,6495,3,600.14,538.44,1,0,1],["2025-07-07",0,3,19,8,0,1479,3,145.98,74.1,0,9,22],["2025-07-08",0,0,0,8,0,1325,1,33.39,16.69,0,9,22],["2025-07-09",0,0,0,8,0,1597,1,100.61,50.31,0,9,22],["2025-07-09",0,3,18,8,0,3503,1,169.19,84.77,0,9,22],["2025-07-09",0,3,18,8,0,5286,1,133.21,66.6,0,9,22],["2025-07-10",0,0,0,8,0,1325,1,108.52,54.32,0,9,22],["2025-07-10",0,0,0,8,0,1455,1,18.19,0.0,0,7,13],["2025-07-11",0,5,5,13,0,4305,1,406.82,0.0,0,9,22],["2025-07-11",0,5,5,13,0,5610,1,406.72,0.0,1,4,5],["2025-07-11",0,5,12,13,0,7582,3,1128.2,0.0,1,4,5],["2025-07-11",0,5,5,13,0,4305,1,312.11,0.0,0,9,22],["2025-07-11",0,5,5,13,0,5610,1,212.06,0.0,1,4,5],["2025-07-11",0,5,5,13,0,3789,3,668.38,0.0,0,9,21],["2025-07-11",0,5,12,13,0,7582,3,1128.2,0.0,1,4,5],["2025-07-14",0,5,5,12,0,6320,10,1023.84,337.49,0,7,13],["2025-07-14",0,5,5,13,1,499,1,100.0,150.0,1,4,5],["2025-07-14",0,5,5,13,1,499,1,100.0,150.0,1,4,5],["2025-07-14",0,5,5,12,0,13800,10,1407.6,539.58,0,7,13],["2025-07-15",0,5,21,6,0,8261,1,451.05,544.4,0,9,22],["2025-07-15",0,5,21,6,0,8261,1,451.05,544.4,0,9,22],["2025-07-16",0,5,21,6,0,4417,1,241.17,291.08,1,0,1],["2025-07-16",0,5,5,13,1,499,1,100.0,150.0,0,9,22],["2025-07-16",0,5,21,6,0,14593,3,1348.39,954.38,1,3,10],["2025-07-16",0,5,5,13,0,8062,1,761.86,0.0,0,9,22],["2025-07-16",0,5,21,6,1,499,1,100.0,150.0,1,0,1],["2025-07-16",0,5,5,13,0,8730,1,632.92,0.0,0,9,22],["2025-07-16",0,5,5,13,1,499,1,100.0,150.0,0,9,22],["2025-07-16",0,5,21,6,1,499,1,100.0,150.0,1,0,1],["2025-07-18",0,8,26,13,0,14466,1,1048.78,0.0,0,9,22],["2025-07-18",0,8,26,13,0,14752,3,1678.78,0.0,0,9,22],["2025-07-21",0,0,0,8,0,1505,1,94.81,47.41,0,9,22],["2025-07-21",0,5,12,13,0,15357,1,580.49,0.0,1,5,8],["2025-07-22",0,5,16,6,0,5670,1,95.26,164.43,0,9,22],["2025-07-22",0,8,26,13,0,8860,3,775.25,0.0,0,9,22],["2025-07-22",0,8,26,13,0,8647,3,984.03,0.0,0,9,22],["2025-07-23",0,0,0,8,0,1430,1,117.12,58.63,0,9,22],["2025-07-24",0,8,26,13,0,9835,1,122.94,0.0,0,9,21],["2025-07-25",0,0,0,8,0,1407,1,14.07,0.0,0,7,13],["2025-07-25",0,0,0,8,0,1935,1,93.46,46.83,0,9,22],["2025-07-25",0,0,0,8,0,1935,1,48.76,24.38,0,9,22],["2025-07-28",0,5,21,6,0,3150,1,39.38,0.0,0,7,13],["2025-07-28",0,5,5,13,0,8876,20,931.98,0.0,1,8,20],["2025-07-28",0,0,0,8,0,1425,1,140.65,70.4,0,9,22],["2025-07-28",0,0,0,8,0,1659,1,104.52,52.26,0,9,22],["2025-07-28",0,5,21,6,0,377,1,20.58,24.84,0,7,13],["2025-07-29",0,5,21,6,0,3835,1,64.43,111.21,0,9,22],["2025-07-29",0,0,0,8,0,1407,1,35.46,17.73,0,9,22],["2025-07-30",0,5,21,6,0,3702,1,388.71,344.66,1,4,5],["2025-07-30",0,5,6,6,0,6430,1,540.12,507.33,0,9,22],["2025-07-30",0,5,21,6,0,3702,1,310.97,292.09,1,4,5],["2025-07-31",0,0,0,8,0,1725,1,17.25,0.0,0,9,22],["2025-07-31",0,5,5,13,0,4492,3,511.19,0.0,1,4,5],["2025-07-31",0,3,18,8,0,1532,1,96.52,48.26,1,0,1],["2025-08-01",0,5,21,6,0,16671,10,1890.49,2580.67,1,3,11],["2025-08-01",0,0,0,8,0,1530,3,151.01,76.65,0,9,22],["2025-08-01",0,5,5,13,1,499,1,100.0,150.0,1,4,5],["2025-08-01",0,3,18,8,0,4349,5,547.97,269.64,0,9,22],["2025-08-04",0,0,0,8,0,1575,1,99.22,49.61,0,9,22],["2025-08-04",0,5,16,6,0,15400,1,840.84,1014.86,1,4,5],["2025-08-04",0,3,18,6,0,1593,3,147.19,132.06,0,7,15],["2025-08-05",0,0,0,8,0,2137,1,103.22,51.72,1,0,1],["2025-08-05",0,3,18,8,0,3652,1,176.39,88.38,1,0,1],["2025-08-05",0,0,0,8,0,1584,1,39.92,19.96,0,9,22],["2025-08-06",0,8,26,13,0,7280,20,672.67,0.0,0,9,22],["2025-08-06",0,8,26,13,0,7030,20,863.99,0.0,0,9,22],["2025-08-06",0,0,0,8,0,1402,3,53.0,26.5,0,9,22],["2025-08-07",0,0,0,8,0,1485,1,93.56,46.78,0,9,22],["2025-08-07",0,5,6,6,0,7635,1,416.87,503.15,0,9,22],["2025-08-07",0,5,12,13,0,15079,20,1393.3,0.0,0,9,22],["2025-08-07",0,5,6,13,0,5718,1,540.35,0.0,0,9,21],["2025-08-07",0,5,12,13,0,14266,20,1318.18,0.0,0,9,22],["2025-08-07",0,0,0,8,0,1560,1,153.97,77.06,0,1,16],["2025-08-07",0,5,21,6,0,7060,20,800.6,692.59,0,9,22],["2025-08-08",0,0,0,8,0,1437,3,108.64,54.89,0,9,22],["2025-08-08",0,0,0,8,1,499,1,100.0,150.0,0,9,22],["2025-08-08",0,0,0,8,0,1357,1,34.2,17.1,0,9,22],["2025-08-08",0,5,6,13,1,499,1,100.0,150.0,0,9,21],["2025-08-11",0,8,9,6,0,14685,1,555.09,773.9,0,9,22],["2025-08-11",0,0,0,8,1,600,0,100.0,150.0,0,9,22],["2025-08-11",0,0,0,8,1,600,0,100.0,150.0,0,9,22],["2025-08-11",0,5,16,1,1,501,1,100.0,150.0,0,9,21],["2025-08-11",0,5,16,1,1,501,1,100.0,150.0,0,9,21],["2025-08-11",0,0,0,8,0,1455,5,183.33,90.21,0,9,22],["2025-08-11",0,0,0,8,0,1455,5,183.33,90.21,0,9,22],["2025-08-11",0,0,0,8,0,1597,20,157.62,78.89,1,0,1],["2025-08-12",0,5,5,13,0,2568,1,315.61,0.0,0,7,13],["2025-08-13",0,5,6,13,0,8792,10,941.62,0.0,0,7,19],["2025-08-13",0,0,0,8,0,1701,1,167.89,84.03,1,4,5],["2025-08-13",0,0,0,8,0,1701,1,139.31,69.74,1,4,5],["2025-08-13",0,5,16,6,0,8095,3,747.98,529.41,0,9,22],["2025-08-13",0,0,0,8,0,1462,1,92.11,46.05,0,9,22],["2025-08-14",0,5,5,13,1,499,1,100.0,150.0,0,9,22],["2025-08-14",0,5,5,13,1,499,1,100.0,150.0,0,9,22],["2025-08-14",0,0,0,8,1,499,1,100.0,150.0,0,9,22],["2025-08-14",0,8,26,13,0,4371,3,497.42,0.0,0,9,22],["2025-08-14",0,8,26,13,0,3662,3,416.74,0.0,0,9,22],["2025-08-14",0,5,5,13,0,17947,20,2826.65,0.0,0,9,22],["2025-08-14",0,8,26,13,0,17360,1,656.21,0.0,0,9,21],["2025-08-14",0,5,5,13,0,16715,20,2632.61,0.0,0,9,22],["2025-08-14",0,0,0,8,0,1430,1,17.88,0.0,0,7,13],["2025-08-14",0,3,18,8,0,3813,1,96.09,48.04,0,7,13],["2025-08-15",0,5,5,13,0,9637,1,698.68,0.0,0,9,22],["2025-08-15",0,5,5,13,0,9887,1,716.81,0.0,0,9,22],["2025-08-18",0,0,0,8,0,1997,1,50.32,25.16,1,3,10],["2025-08-18",0,5,5,13,0,3772,20,348.53,0.0,1,4,5],["2025-08-18",0,0,0,8,0,1756,1,44.25,22.13,1,3,10],["2025-08-18",0,5,21,6,0,7505,1,630.42,592.14,1,3,11],["2025-08-19",0,5,5,13,1,499,1,100.0,150.0,1,4,5],["2025-08-19",0,0,0,8,1,499,1,100.0,150.0,1,3,10],["2025-08-19",0,0,0,8,1,499,1,100.0,150.0,1,3,10],["2025-08-19",0,5,12,13,0,7516,3,1249.91,0.0,1,4,5],["2025-08-19",0,3,19,8,0,1534,1,74.09,37.12,0,9,22],["2025-08-19",0,5,12,13,0,7516,3,1249.91,0.0,1,4,5],["2025-08-19",0,5,6,6,0,15890,1,198.62,0.0,0,9,22],["2025-08-19",0,3,19,8,0,1534,1,74.09,37.12,0,9,22],["2025-08-20",0,5,21,6,0,5415,1,67.69,0.0,0,9,22],["2025-08-20",0,5,21,6,0,5415,1,54.15,0.0,0,9,22],["2025-08-20",0,3,19,8,0,10488,10,1123.26,569.5,0,7,13],["2025-08-20",0,5,12,13,1,499,1,100.0,150.0,1,4,5],["2025-08-20",0,8,26,13,0,3945,1,149.12,0.0,0,7,15],["2025-08-20",0,8,26,13,0,3945,1,149.12,0.0,0,7,15],["2025-08-20",0,5,12,13,1,499,1,100.0,150.0,1,4,5],["2025-08-21",0,8,26,13,0,14815,1,185.19,0.0,0,9,22],["2025-08-21",0,5,16,6,0,11489,1,143.61,0.0,0,7,19],["2025-08-21",0,5,11,13,0,7516,1,923.72,0.0,1,4,5],["2025-08-21",0,0,0,8,0,1505,3,88.49,43.19,0,9,22],["2025-08-21",0,5,21,6,0,7064,1,741.72,657.66,0,9,22],["2025-08-25",0,3,19,8,0,1411,1,68.15,34.15,0,9,22],["2025-08-26",0,0,0,8,0,1567,1,98.72,49.36,1,0,1],["2025-08-26",0,0,0,8,0,1628,1,78.63,39.4,0,9,22],["2025-08-26",0,0,0,8,0,1567,1,128.34,64.25,1,0,1],["2025-08-27",0,5,5,13,0,7312,20,675.63,0.0,1,4,5],["2025-08-27",0,5,5,13,0,7312,20,767.76,0.0,1,4,5],["2025-08-27",0,5,21,8,1,499,1,100.0,150.0,0,9,22],["2025-08-27",0,5,21,8,1,499,1,100.0,150.0,0,9,22],["2025-08-28",0,5,21,6,0,2000,1,33.6,58.0,1,3,10],["2025-08-28",0,5,21,6,0,9920,1,541.63,653.73,1,0,1],["2025-08-28",0,5,6,6,0,11880,5,548.86,535.79,0,9,22],["2025-08-29",0,0,0,8,0,1399,1,13.99,0.0,0,9,22],["2025-08-29",0,5,21,6,1,499,1,100.0,150.0,0,9,22],["2025-08-29",0,5,21,6,1,499,1,100.0,150.0,0,9,22],["2025-08-29",0,5,16,1,1,501,1,100.0,150.0,0,9,21],["2025-08-29",0,5,16,1,1,501,1,100.0,150.0,0,9,21],["2025-09-02",0,8,26,13,0,1245,1,15.56,0.0,0,9,22],["2025-09-02",0,3,18,8,0,8036,1,100.45,0.0,0,9,22],["2025-09-02",0,0,0,8,0,1462,1,36.84,18.42,0,9,22],["2025-09-02",0,5,21,6,0,4235,1,71.15,122.81,0,9,22],["2025-09-03",0,3,19,8,0,1566,3,184.16,92.08,0,9,22],["2025-09-04",0,8,26,13,0,8368,5,1317.96,0.0,1,0,1],["2025-09-04",0,5,21,6,0,9517,1,799.43,750.89,0,9,22],["2025-09-04",0,5,21,6,0,9517,1,799.43,750.89,0,9,22],["2025-09-04",0,0,0,8,0,1512,1,149.23,74.69,1,0,1],["2025-09-04",0,0,0,8,0,1512,1,123.83,61.99,1,0,1],["2025-09-04",0,8,26,13,0,7065,3,927.63,0.0,0,9,22],["2025-09-05",0,5,11,13,0,16547,3,833.97,0.0,0,9,22],["2025-09-05",0,8,26,13,1,499,1,100.0,150.0,0,7,15],["2025-09-05",0,8,26,13,1,499,1,100.0,150.0,0,7,15],["2025-09-05",0,0,0,8,0,1400,1,88.2,44.1,0,9,22],["2025-09-05",0,0,0,8,0,1400,1,88.2,44.1,0,9,22],["2025-09-05",0,8,26,13,1,499,1,100.0,150.0,0,9,22],["2025-09-08",0,5,12,13,0,490,1,72.57,0.0,1,4,5],["2025-09-08",0,5,5,12,0,8780,10,1738.44,611.09,0,7,15],["2025-09-08",0,0,0,8,0,1332,1,83.92,41.96,0,7,13],["2025-09-08",0,3,19,8,0,3623,1,174.99,87.68,1,0,1],["2025-09-08",0,5,21,6,0,4068,1,153.77,214.38,0,9,22],["2025-09-08",0,5,5,12,0,8780,10,1738.44,611.09,0,7,15],["2025-09-08",0,5,21,6,0,4068,1,153.77,214.38,0,9,22],["2025-09-08",0,5,12,13,0,490,1,72.57,0.0,1,4,5],["2025-09-08",0,3,19,8,0,1921,1,121.02,60.51,0,9,22],["2025-09-09",0,0,0,8,0,1357,1,34.2,17.1,0,9,22],["2025-09-09",0,5,16,6,0,7769,1,424.19,511.98,0,9,22],["2025-09-10",0,0,0,8,0,1487,1,121.79,60.97,0,9,22],["2025-09-10",0,5,5,13,0,4423,1,320.67,0.0,0,9,22],["2025-09-10",0,0,0,8,0,1487,1,93.68,46.84,0,9,22],["2025-09-10",0,0,0,8,0,1427,10,185.8,92.9,0,9,22],["2025-09-10",0,5,21,6,0,8320,1,104.0,0.0,0,9,22],["2025-09-10",0,5,5,13,0,4423,1,417.97,0.0,0,9,22],["2025-09-11",0,5,21,6,0,14638,1,799.23,964.64,1,0,1],["2025-09-11",0,5,5,13,1,499,1,100.0,150.0,0,9,22],["2025-09-11",0,5,5,13,1,499,1,100.0,150.0,0,9,22],["2025-09-11",0,5,11,13,0,14537,1,181.71,0.0,0,7,13],["2025-09-11",0,0,0,8,0,1462,1,119.74,59.94,0,9,22],["2025-09-11",0,0,0,8,0,1462,1,119.74,59.94,0,9,22],["2025-09-12",0,5,5,13,0,9726,3,1106.82,0.0,0,7,13],["2025-09-12",0,5,5,13,0,10474,3,1191.94,0.0,1,3,10],["2025-09-12",0,5,6,13,0,14172,1,2098.87,0.0,0,7,15],["2025-09-15",0,0,0,8,0,1682,1,81.24,40.7,0,9,22],["2025-09-17",0,5,21,6,1,600,0,100.0,150.0,1,0,1],["2025-09-17",0,5,21,6,1,600,0,100.0,150.0,1,4,5],["2025-09-17",0,5,21,6,1,600,0,100.0,150.0,1,4,5],["2025-09-17",0,0,0,8,0,5000,1,525.0,262.5,0,7,13],["2025-09-18",0,0,0,8,0,1462,1,70.61,35.38,0,9,22],["2025-09-18",0,0,0,8,0,1462,3,144.3,73.25,1,4,7],["2025-09-18",0,5,5,13,0,13742,10,952.32,0.0,1,0,1],["2025-09-18",0,0,0,8,0,1462,1,70.61,35.38,0,9,22],["2025-09-18",0,5,5,13,0,7899,1,298.58,0.0,0,9,21],["2025-09-18",0,0,0,8,0,1512,1,38.1,19.05,0,7,13],["2025-09-18",0,0,0,8,0,1703,1,168.09,84.13,0,9,22],["2025-09-18",0,0,0,8,0,1703,1,139.48,69.82,0,9,22],["2025-09-18",0,0,0,8,0,1518,1,159.39,79.7,0,9,22],["2025-09-18",0,5,5,13,0,7899,1,746.46,0.0,0,9,21],["2025-09-19",0,5,5,13,0,7817,20,820.78,0.0,1,0,1],["2025-09-19",0,5,5,13,0,6123,10,988.25,0.0,1,8,20],["2025-09-19",0,5,5,13,1,499,1,100.0,150.0,0,9,21],["2025-09-19",0,5,5,13,1,499,1,100.0,150.0,0,9,21],["2025-09-19",0,0,0,8,0,1467,3,163.28,80.69,0,9,22],["2025-09-19",0,0,0,8,0,1467,3,172.52,86.26,0,9,22],["2025-09-19",0,5,5,13,0,6123,10,1099.69,0.0,1,8,20],["2025-09-19",0,5,11,13,0,15421,20,2283.85,0.0,0,9,22],["2025-09-19",0,5,12,13,0,7452,1,704.21,0.0,0,7,13],["2025-09-22",0,5,5,13,0,3788,1,357.97,0.0,0,9,22],["2025-09-22",0,0,0,8,0,1817,5,129.73,64.87,0,9,22],["2025-09-22",0,5,21,6,0,10275,1,172.62,297.97,1,8,20],["2025-09-22",0,5,21,6,0,8881,1,111.01,0.0,1,8,20],["2025-09-22",0,0,0,8,0,1713,5,194.25,97.13,0,9,22],["2025-09-22",0,3,18,8,0,4102,1,258.43,129.21,1,4,5],["2025-09-22",0,5,5,13,0,4188,1,395.77,0.0,0,9,22],["2025-09-23",0,0,0,8,0,1467,1,92.42,46.21,0,9,22],["2025-09-23",0,5,21,6,0,12956,1,161.95,0.0,1,4,6],["2025-09-23",0,5,5,13,1,499,1,100.0,150.0,0,9,22],["2025-09-23",0,5,5,13,1,499,1,100.0,150.0,0,9,22],["2025-09-23",0,5,21,6,0,7260,5,731.81,851.6,0,9,22],["2025-09-25",0,0,0,8,0,1807,1,178.35,89.27,0,9,22],["2025-09-25",0,5,21,6,0,7120,1,89.0,0.0,0,9,22],["2025-09-25",0,0,0,8,0,1487,1,121.79,60.97,1,4,5],["2025-09-25",0,3,18,8,0,3491,5,417.87,205.27,1,8,20],["2025-09-25",0,8,26,13,0,9853,10,1590.27,0.0,1,0,1],["2025-09-25",0,3,18,8,0,3491,5,395.88,197.94,1,8,20],["2025-09-25",0,8,26,13,0,9853,10,1769.6,0.0,1,0,1],["2025-09-25",0,0,0,8,0,1537,1,151.7,75.93,0,7,14],["2025-09-25",0,5,21,6,0,7120,1,119.62,206.48,0,9,22],["2025-09-26",0,8,26,13,0,7657,5,1205.98,0.0,0,9,22],["2025-09-26",0,8,26,13,0,7657,5,1085.76,0.0,0,9,22],["2025-09-26",0,5,11,13,0,4296,1,405.97,0.0,0,7,14],["2025-09-26",0,3,19,8,0,1701,10,221.47,110.74,0,7,13],["2025-09-26",0,5,11,13,0,5582,1,404.69,0.0,0,9,22],["2025-09-29",0,8,26,13,1,499,1,100.0,150.0,0,9,22],["2025-09-29",0,5,5,13,0,4715,10,846.81,0.0,0,7,9],["2025-09-29",0,5,5,13,0,4715,10,846.81,0.0,0,7,9],["2025-09-29",0,5,12,13,0,6037,1,894.08,0.0,0,9,21],["2025-09-29",0,0,0,8,0,1657,1,20.71,0.0,0,9,22],["2025-09-29",0,5,11,13,1,499,1,100.0,150.0,0,9,22],["2025-09-30",0,5,5,13,1,499,1,100.0,150.0,0,7,9],["2025-09-30",0,5,5,13,1,499,1,100.0,150.0,0,7,9],["2025-09-30",0,0,0,8,0,1557,1,39.24,19.62,0,9,22],["2025-09-30",0,0,0,8,0,1537,1,96.83,48.42,0,9,22],["2025-09-30",0,5,21,6,0,14408,1,144.08,0.0,1,4,5],["2025-09-30",0,0,0,8,0,1783,1,17.83,0.0,0,9,22],["2025-09-30",0,0,0,8,0,1465,1,144.6,72.37,1,4,5],["2025-09-30",0,0,0,8,0,1857,3,183.29,93.04,0,9,22],["2025-10-01",0,5,21,6,1,600,0,100.0,150.0,0,7,13],["2025-10-01",0,5,21,6,1,600,0,100.0,150.0,0,7,13],["2025-10-02",0,8,26,13,0,12050,3,1371.29,0.0,1,4,6],["2025-10-02",0,5,11,13,0,5746,10,1031.98,0.0,0,9,22],["2025-10-02",0,5,11,13,0,6121,20,906.52,0.0,0,9,22],["2025-10-02",0,0,0,8,0,1487,1,93.68,46.84,0,9,22],["2025-10-02",0,3,19,8,0,3849,10,460.73,230.56,0,9,22],["2025-10-03",0,5,12,13,0,4212,20,663.39,0.0,1,4,5],["2025-10-06",0,0,0,8,0,1352,1,85.18,42.59,0,9,22],["2025-10-06",0,8,26,13,0,15086,3,2244.8,0.0,1,0,1],["2025-10-06",0,0,0,8,0,1527,1,96.2,48.1,0,9,22],["2025-10-06",0,8,26,13,0,16423,3,2443.74,0.0,1,0,1],["2025-10-06",0,0,0,8,0,1527,1,73.75,36.95,0,9,22],["2025-10-06",0,5,21,6,0,11690,1,441.88,616.06,0,9,22],["2025-10-07",0,0,0,8,0,1854,1,89.55,44.87,0,9,22],["2025-10-07",0,8,26,13,1,499,1,100.0,150.0,1,0,1],["2025-10-07",0,8,26,13,1,499,1,100.0,150.0,1,0,1],["2025-10-07",0,0,0,8,0,5000,1,525.0,262.5,0,7,13],["2025-10-08",0,8,26,13,0,7163,20,1060.84,0.0,1,0,1],["2025-10-08",0,8,26,13,0,6842,20,840.88,0.0,1,0,1],["2025-10-08",0,5,21,6,0,10893,1,136.16,0.0,0,9,22],["2025-10-08",0,0,0,8,0,1517,1,38.23,19.11,0,9,22],["2025-10-09",0,8,26,13,1,499,1,100.0,150.0,1,0,1],["2025-10-09",0,5,12,13,1,499,1,100.0,150.0,0,7,15],["2025-10-09",0,5,12,13,1,499,1,100.0,150.0,0,7,15],["2025-10-09",0,5,12,13,0,3498,1,550.94,0.0,0,7,15],["2025-10-09",0,0,0,8,0,1357,1,16.96,0.0,0,9,22],["2025-10-09",0,5,12,13,0,3498,1,550.94,0.0,0,7,15],["2025-10-09",0,8,26,13,1,499,1,100.0,150.0,1,0,1],["2025-10-10",0,0,0,8,0,1517,3,149.73,76.0,0,9,22],["2025-10-10",0,5,12,13,0,4534,3,674.66,0.0,0,9,22],["2025-10-10",0,5,12,13,0,4534,3,754.0,0.0,0,9,22],["2025-10-15",0,5,16,13,0,6848,1,496.48,0.0,1,0,1],["2025-10-15",0,5,16,13,1,499,1,100.0,150.0,1,0,1],["2025-10-15",0,0,0,8,0,1512,3,168.29,83.16,1,4,5],["2025-10-15",0,8,26,13,0,7901,5,846.2,0.0,1,0,1],["2025-10-15",0,8,26,13,0,7901,5,1120.36,0.0,1,0,1],["2025-10-15",0,5,6,6,0,15250,1,576.45,803.67,0,9,22],["2025-10-15",0,8,9,6,0,2000,1,25.0,0.0,0,7,13],["2025-10-15",0,5,5,13,0,6704,3,1114.88,0.0,1,0,1],["2025-10-16",0,5,12,13,0,8754,10,1764.81,0.0,1,4,5],["2025-10-16",0,5,12,13,0,8704,10,1699.89,0.0,1,4,5],["2025-10-16",0,0,0,8,0,1537,1,19.21,0.0,0,1,16],["2025-10-17",0,5,6,6,0,7190,1,392.57,473.82,0,9,22],["2025-10-17",0,5,6,6,0,8345,1,455.64,549.94,0,9,22],["2025-10-17",0,5,5,13,0,12101,5,2274.99,0.0,1,4,7],["2025-10-17",0,0,0,8,0,1534,10,206.17,103.08,1,4,5],["2025-10-20",0,0,0,8,0,1394,1,17.43,0.0,0,9,22],["2025-10-20",0,0,0,8,0,1532,3,135.12,66.03,0,9,22],["2025-10-20",0,0,0,8,0,1519,1,149.93,75.04,0,9,22],["2025-10-20",0,8,26,13,0,20079,10,2150.46,0.0,1,3,10],["2025-10-20",0,5,5,13,1,600,0,100.0,150.0,1,4,7],["2025-10-20",0,0,0,8,0,1519,1,124.41,62.28,0,9,22],["2025-10-21",0,0,0,8,0,1624,1,102.31,51.16,0,9,22],["2025-10-22",0,5,12,13,0,7399,1,279.68,0.0,1,4,5],["2025-10-22",0,5,12,13,0,7449,1,703.93,0.0,1,4,5],["2025-10-24",0,5,11,13,0,4832,3,549.88,0.0,1,4,5],["2025-10-24",0,5,11,13,0,4832,3,634.44,0.0,1,4,5],["2025-10-24",0,0,0,8,0,1552,1,19.4,0.0,0,7,13],["2025-10-24",0,0,0,8,0,1562,3,118.09,59.67,0,9,22],["2025-10-24",0,5,5,13,0,17267,10,3101.15,0.0,1,4,5],["2025-10-24",0,5,21,6,0,10720,1,405.22,564.94,0,9,22],["2025-10-24",0,5,5,13,0,16675,10,2994.83,0.0,1,4,5],["2025-10-24",0,5,21,6,0,10770,1,407.11,567.58,0,9,22],["2025-10-27",0,0,0,8,0,1357,1,133.94,67.04,0,9,22],["2025-10-28",0,5,21,6,0,4350,1,73.08,126.15,0,9,22],["2025-10-28",0,5,21,6,0,4260,1,71.57,123.54,0,9,22],["2025-10-28",0,5,11,13,0,16612,20,1534.95,0.0,0,9,22],["2025-10-28",0,5,5,13,0,4715,1,58.94,0.0,0,9,22],["2025-10-29",0,8,9,6,0,2200,1,27.5,0.0,0,7,13],["2025-10-29",0,0,0,8,0,1532,1,19.15,0.0,0,7,13],["2025-10-30",0,5,5,13,0,4863,1,60.79,0.0,0,9,22],["2025-10-30",0,5,5,13,0,6338,1,239.58,0.0,1,4,5],["2025-10-30",0,5,5,13,0,7123,1,875.42,0.0,1,4,5],["2025-10-30",0,0,0,8,0,3659,1,92.21,46.1,0,9,22],["2025-10-30",0,0,0,8,0,1587,1,129.98,65.07,0,9,22],["2025-10-31",0,5,5,13,1,499,1,100.0,150.0,1,4,5],["2025-11-03",0,5,6,6,0,7940,3,900.4,928.98,1,4,5],["2025-11-03",0,5,21,6,0,4880,1,81.98,141.52,0,9,22],["2025-11-03",0,5,21,6,0,4880,1,61.0,0.0,0,9,22],["2025-11-04",0,5,5,12,0,6320,10,1213.44,425.34,0,7,13],["2025-11-04",0,8,9,6,0,3475,5,321.09,379.12,1,4,5],["2025-11-04",0,5,5,12,0,13800,10,2484.0,822.48,0,7,13],["2025-11-04",0,0,0,8,0,1578,1,165.69,82.85,0,9,22],["2025-11-06",0,0,0,8,0,1635,1,20.44,0.0,0,9,22],["2025-11-06",0,5,6,6,0,2500,1,31.25,0.0,0,7,15],["2025-11-07",0,0,0,8,0,1607,1,40.5,20.25,0,9,22],["2025-11-07",0,0,0,8,0,2928,1,239.8,120.05,0,9,22],["2025-11-07",0,0,0,8,0,1607,1,101.24,50.62,0,9,22],["2025-11-07",0,5,16,6,0,10865,1,1140.83,1011.53,0,9,22],["2025-11-10",0,0,0,8,0,1862,1,117.31,58.65,0,9,22],["2025-11-10",0,5,16,6,0,3415,1,358.57,350.04,0,9,22],["2025-11-10",0,5,16,6,0,3415,1,286.86,387.6,0,9,22],["2025-11-10",0,0,0,8,0,1812,1,148.4,74.29,0,9,22],["2025-11-11",0,0,0,8,0,1457,1,18.21,0.0,0,9,22],["2025-11-12",0,0,0,8,0,1689,1,166.7,83.44,0,1,16],["2025-11-12",0,0,0,8,0,1689,1,138.33,69.25,0,1,16],["2025-11-13",0,0,0,8,1,499,1,100.0,150.0,0,1,16],["2025-11-13",0,0,0,8,1,499,1,100.0,150.0,0,1,16],["2025-11-13",0,0,0,8,0,1711,1,43.12,21.56,1,8,20],["2025-11-13",0,5,5,13,0,4124,1,649.53,0.0,0,7,13],["2025-11-14",0,5,6,6,0,1000,1,12.5,0.0,1,4,6],["2025-11-18",0,8,26,13,0,3912,1,480.78,0.0,0,9,22],["2025-11-19",0,5,21,6,0,8940,3,826.06,584.68,1,3,10],["2025-11-19",0,5,21,6,0,7965,3,735.97,660.3,1,3,10],["2025-11-19",0,5,21,6,0,9275,1,779.1,1052.71,0,9,21],["2025-11-19",0,5,5,13,0,7926,3,693.52,0.0,0,9,22],["2025-11-19",0,5,5,13,0,3009,1,218.15,0.0,0,1,16],["2025-11-19",0,0,0,8,0,1482,1,121.38,60.76,0,9,22],["2025-11-20",0,5,11,13,0,10911,1,412.44,0.0,1,0,1],["2025-11-20",0,5,11,13,0,10911,1,791.05,0.0,1,0,1],["2025-11-21",0,5,11,13,1,499,1,100.0,150.0,1,0,1],["2025-11-21",0,5,11,13,1,499,1,100.0,150.0,1,0,1],["2025-11-21",0,0,0,8,0,2282,1,143.77,71.88,0,7,13],["2025-11-21",0,5,21,6,0,11079,1,418.79,583.86,1,4,6],["2025-11-24",0,5,5,13,0,3219,1,506.99,0.0,1,4,5],["2025-11-24",0,0,0,8,0,1457,1,143.81,71.98,1,3,11],["2025-11-24",0,0,0,8,0,1657,1,80.03,40.1,0,9,22],["2025-11-24",0,5,5,13,0,3059,1,481.79,0.0,1,4,5],["2025-11-25",0,5,12,13,0,19432,1,1408.82,0.0,0,9,22],["2025-11-25",0,3,19,8,0,1895,1,187.04,93.61,1,0,1],["2025-11-25",0,5,6,6,0,4090,1,343.56,322.7,0,9,22],["2025-11-25",0,5,6,6,0,4090,1,343.56,322.7,0,9,22],["2025-11-25",0,5,11,13,0,5167,1,374.61,0.0,0,9,22],["2025-11-25",0,3,19,8,0,2672,3,297.39,146.96,1,0,1],["2025-11-26",0,5,5,13,1,499,1,100.0,150.0,1,0,1],["2025-11-26",0,5,5,13,1,499,1,100.0,150.0,1,0,1],["2025-11-26",0,3,19,8,0,1562,1,154.17,77.16,1,0,1],["2025-11-30",0,5,5,12,0,4210,10,833.58,293.02,0,7,15],["2025-12-01",0,5,6,6,0,13590,1,228.31,394.11,0,9,22],["2025-12-01",0,5,11,13,0,4037,1,292.68,0.0,0,9,22],["2025-12-01",0,5,11,13,0,4037,1,292.68,0.0,0,9,22],["2025-12-01",0,5,11,13,0,13608,1,2015.34,0.0,0,9,21],["2025-12-01",0,8,26,13,0,7375,1,696.94,0.0,0,9,22],["2025-12-01",0,8,26,13,0,7375,1,696.94,0.0,0,9,22],["2025-12-02",0,8,26,13,0,15642,1,1478.17,0.0,0,9,21],["2025-12-02",0,5,21,6,0,9475,1,118.44,0.0,0,7,19],["2025-12-03",0,8,9,13,0,7568,1,1120.82,0.0,1,0,1],["2025-12-03",0,5,5,13,0,3939,3,517.19,0.0,1,0,1],["2025-12-03",0,5,5,13,0,3939,1,372.24,0.0,1,0,1],["2025-12-03",0,0,0,8,0,1457,1,91.79,45.9,0,9,22],["2025-12-03",0,8,9,13,0,7618,1,1128.23,0.0,1,0,1],["2025-12-04",0,0,0,8,0,1482,3,174.28,87.14,0,9,22],["2025-12-04",0,5,5,13,1,499,1,100.0,150.0,1,0,1],["2025-12-04",0,0,0,8,0,1357,1,13.57,0.0,0,7,13],["2025-12-04",0,0,0,8,0,1482,3,164.95,81.51,0,9,22],["2025-12-04",0,5,5,13,1,499,1,100.0,150.0,1,0,1],["2025-12-05",0,5,11,13,0,8468,10,1520.85,0.0,0,9,22],["2025-12-05",0,5,11,13,0,4437,3,582.58,0.0,1,0,1],["2025-12-05",0,5,21,6,0,6087,1,230.09,320.78,0,7,13],["2025-12-05",0,0,0,8,0,1382,1,66.75,33.44,0,7,13],["2025-12-05",0,5,11,13,0,12841,10,2072.54,0.0,0,9,22],["2025-12-08",0,0,0,11,1,499,1,100.0,150.0,1,3,11],["2025-12-08",0,5,6,6,0,6430,1,351.08,423.74,1,3,11],["2025-12-08",0,8,26,13,0,17666,10,1892.03,0.0,1,0,1],["2025-12-08",0,5,6,6,0,6430,1,540.12,507.33,1,3,11],["2025-12-08",0,8,26,13,0,18570,10,3335.17,0.0,1,0,1],["2025-12-09",0,8,26,13,0,7723,10,1508.3,0.0,1,0,1],["2025-12-09",0,8,26,13,0,8661,20,909.4,0.0,1,0,1],["2025-12-09",0,8,26,13,0,8761,20,919.9,0.0,1,0,1],["2025-12-09",0,8,26,13,0,7323,10,1315.21,0.0,1,0,1],["2025-12-09",0,5,21,6,0,6370,1,79.62,0.0,0,9,22],["2025-12-09",0,8,26,13,1,499,1,100.0,150.0,1,0,1],["2025-12-09",0,8,26,13,1,499,1,100.0,150.0,1,0,1],["2025-12-10",0,8,26,13,1,499,1,100.0,150.0,1,0,1],["2025-12-10",0,0,0,8,0,1572,1,19.65,0.0,0,9,22],["2025-12-10",0,0,0,8,0,1540,1,38.81,19.4,0,9,22],["2025-12-10",0,8,26,13,0,9456,20,1162.14,0.0,0,9,22],["2025-12-10",0,8,26,13,0,14959,20,2356.04,0.0,0,9,22],["2025-12-10",0,8,26,13,0,5702,3,848.46,0.0,1,0,1],["2025-12-10",0,8,26,13,0,5702,3,848.46,0.0,1,0,1],["2025-12-10",0,8,26,13,1,499,1,100.0,150.0,1,0,1],["2025-12-11",0,0,0,8,0,1573,1,99.1,49.55,1,0,1],["2025-12-11",0,3,19,8,0,8522,5,805.33,403.09,1,8,20],["2025-12-11",0,8,26,13,1,499,1,100.0,150.0,1,0,1],["2025-12-11",0,8,26,13,1,499,1,100.0,150.0,1,0,1],["2025-12-11",0,5,5,13,0,6982,3,610.92,0.0,1,0,1],["2025-12-11",0,5,5,13,0,6582,3,749.03,0.0,1,0,1],["2025-12-12",0,0,0,8,0,1905,1,23.81,0.0,0,9,22],["2025-12-12",0,5,6,6,0,10865,20,1232.09,689.93,1,3,10],["2025-12-12",0,5,5,13,0,8678,1,328.03,0.0,0,7,9],["2025-12-15",0,0,0,8,0,1482,1,93.37,46.68,0,7,13],["2025-12-15",0,8,26,13,0,3650,1,264.62,0.0,0,9,22],["2025-12-15",0,5,5,13,0,16482,20,2025.64,0.0,0,9,22],["2025-12-15",0,5,5,13,0,8303,3,1090.18,0.0,1,4,5],["2025-12-16",0,8,26,13,0,6545,3,973.9,0.0,1,0,1],["2025-12-16",0,5,11,13,0,2500,1,393.75,0.0,0,7,13],["2025-12-17",0,8,26,13,0,7454,3,978.71,0.0,1,0,1],["2025-12-17",0,5,5,13,0,3624,3,639.27,0.0,0,7,13],["2025-12-17",0,8,26,13,0,7454,3,848.27,0.0,1,0,1],["2025-12-17",0,3,19,8,0,5377,1,564.58,282.29,0,9,22],["2025-12-18",0,5,5,13,0,13893,20,1458.76,0.0,1,0,1],["2025-12-18",0,5,5,13,0,14157,20,1486.48,0.0,1,0,1],["2025-12-22",0,5,21,6,0,3930,1,412.65,402.83,0,9,22],["2025-12-22",0,5,6,6,0,5000,1,189.0,263.5,1,4,6],["2025-12-22",0,5,21,6,0,6254,1,656.67,641.04,0,9,22],["2025-12-22",0,5,5,13,0,3624,3,639.27,0.0,0,9,21],["2025-12-22",0,0,0,8,0,1512,3,149.23,75.75,0,1,18],["2025-12-23",0,0,0,8,0,1512,1,158.76,79.38,0,9,22],["2025-12-23",0,5,21,6,0,7005,3,794.37,819.58,0,9,22],["2025-12-24",0,5,5,13,0,4073,3,463.51,0.0,0,9,22],["2025-12-29",0,8,26,13,0,6138,1,580.04,0.0,1,0,1],["2025-12-29",0,8,26,13,0,6138,1,909.04,0.0,1,0,1],["2025-12-30",0,8,26,13,0,15133,3,1722.14,0.0,1,0,1],["2025-12-30",0,8,26,13,1,499,1,100.0,150.0,1,0,1],["2025-12-30",0,8,26,13,1,499,1,100.0,150.0,1,0,1],["2025-12-30",0,5,21,6,0,3922,1,329.45,309.45,0,9,22],["2025-12-31",0,0,0,8,0,2212,1,106.84,53.53,0,9,22],["2026-01-06",0,8,26,13,0,9026,3,789.77,0.0,1,0,1],["2026-01-06",0,8,26,13,0,9026,3,1027.16,0.0,1,0,1],["2026-01-06",0,5,6,13,0,9992,1,1228.02,0.0,0,7,19],["2026-01-06",0,0,0,8,0,1573,1,75.98,38.07,1,0,1],["2026-01-07",0,0,0,8,0,1529,1,150.91,75.53,0,9,22],["2026-01-07",0,5,11,13,0,11783,10,2301.22,0.0,0,9,22],["2026-01-07",0,5,11,13,0,11783,10,2301.22,0.0,0,9,22],["2026-01-07",0,5,16,6,0,13874,1,173.43,0.0,0,9,22],["2026-01-07",0,0,0,8,0,1557,1,127.52,63.84,0,9,22],["2026-01-07",0,5,6,6,0,9795,1,370.25,516.2,0,9,22],["2026-01-07",0,8,26,13,1,499,1,100.0,150.0,1,0,1],["2026-01-07",0,8,26,13,1,499,1,100.0,150.0,1,0,1],["2026-01-08",0,5,11,13,1,499,1,100.0,150.0,0,9,22],["2026-01-08",0,5,5,13,0,3201,1,121.0,0.0,0,9,22],["2026-01-08",0,5,11,13,1,499,1,100.0,150.0,0,9,22],["2026-01-09",0,0,0,8,0,1802,1,113.53,56.76,0,9,22],["2026-01-12",0,0,0,8,0,1220,1,99.92,50.02,0,7,13],["2026-01-12",0,0,0,8,0,1582,1,129.57,64.86,0,9,22],["2026-01-12",0,5,11,13,0,13937,1,526.82,0.0,0,9,22],["2026-01-13",0,5,5,13,0,6853,1,647.61,0.0,1,4,5],["2026-01-13",0,5,5,13,0,3824,1,38.24,0.0,0,9,22],["2026-01-15",0,0,0,8,0,1588,1,100.04,50.02,0,9,22],["2026-01-16",0,3,18,8,0,3856,1,97.17,48.59,0,9,22],["2026-01-16",0,5,6,6,0,1325,1,16.56,0.0,0,9,22],["2026-01-16",0,5,12,13,0,4197,1,158.65,0.0,1,8,20],["2026-01-16",0,5,21,6,0,13654,1,1146.94,1077.3,0,9,21],["2026-01-16",0,5,21,6,0,7500,1,630.0,591.75,1,4,5],["2026-01-16",0,5,21,6,0,7500,1,630.0,591.75,1,4,5],["2026-01-19",0,1,3,8,0,6485,3,381.32,186.12,0,7,13],["2026-01-20",0,0,0,8,1,600,0,100.0,150.0,0,9,22],["2026-01-20",0,0,0,8,0,1819,1,22.74,0.0,0,9,22],["2026-01-21",0,0,0,8,0,1620,1,102.06,51.03,1,0,1],["2026-01-21",0,0,0,8,0,1620,1,132.68,66.42,1,0,1],["2026-01-22",0,0,0,8,1,499,1,100.0,150.0,1,0,1],["2026-01-22",0,0,0,8,1,499,1,100.0,150.0,1,0,1],["2026-01-22",0,0,0,8,0,1520,1,124.49,62.32,0,9,22],["2026-01-23",0,0,0,8,0,1415,1,68.34,34.24,0,9,22],["2026-01-26",0,5,21,6,0,2000,1,25.0,0.0,0,9,21],["2026-01-27",0,0,0,8,0,1490,1,122.03,61.09,1,4,5],["2026-01-27",0,8,26,13,0,7081,1,669.15,0.0,0,9,21],["2026-01-27",0,0,0,8,0,1407,1,88.64,44.32,0,9,22],["2026-01-27",0,0,0,8,0,1490,1,122.03,61.09,1,4,5],["2026-01-28",0,5,21,6,0,5267,1,65.84,0.0,0,9,22],["2026-01-28",0,5,5,13,0,6304,3,827.72,0.0,1,0,1],["2026-01-28",0,0,0,8,0,1495,1,122.44,61.29,0,7,13],["2026-01-29",0,5,11,13,0,5614,1,407.01,0.0,1,0,1],["2026-01-29",0,5,5,13,1,499,1,100.0,150.0,1,0,1],["2026-01-29",0,0,0,8,0,1395,1,17.44,0.0,0,9,22],["2026-01-30",0,5,11,13,0,9720,20,1194.59,0.0,1,0,1],["2026-01-30",0,5,11,13,0,9770,20,1200.73,0.0,1,0,1],["2026-01-30",0,5,11,13,0,1719,1,162.45,0.0,0,9,22],["2026-01-30",0,0,0,8,0,1434,3,108.41,54.78,0,9,22],["2026-02-03",0,8,9,6,0,5438,1,456.79,429.06,0,9,22],["2026-02-03",0,8,9,6,0,5438,1,570.99,506.28,0,7,13],["2026-02-03",0,5,21,6,0,21143,1,264.29,0.0,0,9,22],["2026-02-04",0,5,21,6,0,500,1,6.25,0.0,0,9,22],["2026-02-04",0,0,0,8,0,2107,1,101.77,50.99,0,9,22],["2026-02-04",0,1,3,8,0,6869,10,822.22,411.45,0,9,22],["2026-02-04",0,1,3,8,0,11700,1,294.84,147.42,0,9,22],["2026-02-04",0,5,21,6,0,7923,3,732.09,656.82,0,9,22],["2026-02-04",0,0,0,8,0,1970,1,124.11,62.05,0,9,22],["2026-02-04",0,5,21,6,0,7923,3,732.09,656.82,0,9,22],["2026-02-04",0,5,21,6,0,8373,1,83.73,0.0,0,9,22],["2026-02-04",0,5,21,6,0,8373,1,316.5,441.26,0,9,22],["2026-02-05",0,8,26,13,0,8128,20,998.93,0.0,0,9,22],["2026-02-05",0,5,11,13,0,7353,3,836.77,0.0,1,5,8],["2026-02-06",0,5,5,13,0,4802,1,348.14,0.0,1,4,5],["2026-02-06",0,5,5,13,0,4802,1,453.79,0.0,1,4,5],["2026-02-09",0,3,18,8,0,2769,1,133.74,67.01,0,9,22],["2026-02-10",0,1,2,8,0,3345,1,161.56,80.95,0,9,22],["2026-02-10",0,5,5,13,0,3827,10,409.87,0.0,1,4,5],["2026-02-10",0,1,2,8,0,3345,1,161.56,80.95,0,2,3],["2026-02-10",0,5,5,13,0,3827,20,353.61,0.0,1,4,5],["2026-02-10",0,8,26,13,0,18599,3,1054.56,0.0,0,9,22],["2026-02-11",0,0,0,8,0,1640,1,41.33,20.66,1,3,11],["2026-02-11",0,5,5,13,0,5949,1,224.87,0.0,0,7,13],["2026-02-11",0,8,26,13,0,3680,1,266.8,0.0,0,9,22],["2026-02-11",0,5,5,13,0,11433,1,432.17,0.0,0,9,22],["2026-02-11",0,5,5,13,0,11483,1,434.06,0.0,0,9,22],["2026-02-11",0,5,5,13,0,5974,1,433.11,0.0,1,4,5],["2026-02-11",0,5,21,6,0,3648,1,383.04,339.63,1,3,11],["2026-02-11",0,6,23,8,0,1257,1,124.07,62.1,0,7,13],["2026-02-12",0,5,21,6,0,3959,1,49.49,0.0,0,9,22],["2026-02-12",0,0,0,8,0,2083,1,131.23,65.61,0,9,22],["2026-02-13",0,5,21,6,0,5043,1,190.63,265.77,0,9,22],["2026-02-13",0,5,11,13,0,16789,20,2486.45,0.0,1,0,1],["2026-02-13",0,0,0,8,0,1616,3,142.53,69.65,1,3,11],["2026-02-13",0,5,11,13,0,18293,3,2081.74,0.0,0,9,22],["2026-02-13",0,0,0,8,0,1490,1,122.03,61.09,0,9,22],["2026-02-13",0,5,11,13,0,17060,20,2096.67,0.0,1,0,1],["2026-02-16",1,2,25,5,0,5185,1,637.24,0.0,0,9,22],["2026-02-17",0,5,21,6,0,6090,1,230.2,320.94,0,9,22],["2026-02-17",0,5,21,6,0,6378,1,241.09,336.12,1,4,5],["2026-02-17",0,3,19,8,0,11648,1,562.6,281.88,0,9,22],["2026-02-17",0,0,0,8,0,1536,3,170.96,84.48,0,7,13],["2026-02-17",0,5,11,13,1,499,1,100.0,150.0,1,0,1],["2026-02-17",0,5,11,13,1,499,1,100.0,150.0,1,0,1],["2026-02-17",0,5,21,6,0,6090,1,230.2,320.94,0,9,22],["2026-02-19",0,0,0,8,0,3290,1,207.27,103.64,0,9,22],["2026-02-19",0,1,3,8,0,8592,10,1154.76,577.38,0,9,22],["2026-02-20",0,5,5,13,1,499,1,100.0,150.0,1,0,1],["2026-02-20",0,5,5,13,1,499,1,100.0,150.0,1,0,1],["2026-02-20",0,6,23,8,0,1163,1,73.27,36.63,0,7,13],["2026-02-20",0,8,26,13,0,4040,1,598.32,0.0,0,9,22],["2026-02-20",0,8,26,13,0,4040,1,152.71,0.0,0,9,22],["2026-02-20",0,3,18,8,0,10340,1,651.42,325.71,0,9,22],["2026-02-20",0,0,0,8,0,3320,1,271.91,136.12,0,9,22],["2026-02-20",0,6,23,8,0,1257,1,131.98,65.99,0,7,13],["2026-02-20",0,5,21,6,0,5863,1,73.29,0.0,0,9,21],["2026-02-23",0,0,0,8,0,1858,1,89.74,44.96,0,9,22],["2026-02-23",0,0,0,8,0,1858,1,89.74,44.96,0,9,22],["2026-02-23",0,3,19,8,0,1671,10,217.56,108.78,1,0,1],["2026-02-23",0,1,3,8,0,5915,1,285.69,143.14,0,9,22],["2026-02-24",0,5,21,6,0,8150,1,101.88,0.0,1,3,11],["2026-02-24",0,0,0,8,0,1415,1,14.15,0.0,0,9,22],["2026-02-24",0,0,0,8,0,1465,3,110.75,55.96,0,9,22],["2026-02-24",0,0,0,8,0,1465,3,110.75,55.96,0,9,22],["2026-02-24",0,0,0,8,0,1630,1,160.88,80.52,0,9,22],["2026-02-24",0,5,21,6,0,13198,1,221.73,382.74,0,9,21],["2026-02-24",0,5,21,6,0,13198,1,164.98,0.0,0,9,21],["2026-02-25",0,5,21,6,1,499,1,100.0,150.0,0,9,22],["2026-02-25",0,5,21,8,0,11542,1,557.48,279.32,0,7,15],["2026-02-25",0,0,0,8,0,3290,1,269.45,134.89,0,9,22],["2026-02-25",0,0,0,8,0,1540,3,181.1,90.55,1,4,5],["2026-02-25",0,5,21,6,1,499,1,100.0,150.0,0,9,21],["2026-02-25",0,0,0,8,0,1490,1,93.87,46.94,0,9,22],["2026-02-25",0,5,21,6,0,16712,1,1403.81,1318.58,0,9,21],["2026-02-25",0,5,11,13,0,2000,1,189.0,0.0,0,9,22],["2026-02-25",0,0,0,8,0,1800,1,22.5,0.0,0,9,22],["2026-02-25",0,0,0,8,0,3290,1,207.27,103.64,0,9,22],["2026-02-25",0,5,21,6,0,20143,1,251.79,0.0,0,9,22],["2026-02-25",0,5,21,6,1,499,1,100.0,150.0,0,9,22],["2026-02-26",0,0,0,8,0,1365,1,111.79,55.96,0,7,13],["2026-02-26",0,5,5,13,0,4091,1,502.78,0.0,0,9,22],["2026-02-27",0,5,21,6,0,11633,3,928.31,531.63,1,4,5],["2026-02-27",0,5,16,6,0,12683,1,1331.71,1180.79,0,9,22],["2026-02-27",0,5,21,6,0,11633,3,928.31,531.63,1,4,5],["2026-02-27",0,0,0,8,0,1515,10,216.34,108.17,0,1,16],["2026-02-27",0,3,19,8,0,2924,1,73.68,36.84,0,7,13],["2026-02-27",0,3,18,8,0,5135,1,323.5,161.75,0,9,22],["2026-02-27",0,0,0,8,0,1515,10,216.34,108.17,0,1,16],["2026-03-02",0,8,26,13,0,7895,5,1119.51,0.0,1,0,1],["2026-03-02",0,0,0,8,0,1515,10,203.62,101.81,1,0,1],["2026-03-03",0,8,26,13,0,2500,1,31.25,0.0,0,7,13],["2026-03-03",0,5,6,6,0,6303,1,238.25,332.17,1,3,11],["2026-03-03",0,1,3,4,0,613,1,49.04,28.38,0,7,13],["2026-03-03",0,5,21,6,0,4245,1,445.72,435.11,0,1,2],["2026-03-03",0,5,21,6,0,6668,1,364.07,439.42,0,9,22],["2026-03-03",0,5,21,6,0,6668,1,252.05,351.4,0,9,22],["2026-03-03",0,0,0,8,0,1647,1,103.76,51.88,0,9,22],["2026-03-03",0,5,11,13,0,16308,10,2632.11,0.0,0,9,22],["2026-03-03",0,5,11,13,0,15288,10,1637.34,0.0,0,9,22],["2026-03-04",0,5,21,6,1,499,1,100.0,150.0,1,3,11],["2026-03-04",0,1,3,4,0,12576,1,1006.08,582.27,0,7,13],["2026-03-04",0,5,21,6,0,5207,20,590.47,510.81,1,3,11],["2026-03-05",0,8,26,13,0,10359,20,957.17,0.0,1,0,1],["2026-03-05",0,8,26,13,0,10943,20,1149.01,0.0,1,0,1],["2026-03-05",0,5,21,6,0,11328,1,141.6,0.0,0,9,21],["2026-03-06",0,0,0,8,0,1490,1,156.45,78.23,0,9,22],["2026-03-06",0,0,0,8,0,1858,1,89.74,44.96,0,9,22],["2026-03-06",0,8,26,13,1,499,1,100.0,150.0,1,0,1],["2026-03-06",0,8,26,13,1,499,1,100.0,150.0,1,0,1],["2026-03-06",0,0,0,8,0,1858,1,46.82,23.41,0,9,22],["2026-03-06",0,0,0,8,0,1615,1,132.27,66.21,0,9,22],["2026-03-06",0,0,0,8,0,1565,1,98.59,49.3,0,9,22],["2026-03-09",0,8,26,13,0,6905,3,1148.3,0.0,0,9,22],["2026-03-09",0,8,26,13,0,11180,3,1859.23,0.0,0,9,22],["2026-03-09",0,0,0,8,0,1480,1,146.08,73.11,0,9,22],["2026-03-09",0,0,0,8,0,1814,1,114.28,57.14,0,9,22],["2026-03-09",0,5,11,13,0,6857,1,85.71,0.0,0,9,22],["2026-03-10",0,0,0,8,0,1465,5,138.44,69.29,1,0,1],["2026-03-10",0,6,23,14,0,1207,1,192.52,0.0,0,7,13],["2026-03-10",0,0,0,8,0,1590,1,100.17,50.09,1,3,10],["2026-03-10",0,0,0,8,0,1590,1,19.88,0.0,1,3,10],["2026-03-11",0,8,26,13,1,549,1,100.0,150.0,0,9,22],["2026-03-11",0,5,12,13,0,7563,20,929.49,0.0,1,3,11],["2026-03-11",0,8,26,13,1,549,1,100.0,150.0,0,9,22],["2026-03-11",0,5,12,13,0,7563,20,929.49,0.0,1,3,11],["2026-03-11",0,5,11,13,0,3931,3,584.93,0.0,1,4,5],["2026-03-11",0,0,0,8,0,1365,1,86.0,43.0,0,9,22],["2026-03-12",0,5,12,13,1,600,0,100.0,150.0,1,3,11],["2026-03-12",0,5,12,13,1,600,0,100.0,150.0,1,3,11],["2026-03-12",0,8,9,6,0,2200,1,27.5,0.0,0,9,22],["2026-03-12",0,8,26,13,0,4778,20,587.22,0.0,1,0,1],["2026-03-12",0,6,23,14,0,1042,3,324.48,0.0,1,8,20],["2026-03-12",0,8,26,13,0,4803,20,711.32,0.0,1,0,1],["2026-03-12",0,5,6,6,0,3917,1,48.96,0.0,0,9,22],["2026-03-12",0,5,21,6,0,9128,10,651.74,636.22,0,9,22],["2026-03-12",0,5,21,6,0,9128,10,1150.13,1036.94,0,9,22],["2026-03-12",0,0,0,8,0,1651,1,41.61,20.8,0,9,22],["2026-03-13",0,5,12,13,0,4526,1,556.25,0.0,0,9,22],["2026-03-13",0,5,21,6,0,3895,1,327.18,442.08,0,9,22],["2026-03-13",0,5,21,6,0,13313,1,166.41,0.0,1,4,5],["2026-03-13",0,5,21,6,0,3895,1,327.18,442.08,0,9,22],["2026-03-13",0,3,18,8,0,3595,1,226.49,113.24,0,9,22],["2026-03-13",0,3,18,8,0,3545,1,223.34,111.67,0,9,22],["2026-03-13",0,0,0,8,0,1340,1,109.75,54.94,0,9,22],["2026-03-13",0,5,21,6,0,3895,1,212.67,256.68,0,9,22],["2026-03-13",0,6,23,14,0,1132,1,65.43,0.0,1,4,5],["2026-03-16",0,5,21,6,0,14213,1,238.78,412.18,1,0,1],["2026-03-16",0,5,21,6,0,14213,1,238.78,412.18,1,0,1],["2026-03-16",0,5,5,13,0,6534,10,699.79,0.0,0,9,22],["2026-03-18",0,0,0,8,0,1465,3,110.75,55.96,0,9,21],["2026-03-18",0,0,0,8,0,1490,1,147.06,73.61,1,3,10],["2026-03-18",0,0,0,8,0,1673,1,80.81,40.49,0,9,22],["2026-03-18",0,0,0,8,0,1678,1,81.05,40.61,0,9,22],["2026-03-19",0,5,16,6,0,13507,1,737.48,890.11,1,5,8],["2026-03-19",0,8,9,6,0,9063,1,152.26,262.83,0,9,22],["2026-03-19",0,1,3,4,0,5515,1,286.78,309.94,0,7,13],["2026-03-20",0,1,3,4,0,5515,1,68.94,68.39,0,7,13],["2026-03-20",0,5,11,13,0,17301,20,1816.61,0.0,1,4,5],["2026-03-20",0,5,11,13,0,15556,20,1437.37,0.0,0,1,16],["2026-03-20",0,6,23,14,0,1042,1,10.42,0.0,0,7,13],["2026-03-20",0,5,5,12,0,6520,10,1056.24,348.17,0,7,13],["2026-03-20",0,5,5,12,0,6520,10,1290.96,453.79,0,7,13],["2026-03-23",0,1,3,4,0,6297,1,78.71,0.0,0,7,13],["2026-03-23",0,0,0,8,0,602,1,7.53,0.0,0,7,13],["2026-03-23",0,5,5,13,0,3642,1,344.17,0.0,1,3,10],["2026-03-23",0,6,23,14,0,1006,1,224.24,0.0,0,7,13],["2026-03-24",0,0,0,8,0,1520,1,19.0,0.0,0,9,22],["2026-03-24",0,5,22,13,1,549,1,100.0,150.0,0,7,13],["2026-03-24",0,5,22,13,1,549,1,100.0,150.0,0,7,13],["2026-03-24",0,5,21,6,0,1200,1,15.0,0.0,0,9,21],["2026-03-24",0,8,9,6,0,12635,3,1167.47,826.33,0,9,22],["2026-03-24",0,0,0,8,0,1564,1,19.55,0.0,0,9,22],["2026-03-25",1,2,25,5,0,13320,1,166.5,0.0,0,9,22],["2026-03-25",1,2,25,5,0,13320,1,166.5,0.0,0,9,22],["2026-03-26",0,0,0,8,0,1465,1,70.76,35.45,1,0,1],["2026-03-26",0,3,18,8,0,5995,10,717.6,359.1,0,9,22],["2026-03-27",1,2,27,5,0,1595,1,115.64,0.0,0,9,22],["2026-03-27",0,1,3,4,0,13692,1,171.15,169.78,0,7,13],["2026-03-27",1,2,4,5,0,2500,1,181.25,0.0,0,9,22],["2026-03-27",0,8,26,13,0,9380,1,117.25,0.0,0,9,22],["2026-03-30",0,1,3,8,0,12381,1,780.0,390.0,0,7,13],["2026-03-30",1,2,1,5,0,7215,1,1136.36,0.0,0,9,22],["2026-03-30",0,5,16,6,0,9793,1,1028.26,1003.78,0,9,22],["2026-03-30",0,8,26,13,0,14305,3,1878.25,0.0,0,9,22],["2026-03-30",0,8,26,13,0,14355,3,1884.81,0.0,0,9,22],["2026-03-31",0,5,5,13,0,14039,10,2521.4,0.0,1,0,1],["2026-03-31",0,5,5,13,0,8621,10,1548.33,0.0,1,0,1],["2026-03-31",0,3,18,8,0,4105,1,431.02,215.51,0,9,22],["2026-03-31",0,8,26,13,1,549,1,100.0,150.0,0,9,22],["2026-03-31",0,8,26,13,1,549,1,100.0,150.0,0,9,22],["2026-03-31",0,8,26,13,1,549,1,100.0,150.0,0,9,22],["2026-03-31",0,5,21,6,0,11183,1,139.79,0.0,0,9,21],["2026-03-31",0,8,26,13,1,549,1,100.0,150.0,0,9,22],["2026-03-31",0,8,26,13,0,9047,1,655.91,0.0,0,9,22],["2026-03-31",0,8,26,13,0,17559,1,1659.33,0.0,0,9,22],["2026-04-01",0,8,26,13,0,4738,1,746.24,0.0,0,9,22],["2026-04-01",1,2,10,5,0,1340,1,211.05,0.0,0,9,22],["2026-04-01",0,5,21,6,0,14143,1,176.79,0.0,0,9,21],["2026-04-02",0,8,26,13,0,6810,10,1329.99,0.0,1,0,1],["2026-04-02",0,8,26,13,0,14707,20,2178.11,0.0,1,0,1],["2026-04-02",0,8,26,13,1,549,1,100.0,150.0,1,0,1],["2026-04-02",0,8,26,13,1,549,1,100.0,150.0,1,0,1],["2026-04-06",0,8,26,13,1,549,1,100.0,150.0,1,0,1],["2026-04-06",0,5,16,6,0,11388,3,908.76,520.43,1,0,1],["2026-04-06",0,5,11,13,0,500,1,61.45,0.0,0,7,13],["2026-04-06",0,8,26,13,0,7846,3,686.52,0.0,1,0,1],["2026-04-07",0,3,19,8,0,1595,1,15.95,0.0,0,7,13],["2026-04-07",0,0,0,8,0,1545,1,74.62,37.39,0,9,22],["2026-04-07",0,0,0,8,0,1545,1,74.62,37.39,0,9,22],["2026-04-07",0,0,0,8,0,1490,1,122.03,61.09,0,9,22],["2026-04-08",0,5,21,6,0,5678,1,310.02,374.18,0,9,22],["2026-04-08",0,5,21,6,0,14918,1,186.48,0.0,0,9,22],["2026-04-09",0,0,0,8,0,1490,1,93.87,46.94,0,9,22],["2026-04-09",0,5,5,13,0,7256,10,502.84,0.0,1,0,1],["2026-04-09",0,5,5,13,0,6348,10,439.92,0.0,1,0,1],["2026-04-10",0,0,0,8,0,1415,1,35.66,17.83,0,7,13],["2026-04-10",0,5,21,6,0,8088,1,679.39,638.14,1,3,11],["2026-04-10",0,0,0,8,0,1565,1,75.59,37.87,0,9,22],["2026-04-10",0,0,0,8,0,2137,1,26.71,0.0,0,9,22],["2026-04-10",0,0,0,8,0,1595,1,130.63,65.39,0,9,22],["2026-04-10",1,2,25,5,0,5355,1,202.42,0.0,0,9,22],["2026-04-10",0,0,0,8,0,1595,1,130.63,65.39,0,9,22],["2026-04-13",0,5,21,6,1,549,1,100.0,150.0,1,3,11],["2026-04-13",0,5,21,6,1,549,1,100.0,150.0,1,3,11],["2026-04-13",0,5,21,6,1,549,1,100.0,150.0,1,3,11],["2026-04-13",0,0,0,8,0,1697,1,106.91,53.46,0,9,22],["2026-04-13",0,5,11,13,0,16659,20,1749.19,0.0,1,0,1],["2026-04-13",0,5,11,13,0,16607,20,1743.73,0.0,1,0,1],["2026-04-15",1,2,25,5,0,12635,1,126.35,0.0,0,9,22],["2026-04-15",0,5,11,13,0,18663,1,233.29,0.0,0,9,22],["2026-04-15",0,0,0,8,0,1520,1,38.3,19.15,0,9,22],["2026-04-15",0,1,3,8,0,17048,1,823.42,412.56,0,9,21],["2026-04-15",0,1,3,8,0,17209,1,1084.17,542.08,0,9,21],["2026-04-15",0,1,3,4,0,750,1,60.0,34.73,0,7,13],["2026-04-16",0,5,16,6,0,4028,1,50.35,0.0,1,0,1],["2026-04-16",0,1,3,8,0,9145,20,960.22,480.11,0,9,21],["2026-04-16",0,1,3,8,0,6235,1,510.65,255.63,0,9,22],["2026-04-16",0,5,21,6,0,3410,1,128.9,179.71,1,4,5],["2026-04-16",0,0,0,8,0,1917,1,19.17,0.0,0,7,13],["2026-04-17",0,5,5,12,0,13800,10,2484.0,822.48,0,7,4],["2026-04-17",0,0,0,8,0,1465,1,92.3,46.15,0,9,22],["2026-04-17",0,5,5,12,0,13800,10,2649.6,928.74,0,7,4],["2026-04-17",0,1,3,8,0,9145,20,960.22,480.11,0,9,21],["2026-04-20",0,0,0,8,0,1370,1,86.31,43.16,0,9,22],["2026-04-21",0,5,6,13,0,9816,20,1206.39,0.0,1,4,5],["2026-04-22",0,8,9,6,0,7148,5,660.48,667.62,0,9,21],["2026-04-22",0,5,11,13,0,7805,5,491.72,0.0,0,7,9],["2026-04-22",0,3,19,8,0,9535,1,780.92,390.93,1,0,1],["2026-04-22",0,8,26,13,0,18968,3,3345.96,0.0,0,9,22],["2026-04-22",0,8,26,13,0,18668,3,3293.04,0.0,0,9,22],["2026-04-22",0,3,19,8,0,9935,1,625.9,312.95,1,0,1],["2026-04-24",0,5,6,6,0,6648,1,698.04,618.93,0,9,22],["2026-04-24",0,0,0,8,0,1495,1,37.67,18.84,0,9,22],["2026-04-24",0,5,11,13,0,16211,5,1021.29,0.0,0,9,22],["2026-04-24",0,5,22,6,0,7193,1,392.74,474.02,1,4,5],["2026-04-27",0,5,22,6,1,600,0,100.0,150.0,1,3,10],["2026-04-27",0,5,5,13,0,5841,1,220.79,0.0,0,7,13],["2026-04-27",0,5,5,13,0,4159,10,445.43,0.0,0,7,13],["2026-04-28",0,8,26,13,1,549,1,100.0,150.0,0,9,22],["2026-04-28",0,5,22,6,0,9568,1,160.74,277.47,0,9,22],["2026-04-28",0,5,6,6,0,8728,1,329.92,459.97,0,9,22],["2026-04-28",1,2,25,5,0,12045,1,455.3,0.0,0,9,22],["2026-04-28",0,5,6,6,0,4753,1,179.66,250.48,0,9,22],["2026-04-28",0,6,23,14,0,1102,1,63.7,0.0,0,7,13],["2026-04-28",1,2,25,5,0,11595,1,438.29,0.0,0,9,22],["2026-04-28",0,8,26,13,1,549,1,100.0,150.0,0,9,22],["2026-04-29",0,5,16,6,1,549,0,100.0,150.0,1,0,1],["2026-04-29",0,5,16,6,0,7585,1,796.42,706.16,1,0,1],["2026-04-29",0,3,19,8,0,1494,1,156.87,78.44,0,9,22],["2026-04-29",0,0,0,8,0,136,1,8.57,4.28,0,9,22],["2026-04-29",0,3,19,8,0,1494,1,37.65,18.82,0,9,22],["2026-04-29",0,0,0,8,0,1528,3,134.77,65.86,0,9,22],["2026-04-29",0,5,16,6,0,7585,1,637.14,598.46,1,0,1],["2026-04-29",0,5,16,6,1,549,0,100.0,150.0,1,0,1],["2026-04-30",0,1,3,8,0,7584,10,812.25,411.81,0,9,21],["2026-04-30",0,5,5,13,0,9516,1,689.91,0.0,1,0,1],["2026-05-01",0,8,26,13,0,7253,3,1079.25,0.0,0,9,22],["2026-05-01",0,8,26,13,0,7000,1,860.3,0.0,0,9,22],["2026-05-01",0,8,26,13,0,7203,3,1071.81,0.0,0,9,22],["2026-05-01",0,0,0,8,0,1565,1,128.17,64.16,0,9,22],["2026-05-01",0,8,26,13,0,7000,1,860.3,0.0,0,9,22],["2026-05-01",0,0,0,8,0,1520,1,159.6,79.8,0,9,21],["2026-05-01",0,0,0,8,0,1490,1,156.45,78.23,0,9,21],["2026-05-01",0,5,22,6,0,9463,1,158.98,274.43,1,3,10],["2026-05-01",0,0,0,8,0,1515,3,133.62,65.3,0,9,22],["2026-05-01",0,0,0,8,0,1515,3,133.62,65.3,0,9,22],["2026-05-01",0,0,0,8,0,1565,1,128.17,64.16,0,9,22],["2026-05-04",0,0,0,8,0,1540,5,145.53,72.84,0,9,22],["2026-05-04",0,5,5,13,0,12949,1,1591.43,0.0,0,9,22],["2026-05-07",0,5,5,13,0,2500,1,307.25,0.0,1,4,5],["2026-05-07",0,5,5,13,0,7500,20,921.75,0.0,1,4,5],["2026-05-07",0,5,5,13,0,2500,1,307.25,0.0,1,4,5],["2026-05-07",0,5,5,13,0,3517,1,520.87,0.0,0,7,19],["2026-05-07",0,5,5,13,0,7450,20,915.61,0.0,1,4,5],["2026-05-07",0,5,5,13,1,549,1,100.0,150.0,1,4,5],["2026-05-07",0,5,5,13,1,549,1,100.0,150.0,1,4,5],["2026-05-11",1,2,25,5,0,13335,1,966.79,0.0,0,9,22],["2026-05-11",0,5,22,6,0,1625,3,129.67,74.26,1,8,20],["2026-05-11",0,1,3,8,0,7777,10,832.92,422.29,0,1,16],["2026-05-11",0,5,22,6,1,600,0,100.0,150.0,1,3,10],["2026-05-11",0,5,22,6,1,600,0,100.0,150.0,1,8,20],["2026-05-11",1,2,25,5,0,13335,1,1260.16,0.0,0,9,22],["2026-05-11",0,5,5,13,0,8744,1,826.31,0.0,0,9,22],["2026-05-12",0,1,3,8,0,1671,1,20.89,0.0,0,9,22],["2026-05-12",0,5,5,13,0,12719,1,480.78,0.0,0,9,22],["2026-05-12",0,0,0,8,0,2100,1,26.25,0.0,0,7,13],["2026-05-12",0,1,3,8,0,7771,5,734.36,367.57,1,4,5],["2026-05-12",0,5,5,13,0,12769,1,482.67,0.0,0,9,22],["2026-05-12",0,1,3,8,0,7771,5,881.23,440.62,1,4,5],["2026-05-12",0,5,5,13,1,549,1,100.0,150.0,0,9,22],["2026-05-12",0,5,5,13,1,549,1,100.0,150.0,0,9,22],["2026-05-12",0,5,22,6,0,1075,3,99.33,89.12,1,3,10],["2026-05-12",0,0,0,8,0,1917,1,189.21,94.7,0,7,13],["2026-05-13",1,2,10,5,0,1900,1,179.55,0.0,0,9,22],["2026-05-13",0,0,0,8,0,2078,1,170.19,85.2,0,9,22],["2026-05-14",0,5,6,6,0,4388,1,165.87,231.25,0,9,22],["2026-05-14",0,0,0,8,0,1370,1,86.31,43.16,0,9,22],["2026-05-14",0,3,19,8,0,1629,1,20.36,0.0,0,9,22],["2026-05-14",0,5,12,13,0,9044,10,626.75,0.0,0,9,22],["2026-05-14",0,5,6,6,0,14653,1,246.17,424.94,1,0,1],["2026-05-14",0,5,6,6,0,9893,1,373.96,521.36,1,0,1],["2026-05-15",0,1,3,8,0,9747,20,1023.43,511.72,0,9,22],["2026-05-15",0,1,3,8,0,12878,1,811.31,405.66,1,4,5],["2026-05-15",0,5,22,6,0,600,1,63.0,61.5,0,9,22],["2026-05-15",0,5,22,6,0,6163,1,232.96,324.79,0,9,21],["2026-05-15",0,1,3,8,0,3705,10,529.07,264.54,0,9,22],["2026-05-18",0,5,22,6,0,6297,1,661.18,586.25,0,9,21],["2026-05-19",0,3,19,8,0,5332,1,436.69,218.61,1,0,1],["2026-05-19",0,3,19,8,0,24110,1,301.38,0.0,0,9,22],["2026-05-19",1,2,10,5,0,1340,1,164.69,0.0,1,3,10],["2026-05-19",0,3,19,8,0,5332,1,436.69,218.61,1,0,1],["2026-05-19",0,5,22,6,0,2000,1,25.0,0.0,0,7,13],["2026-05-19",1,2,10,5,0,1380,1,130.41,0.0,1,3,10],["2026-05-19",1,2,10,5,0,1340,1,164.69,0.0,1,3,10],["2026-05-19",0,0,0,8,0,1490,1,147.06,73.61,0,9,22],["2026-05-20",1,2,7,7,0,8530,1,682.4,1002.28,0,9,22],["2026-05-20",0,5,11,13,0,4356,1,164.66,0.0,0,9,22],["2026-05-20",0,5,6,6,0,8493,1,142.68,246.3,0,9,22],["2026-05-20",1,2,14,5,0,15000,1,150.0,0.0,0,9,22],["2026-05-20",0,3,19,8,1,549,1,100.0,150.0,1,0,1],["2026-05-20",0,3,19,8,1,549,1,100.0,150.0,1,0,1],["2026-05-21",1,2,7,5,0,8780,1,331.88,0.0,0,9,22],["2026-05-21",1,2,7,5,0,10000,1,945.0,0.0,0,9,22],["2026-05-21",0,0,0,8,0,1622,10,194.15,97.16,0,9,22],["2026-05-22",0,5,12,13,0,11345,10,2215.68,0.0,1,4,5],["2026-05-22",0,5,12,13,0,11081,10,1990.15,0.0,1,4,5],["2026-05-22",0,0,0,8,0,1565,1,75.59,37.87,0,9,22],["2026-05-22",0,0,0,8,0,1565,1,164.32,82.16,0,9,22],["2026-05-22",1,2,8,5,1,549,1,100.0,150.0,0,9,22],["2026-05-25",0,5,11,13,0,14852,1,1403.51,0.0,0,9,22],["2026-05-25",0,0,0,8,0,1581,1,156.04,78.1,0,9,22],["2026-05-25",0,5,16,6,0,9843,1,123.04,0.0,0,1,16],["2026-05-25",1,2,14,5,0,3500,1,43.75,0.0,0,9,22],["2026-05-25",0,1,3,8,0,4807,1,474.45,237.47,0,7,13],["2026-05-25",0,0,0,8,0,1581,1,99.6,49.8,0,9,22],["2026-05-25",0,5,5,13,0,3681,1,266.87,0.0,0,7,17],["2026-05-25",0,5,5,13,0,3681,1,266.87,0.0,0,7,17],["2026-05-25",0,1,3,8,0,4619,1,455.9,228.18,0,7,13],["2026-05-26",0,1,3,8,0,12381,1,780.0,390.0,0,7,13],["2026-05-27",1,2,25,5,1,549,1,100.0,150.0,0,9,22],["2026-05-27",1,2,25,5,1,549,1,100.0,150.0,0,9,22],["2026-05-27",0,5,22,6,0,14923,1,250.71,432.77,0,7,17],["2026-05-27",0,1,3,8,0,800,1,65.52,32.8,0,7,13],["2026-05-28",1,2,7,5,0,2730,1,257.99,0.0,0,9,22],["2026-05-28",1,2,10,5,0,1340,1,126.63,0.0,0,9,22],["2026-05-28",0,5,22,6,0,8248,1,311.77,434.67,1,4,5],["2026-05-28",0,5,22,6,0,8248,1,311.77,434.67,1,4,5],["2026-05-28",1,2,27,5,0,3240,1,40.5,0.0,0,9,22],["2026-05-28",1,2,25,7,1,549,1,100.0,150.0,1,0,1],["2026-05-29",1,2,25,7,0,17140,1,617.04,934.13,1,0,1],["2026-05-29",1,2,7,7,0,4065,1,406.5,436.99,0,9,22],["2026-05-29",1,2,7,7,0,4365,1,436.5,469.24,0,9,22],["2026-05-29",1,2,10,7,0,2212,5,194.66,216.33,1,3,10],["2026-05-29",0,5,22,6,0,6398,1,537.43,504.8,0,9,22],["2026-05-29",1,2,10,7,0,1433,1,51.59,78.1,1,3,10],["2026-06-01",0,0,0,8,0,1718,1,82.98,41.58,0,9,22],["2026-06-01",1,2,7,7,0,7616,3,731.14,767.69,1,3,10],["2026-06-01",0,5,21,6,1,600,0,100.0,150.0,0,9,21],["2026-06-01",0,5,21,6,1,600,0,100.0,150.0,0,9,21],["2026-06-01",1,2,7,7,0,4699,1,375.92,389.55,1,3,10],["2026-06-02",0,0,0,8,0,2769,1,226.78,113.53,0,9,22],["2026-06-02",0,5,5,13,0,9625,3,1263.76,0.0,1,4,5],["2026-06-02",0,3,19,8,0,12957,1,161.96,0.0,0,9,22],["2026-06-02",0,0,0,8,0,1465,1,144.6,72.37,1,3,11],["2026-06-02",1,2,7,7,0,5025,1,62.81,0.0,0,9,22],["2026-06-02",0,5,22,6,0,8038,3,911.51,940.45,1,4,5],["2026-06-02",0,0,0,8,0,3085,1,77.74,38.87,1,0,1],["2026-06-03",0,0,0,8,0,1166,3,88.15,44.54,1,3,11],["2026-06-03",0,0,0,8,0,349,1,16.86,8.45,1,3,11],["2026-06-03",1,2,10,5,0,1190,1,86.27,0.0,0,9,22],["2026-06-03",1,2,10,5,0,1270,1,48.01,0.0,0,9,22],["2026-06-03",0,8,26,13,0,3691,1,46.14,0.0,0,9,22],["2026-06-03",1,2,10,5,0,1270,1,48.01,0.0,0,9,22],["2026-06-03",0,5,5,12,0,4690,10,900.48,315.64,0,7,13],["2026-06-03",0,5,22,6,0,6491,1,81.14,0.0,0,9,21],["2026-06-04",0,6,23,14,0,5250,1,616.88,0.0,0,7,13],["2026-06-04",0,0,0,8,0,1540,1,126.13,63.14,0,9,22],["2026-06-04",0,1,3,8,0,4739,1,298.56,149.28,1,0,1],["2026-06-04",0,1,3,8,0,4739,1,298.56,149.28,1,0,1],["2026-06-04",0,0,0,8,0,1465,1,144.6,72.37,0,9,22],["2026-06-04",0,5,22,6,0,7885,1,98.56,0.0,0,1,18],["2026-06-05",1,2,1,5,0,366,1,34.59,0.0,1,3,10],["2026-06-05",1,2,1,5,0,3228,3,423.84,0.0,1,3,10],["2026-06-08",2,7,24,15,0,5500,1,519.75,0.0,0,7,13],["2026-06-08",1,2,25,5,0,300,1,28.35,0.0,0,9,22],["2026-06-08",1,2,25,5,0,300,1,21.75,0.0,0,9,22],["2026-06-08",2,7,24,15,0,13086,1,163.58,0.0,0,7,13],["2026-06-08",0,1,3,8,0,3043,1,191.71,95.85,0,9,22],["2026-06-09",1,2,10,7,0,5545,20,598.86,382.05,1,3,10],["2026-06-09",0,1,3,8,0,13120,20,1074.53,537.92,1,3,10],["2026-06-09",0,0,0,8,0,1465,1,36.92,18.46,0,9,22],["2026-06-09",0,0,0,8,1,549,1,100.0,150.0,0,9,22],["2026-06-09",0,0,0,8,0,1465,1,36.92,18.46,0,9,22],["2026-06-09",1,2,10,5,0,1270,1,48.01,0.0,0,9,22],["2026-06-09",0,0,0,8,0,1370,1,86.31,43.16,0,9,22],["2026-06-09",1,2,10,5,0,1270,1,48.01,0.0,0,9,22],["2026-06-09",0,0,0,8,1,549,1,100.0,150.0,0,9,22],["2026-06-09",0,6,23,14,0,1177,1,11.77,0.0,0,7,13],["2026-06-10",0,5,16,6,0,4838,1,264.15,318.82,0,9,22],["2026-06-10",1,2,10,5,0,5840,1,551.88,0.0,0,9,22],["2026-06-10",0,5,16,6,0,4283,1,449.71,398.75,0,9,22],["2026-06-10",0,5,11,13,0,5521,10,591.3,0.0,0,7,13],["2026-06-10",1,2,15,7,0,2975,1,154.7,203.79,1,8,20],["2026-06-10",1,2,15,7,0,3015,1,156.78,206.53,1,8,20],["2026-06-10",1,2,10,5,0,3595,1,35.95,0.0,1,4,5],["2026-06-11",0,0,0,8,0,1935,5,182.86,91.53,0,9,22],["2026-06-11",0,5,12,13,0,1000,1,10.0,0.0,0,7,13],["2026-06-11",0,5,12,13,0,16735,1,2056.73,0.0,1,0,1],["2026-06-11",0,5,12,13,0,16685,1,2050.59,0.0,1,0,1],["2026-06-11",0,0,0,8,0,1515,1,95.45,47.72,0,9,22],["2026-06-12",0,0,0,8,0,1657,1,173.98,86.99,0,9,22],["2026-06-12",1,2,13,7,1,600,0,100.0,150.0,1,4,5],["2026-06-15",0,0,0,8,0,1515,1,124.08,62.11,0,9,22],["2026-06-15",0,0,0,8,0,1843,1,181.9,91.04,0,7,13],["2026-06-15",0,5,16,6,0,6838,1,258.48,360.36,0,7,13],["2026-06-16",0,6,23,14,0,1117,3,319.91,0.0,0,7,13],["2026-06-16",0,0,0,8,0,455,1,28.66,14.33,1,3,10],["2026-06-16",0,0,0,8,0,1432,1,36.09,18.04,0,9,22],["2026-06-16",0,0,0,8,0,1060,3,93.49,45.69,1,3,10],["2026-06-16",0,0,0,8,0,1490,1,37.55,18.77,1,3,11],["2026-06-17",0,8,26,13,0,8420,3,736.75,0.0,1,0,1],["2026-06-17",1,2,4,5,0,6300,1,63.0,0.0,0,9,22],["2026-06-17",0,0,0,8,0,11782,1,147.28,0.0,0,9,22],["2026-06-17",0,0,0,8,0,1390,1,17.38,0.0,0,9,22],["2026-06-17",0,8,26,13,0,8642,3,983.46,0.0,1,0,1],["2026-06-17",0,8,26,13,0,8906,3,1013.5,0.0,1,0,1],["2026-06-17",0,1,3,8,0,3093,3,305.28,154.96,1,3,10],["2026-06-17",0,0,0,8,0,5031,1,412.04,206.27,0,9,22],["2026-06-17",0,8,26,13,0,8100,3,708.75,0.0,1,0,1],["2026-06-17",0,0,0,8,0,2723,1,27.23,0.0,0,9,22],["2026-06-17",0,4,20,3,0,8257,1,103.21,0.0,0,1,2],["2026-06-17",1,2,10,5,0,1330,1,16.62,0.0,0,9,22],["2026-06-17",0,0,0,8,0,1340,1,84.42,42.21,0,9,22],["2026-06-17",0,8,26,13,1,549,1,100.0,150.0,1,0,1],["2026-06-17",0,8,26,13,1,549,1,100.0,150.0,1,0,1],["2026-06-17",0,0,0,8,0,1490,1,93.87,46.94,0,9,22],["2026-06-18",1,2,7,5,0,7305,1,91.31,0.0,0,9,22],["2026-06-18",1,2,7,5,0,7305,1,529.61,0.0,0,9,22],["2026-06-18",0,1,3,8,1,549,1,100.0,150.0,1,3,10],["2026-06-18",0,1,3,8,1,549,1,100.0,150.0,1,3,10],["2026-06-18",0,1,3,8,0,3068,1,193.28,96.64,1,3,10],["2026-06-18",0,1,3,8,0,3068,1,302.81,151.56,1,3,10],["2026-06-18",0,4,20,3,0,3325,1,199.5,101.41,1,4,6],["2026-06-18",1,2,7,5,0,7790,1,97.38,0.0,0,9,22],["2026-06-19",0,4,20,3,0,7345,1,887.28,309.22,1,4,6],["2026-06-19",1,2,10,5,0,1590,1,235.48,0.0,1,4,5],["2026-06-19",0,4,20,3,0,7345,5,1175.2,532.51,1,4,6],["2026-06-22",0,0,0,8,0,1515,1,73.17,36.66,0,9,22],["2026-06-22",0,0,0,8,0,1515,1,124.08,62.11,0,9,22],["2026-06-22",0,0,0,8,0,1515,1,159.07,79.54,0,7,13],["2026-06-22",0,0,0,8,0,1515,1,159.07,79.54,0,7,13],["2026-06-22",0,0,0,8,0,1465,1,92.3,46.15,0,9,22],["2026-06-22",0,0,0,8,0,1515,1,73.17,36.66,0,9,22],["2026-06-23",0,0,0,8,1,549,1,100.0,150.0,1,3,11],["2026-06-23",1,2,25,9,0,12665,10,1231.04,1497.0,0,9,22],["2026-06-23",1,2,25,9,0,12365,10,1201.88,1461.54,0,9,22],["2026-06-23",1,2,7,9,0,3720,1,267.84,338.15,1,4,5],["2026-06-23",0,1,3,8,0,500,1,40.95,20.5,0,7,13],["2026-06-23",0,8,26,13,0,8698,1,630.6,0.0,1,4,6],["2026-06-23",0,8,26,13,0,8698,1,821.96,0.0,1,4,6],["2026-06-23",0,5,5,13,0,14098,20,1732.64,0.0,1,4,5],["2026-06-23",0,5,5,13,0,10182,20,1069.11,0.0,1,4,5],["2026-06-23",0,0,0,8,0,1490,1,18.62,0.0,0,9,22],["2026-06-23",2,7,24,5,1,549,1,100.0,150.0,0,7,15],["2026-06-23",2,7,24,5,1,549,1,100.0,150.0,0,7,15],["2026-06-23",0,0,0,8,0,1428,1,116.95,58.55,0,9,22],["2026-06-24",0,0,0,8,0,1760,1,110.88,55.44,1,3,11],["2026-06-24",2,7,24,0,0,11252,1,364.56,653.74,0,7,13],["2026-06-24",2,7,24,0,0,3900,1,280.8,354.51,0,7,13],["2026-06-24",2,7,24,0,0,3900,1,126.36,226.59,0,7,13],["2026-06-24",1,2,7,7,0,2775,1,44.4,82.69,1,3,10],["2026-06-24",2,7,24,0,0,11252,1,364.56,653.74,0,7,13],["2026-06-25",0,5,22,6,0,13148,1,164.35,0.0,1,3,11],["2026-06-25",0,0,0,8,0,1737,1,109.43,54.72,0,9,21],["2026-06-25",2,7,24,15,0,5379,1,389.98,0.0,0,7,13],["2026-06-25",2,7,24,15,0,12126,1,879.13,0.0,0,7,13],["2026-06-25",0,6,23,14,0,1072,1,125.96,0.0,0,7,13],["2026-06-25",0,5,21,6,1,549,1,100.0,150.0,0,9,21],["2026-06-25",0,0,0,8,0,1737,1,109.43,54.72,0,9,21],["2026-06-25",0,0,0,8,0,1917,1,201.28,100.64,0,7,13],["2026-06-25",1,2,25,5,0,10530,1,398.03,0.0,0,9,22],["2026-06-25",0,0,0,8,0,1917,1,201.28,100.64,0,7,13],["2026-06-25",0,5,6,13,0,1000,1,94.5,0.0,1,4,5],["2026-06-25",0,5,6,13,0,11455,20,1202.77,0.0,1,4,5],["2026-06-25",0,5,22,6,0,4677,1,46.77,0.0,0,7,13],["2026-06-26",0,5,5,13,0,9350,1,116.88,0.0,0,7,13],["2026-06-26",0,0,0,8,0,244,1,15.37,7.69,0,9,22],["2026-06-26",0,0,0,8,0,1355,3,119.51,58.4,0,9,22],["2026-06-26",0,0,0,8,0,1762,1,22.03,0.0,0,9,22],["2026-06-26",0,0,0,8,0,1737,1,43.77,21.89,0,9,22],["2026-06-26",0,5,11,13,0,16436,1,1191.61,0.0,0,9,21],["2026-06-26",0,0,0,8,0,1792,1,45.16,22.58,0,9,22],["2026-06-26",1,2,10,5,0,1475,1,18.44,0.0,0,9,22],["2026-06-26",1,2,10,9,0,1455,1,14.55,0.0,0,9,22],["2026-06-26",1,2,7,5,0,8675,20,910.88,0.0,1,3,10],["2026-06-29",1,2,10,9,0,1340,1,13.4,0.0,0,9,22],["2026-06-29",0,0,0,8,0,1420,1,14.2,0.0,0,9,22],["2026-06-29",0,0,0,8,0,1340,5,151.96,75.98,0,9,22],["2026-06-29",0,5,6,6,0,6963,1,380.18,458.86,0,9,22],["2026-06-29",1,2,1,7,0,4405,1,158.58,240.07,1,4,5],["2026-06-29",0,8,26,13,0,7456,10,1203.4,0.0,1,0,1],["2026-06-29",1,2,1,7,0,4405,1,158.58,240.07,1,4,5],["2026-06-29",1,2,10,9,1,600,0,100.0,150.0,1,3,10],["2026-06-29",2,7,24,0,1,549,1,100.0,150.0,0,7,13],["2026-06-29",0,8,26,13,1,549,1,100.0,150.0,1,0,1],["2026-06-29",0,0,0,8,0,1340,5,151.96,75.98,0,9,22],["2026-06-29",2,7,24,0,1,549,1,100.0,150.0,0,7,13],["2026-06-30",1,2,10,7,0,1360,5,119.68,154.36,1,3,10],["2026-06-30",0,5,5,13,0,6033,1,570.12,0.0,0,9,22],["2026-06-30",0,6,23,14,0,1072,1,125.96,0.0,0,7,13],["2026-06-30",0,6,23,14,0,1252,1,199.69,0.0,0,7,13],["2026-06-30",1,2,13,5,1,549,1,100.0,150.0,0,9,22],["2026-06-30",1,2,13,5,1,549,1,100.0,150.0,0,9,22],["2026-06-30",1,2,13,9,1,549,0,100.0,150.0,0,9,22],["2026-07-01",1,2,7,5,0,4270,1,403.51,0.0,0,9,22],["2026-07-01",1,2,25,5,0,11110,1,419.96,0.0,1,4,5],["2026-07-01",0,0,0,8,0,1595,1,77.04,38.6,0,9,22],["2026-07-01",0,5,6,1,1,499,1,100.0,150.0,0,9,22],["2026-07-01",1,2,25,5,0,11110,1,419.96,0.0,1,4,5],["2026-07-01",0,5,6,1,1,499,1,100.0,150.0,0,9,22],["2026-07-01",0,0,0,8,0,1595,1,77.04,38.6,0,9,22],["2026-07-02",1,2,10,9,0,7495,10,728.51,885.91,0,9,22],["2026-07-02",1,2,10,9,0,1400,1,45.36,81.34,0,9,22],["2026-07-02",0,5,22,6,0,4097,1,430.19,381.43,0,9,22],["2026-07-02",0,3,19,8,0,9932,3,750.86,379.4,0,9,21],["2026-07-02",0,3,19,8,0,565,1,27.29,13.67,0,9,21],["2026-07-02",0,5,5,13,0,6650,1,83.12,0.0,1,4,5],["2026-07-02",0,4,20,3,0,3299,1,197.94,100.62,0,9,22],["2026-07-02",0,4,20,3,0,3352,1,107.26,46.26,0,1,18],["2026-07-02",0,4,20,3,0,7328,1,692.5,190.53,0,9,22],["2026-07-02",0,4,20,3,0,7223,1,872.54,304.09,0,9,22],["2026-07-02",0,5,5,13,0,976,1,36.89,0.0,0,7,13],["2026-07-02",0,5,5,13,0,976,1,36.89,0.0,0,7,13],["2026-07-02",1,2,7,7,0,9360,20,936.0,514.8,1,4,5],["2026-07-02",1,2,10,9,0,9290,10,1003.32,1544.0,1,4,5],["2026-07-06",0,0,0,8,0,890,1,72.89,36.49,0,9,22],["2026-07-07",0,1,3,8,0,8948,3,789.21,385.66,0,9,22],["2026-07-07",0,1,3,8,0,8652,1,545.08,272.54,0,9,22],["2026-07-07",0,5,16,6,0,5873,1,73.41,0.0,1,3,10],["2026-07-07",0,8,26,13,0,9536,20,1001.28,0.0,1,0,1],["2026-07-07",0,8,26,13,0,9586,20,1006.53,0.0,1,0,1],["2026-07-07",0,3,19,8,0,8277,1,208.58,104.29,0,9,22],["2026-07-07",0,0,0,8,0,1495,1,156.97,78.49,0,9,22],["2026-07-07",0,0,0,8,0,1495,1,156.97,78.49,0,9,22],["2026-07-07",1,2,10,9,0,2045,10,220.86,269.12,0,9,22],["2026-07-07",1,2,10,9,0,2045,10,220.86,269.12,0,9,22],["2026-07-08",1,2,10,9,0,2235,1,27.94,0.0,0,9,22],["2026-07-08",1,2,10,9,0,2335,1,29.19,0.0,0,9,22],["2026-07-08",0,5,12,13,0,14690,20,2313.68,0.0,0,9,22],["2026-07-08",0,4,20,3,0,4342,1,54.28,0.0,0,7,13],["2026-07-08",1,2,7,9,0,4320,5,295.49,331.34,0,9,22],["2026-07-08",0,0,0,8,0,1490,1,18.62,0.0,0,9,22],["2026-07-08",0,0,0,8,0,1922,1,157.41,78.8,0,7,13],["2026-07-08",0,0,0,8,0,1490,1,18.62,0.0,0,9,22],["2026-07-08",1,2,25,5,0,8398,1,793.61,0.0,0,7,15],["2026-07-09",1,2,25,5,0,300,1,21.75,0.0,0,9,22],["2026-07-09",0,4,20,3,0,4496,1,56.2,0.0,0,7,13],["2026-07-10",0,6,23,14,0,1102,1,11.02,0.0,0,7,13],["2026-07-10",0,5,22,6,0,11743,10,1479.62,1334.0,1,0,1],["2026-07-13",0,0,0,8,0,1540,1,152.0,76.08,0,9,22],["2026-07-13",0,5,12,13,0,1000,1,37.8,0.0,0,9,22],["2026-07-13",0,5,12,13,0,12609,1,1191.55,0.0,0,7,15],["2026-07-13",0,0,0,8,0,4266,1,107.5,53.75,0,9,22],["2026-07-13",0,5,12,13,0,12661,10,1355.99,0.0,0,9,22],["2026-07-13",0,5,12,13,1,549,1,100.0,150.0,0,7,15],["2026-07-13",1,2,25,9,0,4170,1,300.24,379.05,0,9,22],["2026-07-13",1,2,7,7,1,549,1,100.0,150.0,1,3,10],["2026-07-14",0,5,6,6,0,4238,1,231.39,279.28,0,9,22],["2026-07-14",0,8,26,13,0,4085,1,296.16,0.0,0,9,22],["2026-07-14",1,2,25,9,0,7060,20,635.4,458.9,1,3,10],["2026-07-14",1,2,7,7,0,8320,1,432.64,569.92,1,3,10],["2026-07-15",0,0,0,8,0,1515,1,73.17,36.66,0,9,22],["2026-07-15",0,5,12,13,0,3000,1,283.5,0.0,0,7,9],["2026-07-15",0,5,12,13,0,1701,10,305.5,0.0,0,7,9],["2026-07-15",0,5,12,13,0,4951,20,608.48,0.0,0,7,9],["2026-07-15",1,2,15,9,0,7550,1,75.5,0.0,0,9,22],["2026-07-15",1,2,10,9,0,1340,1,62.71,98.76,0,7,13],["2026-07-15",0,0,0,8,0,1515,1,73.17,36.66,0,9,22],["2026-07-15",0,5,11,13,0,12000,1,1890.0,0.0,0,7,17],["2026-07-15",0,0,0,8,0,1415,1,14.15,0.0,0,9,22],["2026-07-15",0,0,0,8,0,1415,1,89.14,44.57,0,9,22],["2026-07-15",0,0,0,8,0,3735,1,180.4,90.39,0,9,22],["2026-07-15",0,0,0,8,0,1495,1,122.44,61.29,0,7,13],["2026-07-16",1,2,10,5,0,2485,1,234.83,0.0,0,9,22],["2026-07-16",0,1,3,8,0,7324,1,91.55,0.0,0,9,22],["2026-07-16",0,5,5,13,0,8155,1,101.94,0.0,0,9,22],["2026-07-16",0,3,19,8,0,3881,1,48.51,0.0,0,7,13],["2026-07-16",0,3,19,8,0,2377,3,89.85,44.93,0,7,13],["2026-07-17",1,2,10,9,0,1340,1,13.4,0.0,0,7,13],["2026-07-17",0,1,3,8,0,13468,1,339.39,169.7,0,9,22],["2026-07-17",1,2,25,9,0,4500,1,210.6,331.65,0,9,22],["2026-07-17",0,5,5,13,0,3667,1,265.86,0.0,0,9,22],["2026-07-17",1,2,27,9,0,6000,1,432.0,545.4,0,7,13],["2026-07-17",1,2,25,9,0,6750,10,729.0,888.3,0,9,22],["2026-07-20",0,5,11,13,0,8810,1,333.02,0.0,0,9,22],["2026-07-20",0,1,2,8,0,2668,3,296.95,146.74,0,9,22],["2026-07-20",0,0,0,8,0,1545,1,19.31,0.0,0,9,22],["2026-07-20",0,1,2,8,0,397,1,39.18,19.61,0,9,22],["2026-07-20",1,2,7,9,0,1875,3,162.0,207.0,1,3,10],["2026-07-20",1,2,7,9,0,1500,1,108.0,136.35,1,3,10],["2026-07-20",0,1,2,8,0,398,1,39.28,19.66,0,9,22],["2026-07-20",0,1,2,8,0,2669,3,297.06,146.8,0,9,22],["2026-07-21",1,2,13,5,1,549,1,100.0,150.0,0,9,22],["2026-07-21",2,7,24,0,0,10661,1,153.52,334.76,0,7,14],["2026-07-21",2,7,24,0,0,10661,1,133.26,0.0,0,7,14],["2026-07-21",1,2,7,7,0,7145,1,371.54,489.43,1,3,10],["2026-07-21",1,2,7,7,0,7145,1,571.6,592.32,1,3,10],["2026-07-21",1,2,25,5,0,11695,1,847.89,0.0,0,9,22],["2026-07-21",1,2,25,5,0,11695,1,1105.18,0.0,0,9,22],["2026-07-21",2,7,24,0,0,10233,1,920.97,1106.19,0,7,13],["2026-07-21",2,7,24,0,0,15457,1,193.21,0.0,0,7,13],["2026-07-21",0,5,22,6,0,6640,1,111.55,192.56,0,9,22],["2026-07-21",2,7,24,0,0,10233,1,736.78,930.18,0,7,13],["2026-07-21",0,5,22,6,0,6640,1,250.99,349.93,0,9,22],["2026-07-21",1,2,7,7,1,549,1,100.0,150.0,1,3,10],["2026-07-21",1,2,7,7,1,549,1,100.0,150.0,1,3,10],["2026-07-22",1,2,10,9,0,1340,1,62.71,98.76,0,9,22],["2026-07-22",0,5,6,13,0,8556,3,1273.13,0.0,0,9,22],["2026-07-22",0,0,0,8,0,1734,1,182.07,91.04,0,9,22],["2026-07-22",0,5,21,8,1,549,1,100.0,150.0,0,9,22],["2026-07-22",0,0,0,8,0,1465,1,92.3,46.15,0,7,13],["2026-07-22",0,5,22,6,0,8989,1,755.08,709.23,1,3,11],["2026-07-23",1,2,14,5,0,3000,1,113.4,0.0,0,9,22],["2026-07-23",1,2,25,5,0,11445,1,432.62,0.0,0,7,13],["2026-07-23",0,0,0,8,0,1470,1,14.7,0.0,0,9,22],["2026-07-23",1,2,14,5,0,1372,1,17.15,0.0,0,7,13],["2026-07-23",1,2,25,9,0,8802,5,697.12,1076.48,0,9,22],["2026-07-23",1,2,25,9,0,4743,1,221.97,349.56,0,9,22],["2026-07-23",0,5,11,13,0,6034,1,228.09,0.0,0,9,22],["2026-07-23",0,5,22,6,0,8973,1,150.75,260.22,0,9,21],["2026-07-23",0,5,22,6,0,8973,1,112.16,0.0,0,9,21],["2026-07-24",0,0,0,8,0,1340,1,109.75,54.94,0,9,22],["2026-07-24",2,7,24,0,0,4143,1,134.23,240.71,0,7,14],["2026-07-27",2,7,24,0,0,11172,1,139.65,0.0,0,7,14],["2026-07-27",0,8,26,13,0,5820,20,611.1,0.0,0,9,22],["2026-07-27",0,0,0,8,0,1415,1,14.15,0.0,0,9,22],["2026-07-27",1,2,14,5,0,2129,1,80.48,0.0,0,7,13],["2026-07-28",0,4,20,3,0,3292,1,397.67,138.59,0,9,22],["2026-07-28",1,2,10,9,0,2380,1,34.27,74.73,1,4,5],["2026-07-28",0,0,0,8,0,1490,1,71.97,36.06,0,9,22],["2026-07-28",0,5,11,13,0,14550,1,181.88,0.0,0,7,13],["2026-07-28",0,4,20,3,0,6233,1,752.95,262.41,0,9,22],["2026-07-28",0,5,21,6,1,549,1,100.0,150.0,1,3,11],["2026-07-28",0,5,5,13,0,1921,1,72.61,0.0,0,9,22],["2026-07-28",1,2,7,5,0,7320,1,276.7,0.0,0,7,13],["2026-07-28",2,7,24,0,1,549,1,100.0,150.0,0,7,14],["2026-07-28",0,5,5,13,0,3863,10,413.73,0.0,0,9,22],["2026-07-29",2,7,24,0,0,3047,1,274.23,358.02,2,6,0],["2026-07-29",0,4,20,3,0,3352,1,404.92,141.12,2,6,0],["2026-07-29",2,7,24,0,0,3047,1,274.23,358.02,2,6,0],["2026-07-29",0,4,20,3,0,3352,1,404.92,141.12,2,6,0],["2026-07-29",0,0,0,8,0,1545,1,126.54,63.34,2,6,0],["2026-07-29",0,4,20,3,0,3292,1,311.09,85.59,2,6,0],["2026-07-29",1,2,7,9,0,2970,1,213.84,269.97,2,6,0],["2026-07-29",0,0,0,8,0,1370,1,17.12,0.0,2,6,0],["2026-07-29",1,2,7,9,0,4075,1,132.03,236.76,2,6,0],["2026-07-29",0,4,20,3,0,4072,3,586.37,215.0,2,6,0],["2026-07-29",0,4,20,3,0,4072,3,684.1,254.09,2,6,0],["2026-07-29",0,5,11,13,0,3897,1,368.27,0.0,2,6,0],["2026-07-29",2,7,24,0,0,3047,1,142.6,224.56,2,6,0],["2026-07-29",1,2,7,9,0,2970,1,42.77,93.26,2,6,0],["2026-07-29",2,7,24,0,0,3047,1,274.23,358.02,2,6,0]]};
+const D = DATA.rows, DIM = DATA.dims, META = DATA.meta;
+// row layout: 0 date, 1 region, 2 brand, 3 fh, 4 agent, 5 oap, 6 sales, 7 payplan, 8 agentComm,
+//             9 override, 10 national/local, 11 condensed lead source, 12 lead source name
+const R_DATE=0,R_REG=1,R_BRD=2,R_FH=3,R_AGT=4,R_OAP=5,R_SAL=6,R_PP=7,R_AC=8,R_OV=9,
+      R_NL=10,R_CLS=11,R_SRC=12;
+const NL_LOCAL=0, NL_NATIONAL=1, NL_UNATTR=2;
+
+/* ---------- date helpers (all comparisons on plain YYYY-MM-DD strings) ---------- */
+const asof = META.dataThrough, from = META.dataFrom;
+const Y_MAX = +asof.slice(0,4), M_MAX = +asof.slice(5,7);
+const pad = n => String(n).padStart(2,'0');
+const iso = (y,m,d) => `${y}-${pad(m)}-${pad(d)}`;
+const eom = (y,m) => new Date(y, m, 0).getDate();
+const minusYear = s => (+s.slice(0,4)-1) + s.slice(4);
+// first day of the month in which the data begins — the earliest month we can fairly compare against
+const COVER_START = from.slice(0,7) + '-01';
+
+const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const fmtMonth = ym => MONTHS[+ym.slice(5,7)-1] + ' ' + ym.slice(0,4);
+const niceDate = s => MONTHS[+s.slice(5,7)-1] + ' ' + (+s.slice(8,10)) + ', ' + s.slice(0,4);
+
+/* every month present in the data, ascending */
+const ALLMONTHS = [...new Set(D.map(r=>r[R_DATE].slice(0,7)))].sort();
+
+/* ---------- state ---------- */
+const S = { basis:'ytd', period:null, oap:true, level:'region', sortKey:'sales', sortDir:-1,
+            scope:'all',                      // 'all' | 'national' | 'local'
+            filter:{region:null, brand:null} };
+
+/* ---------- period construction ---------- */
+function periodOptions(basis){
+  if(basis==='month') return ALLMONTHS.slice().reverse().map(m=>({v:m,t:fmtMonth(m)}));
+  if(basis==='quarter'){
+    const qs=[...new Set(ALLMONTHS.map(m=>m.slice(0,4)+'-Q'+(Math.floor((+m.slice(5,7)-1)/3)+1)))];
+    return qs.sort().reverse().map(q=>({v:q,t:q.replace('-',' ')}));
+  }
+  if(basis==='ytd'){
+    const ys=[...new Set(ALLMONTHS.map(m=>m.slice(0,4)))];
+    return ys.sort().reverse().map(y=>({v:y,t:y+(+y<Y_MAX?' full year':' year to date')}));
+  }
+  return [{v:'ttm',t:'Trailing 12 months'}];
+}
+
+/* returns {start,end,label,pyStart,pyEnd,pyOk,pyLabel,partial} */
+function windowFor(basis,period){
+  let start,end,label,partial=false;
+  if(basis==='month'){
+    const y=+period.slice(0,4), m=+period.slice(5,7);
+    start=iso(y,m,1); end=iso(y,m,eom(y,m)); label=fmtMonth(period);
+  } else if(basis==='quarter'){
+    const y=+period.slice(0,4), q=+period.slice(6);
+    const m0=(q-1)*3+1, m1=m0+2;
+    start=iso(y,m0,1); end=iso(y,m1,eom(y,m1)); label=`Q${q} ${y}`;
+  } else if(basis==='ytd'){
+    const y=+period;
+    start=iso(y,1,1); end=iso(y,12,31);
+    label = y<Y_MAX ? `${y} full year` : `${y} year to date`;
+  } else {
+    // trailing 12 months ending on the last day of data
+    start = minusYear(asof); // same date one year earlier
+    const d=new Date(start+'T00:00:00'); d.setDate(d.getDate()+1);
+    start = iso(d.getFullYear(), d.getMonth()+1, d.getDate());
+    end = asof; label='Trailing 12 months';
+  }
+  if(end > asof){ end = asof; partial = true; }
+  const pyStart = minusYear(start), pyEnd = minusYear(end);
+  const pyOk = pyStart >= COVER_START;
+  let pyLabel;
+  if(basis==='month') pyLabel = fmtMonth(minusYear(start).slice(0,7));
+  else if(basis==='quarter') pyLabel = period.replace(/^(\d{4})/, y=>+y-1).replace('-',' ');
+  else if(basis==='ytd') pyLabel = (+period-1)+' same window';
+  else pyLabel = 'prior 12 months';
+  return {start,end,label,pyStart,pyEnd,pyOk,pyLabel,partial};
+}
+
+/* ---------- filtering + aggregation ---------- */
+function inScope(r){
+  if(!S.oap && r[R_OAP]) return false;
+  if(S.filter.region!==null && r[R_REG]!==S.filter.region) return false;
+  if(S.filter.brand!==null && r[R_BRD]!==S.filter.brand) return false;
+  return true;
+}
+function slice(start,end,opts={}){
+  const out=[];
+  for(const r of D){
+    const d=r[R_DATE];
+    if(d<start||d>end) continue;
+    if(!opts.ignoreOap && !S.oap && r[R_OAP]) continue;
+    if(!opts.ignoreScope){
+      if(S.scope==='national' && r[R_NL]!==NL_NATIONAL) continue;
+      if(S.scope==='local'    && r[R_NL]!==NL_LOCAL)    continue;
+    }
+    if(!opts.ignoreEntity){
+      if(S.filter.region!==null && r[R_REG]!==S.filter.region) continue;
+      if(S.filter.brand!==null && r[R_BRD]!==S.filter.brand) continue;
+    }
+    out.push(r);
+  }
+  return out;
+}
+function agg(rows){
+  let sales=0,n=0,ac=0,ov=0,sp=0,oapN=0,nonOapN=0,nonOapSales=0,nonOapOv=0;
+  let natS=0,natN=0,natOv=0,locS=0,locN=0,locOv=0,unS=0,unN=0;
+  for(const r of rows){
+    sales+=r[R_SAL]; n++; ac+=r[R_AC]; ov+=r[R_OV];
+    if(r[R_PP]===1) sp+=r[R_SAL];
+    if(r[R_OAP]){ oapN++; } else { nonOapN++; nonOapSales+=r[R_SAL]; nonOapOv+=r[R_OV]; }
+    if(r[R_NL]===NL_NATIONAL){ natS+=r[R_SAL]; natN++; natOv+=r[R_OV]; }
+    else if(r[R_NL]===NL_LOCAL){ locS+=r[R_SAL]; locN++; locOv+=r[R_OV]; }
+    else { unS+=r[R_SAL]; unN++; }
+  }
+  const attributed = natS+locS;
+  return { sales, n, ac, ov, avg: n?sales/n:0, spMix: sales?sp/sales:null,
+           ovRate: sales?ov/sales:null, oapN, nonOapN, nonOapSales, nonOapOv,
+           attach: nonOapN? oapN/nonOapN : null,
+           natS, natN, natOv, locS, locN, locOv, unS, unN,
+           natShare: attributed? natS/attributed : null,
+           natAvg: natN? natS/natN : null, locAvg: locN? locS/locN : null,
+           natRate: natS? natOv/natS : null, locRate: locS? locOv/locS : null };
+}
+
+/* ---------- formatting ---------- */
+const money = v => '$'+Math.round(v).toLocaleString('en-US');
+const money2 = v => { const a=Math.abs(v);
+  if(a>=1e6) return (v<0?'-$':'$')+(a/1e6).toFixed(2)+'M';
+  if(a>=1e3) return (v<0?'-$':'$')+Math.round(a/1e3)+'k';
+  return (v<0?'-$':'$')+Math.round(a); };
+const pct = (v,dp=1) => v==null?'—':(v*100).toFixed(dp)+'%';
+const num = v => Math.round(v).toLocaleString('en-US');
+const ratio = v => v==null?'—':v.toFixed(3);
+
+function deltaHTML(cur,prev,ok,pyLabel,fmt){
+  if(!ok) return `<span class="delta na">Prior year not in data</span>`;
+  if(prev===0||prev==null) return `<span class="delta na">No prior-year base</span>`;
+  const ch=(cur-prev)/Math.abs(prev);
+  const cls = ch>=0?'up':'dn', ar = ch>=0?'▲':'▼';
+  return `<span class="delta ${cls}">${ar} ${(Math.abs(ch)*100).toFixed(1)}%`
+       + `<span class="py">vs ${fmt(prev)} · ${pyLabel}</span></span>`;
+}
+
+/* ================================ RENDER ================================ */
+function render(){
+  const W = windowFor(S.basis, S.period);
+  const cur = agg(slice(W.start,W.end));
+  const py  = W.pyOk ? agg(slice(W.pyStart,W.pyEnd)) : null;
+
+  renderFlags(W);
+  renderScope();
+  renderKPIs(W,cur,py);
+  renderBridge(W);
+  renderInsights(W,cur,py);
+  renderLeadSource(W,cur,py);
+  renderTable(W);
+
+  document.getElementById('asof').textContent = niceDate(asof);
+  document.getElementById('asofrange').textContent = niceDate(from) + ' → ' + niceDate(asof);
+  document.getElementById('kpiNote').innerHTML =
+    `<b>${W.label}</b> · ${niceDate(W.start)} – ${niceDate(W.end)}`
+    + (W.pyOk ? ` · compared with ${niceDate(W.pyStart)} – ${niceDate(W.pyEnd)}` : '');
+  document.getElementById('oapHint').textContent = S.oap
+    ? `(${num(cur.oapN)} OAP policies in period)` : '(OAP excluded)';
+}
+
+function renderFlags(W){
+  const f=[];
+  if(W.partial) f.push(`<b>${W.label} is a partial period.</b> The data ends ${niceDate(asof)}, so this period is measured through that date — and the prior-year window is cut to the same day so the comparison stays like-for-like.`);
+  if(!W.pyOk) f.push(`<b>No prior-year comparison for ${W.label}.</b> Records begin ${niceDate(from)}, so the matching window a year earlier is not in the file. Prior-year figures are suppressed rather than shown against partial history.`);
+  document.getElementById('flags').innerHTML =
+    f.map(t=>`<div class="flag">${t}</div>`).join('');
+}
+
+function renderScope(){
+  let t=[];
+  t.push(S.filter.region!==null ? DIM.region[S.filter.region]+' region' : 'All regions');
+  t.push(S.filter.brand!==null ? DIM.brand[S.filter.brand] : 'all brands');
+  if(S.scope!=='all') t.push(S.scope==='national'?'national leads only':'local leads only');
+  t.push(S.oap ? 'OAP included' : 'OAP excluded');
+  document.getElementById('scopeline').textContent = t.join(' · ');
+}
+
+function renderKPIs(W,c,p){
+  const cards=[
+    {lab:'Total sales', val:money2(c.sales), sub:`${num(c.n)} policies written`,
+     d:deltaHTML(c.sales,p&&p.sales,W.pyOk,W.pyLabel,money2), accent:true},
+    {lab:'Policies', val:num(c.n), sub:`${num(c.oapN)} OAP · ${num(c.nonOapN)} non-OAP`,
+     d:deltaHTML(c.n,p&&p.n,W.pyOk,W.pyLabel,num)},
+    {lab:'Average sale', val:money(c.avg), sub:'Per policy written',
+     d:deltaHTML(c.avg,p&&p.avg,W.pyOk,W.pyLabel,money)},
+    {lab:'Agent commissions', val:money2(c.ac), sub:`${pct(c.sales?c.ac/c.sales:null)} of sales`,
+     d:deltaHTML(c.ac,p&&p.ac,W.pyOk,W.pyLabel,money2)},
+    {lab:'Landmark override', val:money2(c.ov), sub:`${pct(c.ovRate)} of sales`,
+     d:deltaHTML(c.ov,p&&p.ov,W.pyOk,W.pyLabel,money2), accent:true},
+  ];
+  document.getElementById('kpis').innerHTML = cards.map(k=>`
+    <div class="kpi${k.accent?' accent':''}">
+      <div class="k-lab">${k.lab}</div>
+      <div class="k-val">${k.val}</div>
+      <div class="k-sub">${k.sub}</div>
+      ${k.d}
+    </div>`).join('');
+}
+
+/* ---------------- the bridge: monthly sales as suspenders under a cable ---------------- */
+function renderBridge(W){
+  const svg=document.getElementById('bridgeSvg');
+  const Wd=1180, Ht=340, L=62, Rt=18, T=26, B=52;
+  const iw=Wd-L-Rt, ih=Ht-T-B;
+
+  // monthly series honours the OAP toggle and the entity filter, but never the date window
+  const byM={};
+  for(const m of ALLMONTHS) byM[m]={s:0,n:0};
+  for(const r of D){
+    if(!S.oap && r[R_OAP]) continue;
+    if(S.filter.region!==null && r[R_REG]!==S.filter.region) continue;
+    if(S.filter.brand!==null && r[R_BRD]!==S.filter.brand) continue;
+    const m=r[R_DATE].slice(0,7); byM[m].s+=r[R_SAL]; byM[m].n++;
+  }
+  const ms=ALLMONTHS, vals=ms.map(m=>byM[m].s);
+  const peak=Math.max(...vals,1);
+  const step=iw/ms.length, bw=Math.min(step*0.52,30);
+  const y = v => T+ih-(v/peak)*ih*0.88;
+  const deck = T+ih;
+
+  // 3-month rolling average = the cable
+  const ma=ms.map((_,i)=>{ const a=Math.max(0,i-2); const w=vals.slice(a,i+1);
+    return w.reduce((x,y2)=>x+y2,0)/w.length; });
+  const cx = i => L+step*i+step/2;
+
+  // smooth the cable with a light cardinal spline so it drapes
+  function drape(pts){
+    if(pts.length<2) return '';
+    let d=`M${pts[0][0]},${pts[0][1]}`;
+    for(let i=0;i<pts.length-1;i++){
+      const p0=pts[i-1]||pts[i], p1=pts[i], p2=pts[i+1], p3=pts[i+2]||pts[i+1];
+      const t=0.16;
+      d+=` C${p1[0]+(p2[0]-p0[0])*t},${p1[1]+(p2[1]-p0[1])*t}`
+       + ` ${p2[0]-(p3[0]-p1[0])*t},${p2[1]-(p3[1]-p1[1])*t}`
+       + ` ${p2[0]},${p2[1]}`;
+    }
+    return d;
+  }
+  const cablePts=ms.map((_,i)=>[cx(i), y(ma[i])]);
+
+  const inWin = m => m >= W.start.slice(0,7) && m <= W.end.slice(0,7);
+
+  let g='';
+  // gridlines
+  const ticks=4;
+  for(let i=0;i<=ticks;i++){
+    const v=peak*0.88*i/ticks, yy=y(v);
+    g+=`<line x1="${L}" y1="${yy}" x2="${Wd-Rt}" y2="${yy}" stroke="#E6EBF2" stroke-width="1"/>`
+     + `<text x="${L-9}" y="${yy+4}" text-anchor="end" font-size="10" fill="#6D6E71" font-family="Inter,sans-serif">${money2(v)}</text>`;
+  }
+  // suspender hairlines from cable down to the deck
+  ms.forEach((m,i)=>{
+    g+=`<line x1="${cx(i)}" y1="${y(ma[i])}" x2="${cx(i)}" y2="${deck}" stroke="#1A3666" stroke-width="1" opacity="${inWin(m)?0.20:0.08}"/>`;
+  });
+  // bars
+  ms.forEach((m,i)=>{
+    const h=Math.max(deck-y(vals[i]),0), on=inWin(m);
+    g+=`<rect class="bar" data-m="${m}" x="${cx(i)-bw/2}" y="${y(vals[i])}" width="${bw}" height="${h}"
+         fill="${on?'#87BD67':'#CFDCC5'}" opacity="${on?1:.55}"/>`;
+  });
+  // towers at each January present in the data
+  ms.forEach((m,i)=>{
+    if(m.slice(5,7)!=='01') return;          // one tower per calendar year boundary
+    const tx=L+step*i-step*0.06, top=T-10, tw2=5;
+    g+=`<rect x="${tx-tw2/2}" y="${top}" width="${tw2}" height="${deck-top}" fill="#1A3666" opacity=".9"/>`
+     + `<rect x="${tx-11}" y="${top+30}" width="22" height="3.5" fill="#1A3666" opacity=".9"/>`
+     + `<rect x="${tx-11}" y="${top+72}" width="22" height="3.5" fill="#1A3666" opacity=".9"/>`
+     + `<text x="${tx+15}" y="${top+12}" font-size="12" font-weight="700" fill="#1A3666" font-family="Spectral,Georgia,serif">${m.slice(0,4)}</text>`;
+  });
+  // the cable
+  g+=`<path d="${drape(cablePts)}" fill="none" stroke="#1A3666" stroke-width="2.4" stroke-linecap="round"/>`;
+  // deck
+  g+=`<line x1="${L-6}" y1="${deck}" x2="${Wd-Rt+6}" y2="${deck}" stroke="#1A3666" stroke-width="2.5"/>`;
+  // month labels
+  ms.forEach((m,i)=>{
+    const show = ms.length<=14 || i%2===0 || i===ms.length-1;
+    if(!show) return;
+    g+=`<text x="${cx(i)}" y="${deck+17}" text-anchor="middle" font-size="9.5"
+         fill="${inWin(m)?'#0E1F3D':'#9AA4B2'}" font-weight="${inWin(m)?600:400}" font-family="Inter,sans-serif">${MONTHS[+m.slice(5,7)-1]}</text>`;
+  });
+  // hover targets
+  ms.forEach((m,i)=>{
+    g+=`<rect class="hit" data-m="${m}" x="${L+step*i}" y="${T-14}" width="${step}" height="${deck-T+14}" fill="transparent"/>`;
+  });
+  svg.innerHTML=g;
+
+  const tip=document.getElementById('tip');
+  svg.querySelectorAll('.hit').forEach(h=>{
+    h.addEventListener('mousemove',e=>{
+      const m=h.dataset.m, o=byM[m];
+      tip.innerHTML=`<b>${fmtMonth(m)}</b>${money(o.s)}<s>${num(o.n)} policies · ${o.n?money(o.s/o.n):'—'} average</s>`;
+      tip.style.opacity=1;
+      tip.style.left=Math.min(e.clientX+14, window.innerWidth-190)+'px';
+      tip.style.top=(e.clientY-52)+'px';
+    });
+    h.addEventListener('mouseleave',()=>tip.style.opacity=0);
+  });
+}
+
+/* ---------------- insight panels ---------------- */
+function sparkline(series,{w=300,h=64,fmt=pct,band=null,fill='#87BD67'}={}){
+  if(!series.length) return '';
+  const vs=series.map(s=>s.v).filter(v=>v!=null);
+  if(!vs.length) return '';
+  let lo=Math.min(...vs), hi=Math.max(...vs);
+  if(band){ lo=Math.min(lo,band[0]); hi=Math.max(hi,band[1]); }
+  const padY=(hi-lo)*0.18||0.02; lo-=padY; hi+=padY;
+  const x=i=>4+(w-8)*(series.length===1?0.5:i/(series.length-1));
+  const y=v=>h-8-((v-lo)/(hi-lo))*(h-18);
+  let d='',area='';
+  series.forEach((s,i)=>{ if(s.v==null) return;
+    d += (d?' L':'M')+x(i)+','+y(s.v); });
+  area = d ? d+` L${x(series.length-1)},${h-4} L${x(0)},${h-4} Z` : '';
+  const last=series[series.length-1];
+  return `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" style="height:${h}px">
+    <path d="${area}" fill="${fill}" opacity=".16"/>
+    <path d="${d}" fill="none" stroke="#1A3666" stroke-width="2" stroke-linejoin="round"/>
+    ${last.v!=null?`<circle cx="${x(series.length-1)}" cy="${y(last.v)}" r="3.4" fill="#87BD67" stroke="#1A3666" stroke-width="1.4"/>`:''}
+  </svg>`;
+}
+
+function monthlySeries(fn){
+  const buckets={}; for(const m of ALLMONTHS) buckets[m]=[];
+  for(const r of D){
+    if(S.filter.region!==null && r[R_REG]!==S.filter.region) continue;
+    if(S.filter.brand!==null && r[R_BRD]!==S.filter.brand) continue;
+    buckets[r[R_DATE].slice(0,7)].push(r);
+  }
+  return ALLMONTHS.map(m=>({m, v:fn(agg(S.oap?buckets[m]:buckets[m].filter(r=>!r[R_OAP])), buckets[m])}));
+}
+
+function renderInsights(W,c,p){
+  const el=document.getElementById('ins');
+
+  // --- single pay mix ---
+  const spSeries = monthlySeries(a=>a.spMix);
+  const spFirst = spSeries.slice(0,3).map(s=>s.v).filter(v=>v!=null);
+  const spLast  = spSeries.slice(-3).map(s=>s.v).filter(v=>v!=null);
+  const spEarly = spFirst.reduce((a,b)=>a+b,0)/(spFirst.length||1);
+  const spNow   = spLast.reduce((a,b)=>a+b,0)/(spLast.length||1);
+  const spShift = spNow-spEarly;
+  // period-over-period: same inverted convention (up = unfavourable)
+  const spPY = (W.pyOk && p && p.spMix!=null && c.spMix!=null) ? c.spMix-p.spMix : null;
+
+  // --- OAP attachment (deliberately ignores the OAP toggle: it is a metric about OAP) ---
+  const attSeries = ALLMONTHS.map(m=>{
+    const rows = D.filter(r=>r[R_DATE].slice(0,7)===m
+      && (S.filter.region===null||r[R_REG]===S.filter.region)
+      && (S.filter.brand===null||r[R_BRD]===S.filter.brand));
+    const a=agg(rows); return {m, v:a.attach};
+  });
+  const attCur = agg(slice(W.start,W.end,{ignoreOap:true}));
+
+  // --- override driver decomposition, current vs prior year ---
+  let wf='';
+  if(W.pyOk && p){
+    const cNon = c.nonOapSales, pNon = p.nonOapSales;
+    const rateC = cNon? c.nonOapOv/cNon : 0, rateP = pNon? p.nonOapOv/pNon : 0;
+    const volEff  = (cNon-pNon)*rateP;
+    const rateEff = (rateC-rateP)*cNon;
+    const oapEff  = S.oap ? (c.oapN-p.oapN)*META.oapOverrideFlat : 0;
+    const parts=[
+      {l:W.pyLabel, v:p.ov, base:true},
+      {l:'Volume',  v:volEff},
+      {l:'Rate / mix', v:rateEff},
+      ...(S.oap?[{l:'OAP count', v:oapEff}]:[]),
+      {l:W.label, v:c.ov, base:true},
+    ];
+    const scale=Math.max(...parts.map(x=>Math.abs(x.v)))||1;
+    wf = parts.map(x=>{
+      const w=Math.max(Math.abs(x.v)/scale*100,1.2);
+      const cls = x.base?'base':(x.v>=0?'':'d');
+      return `<div class="wf-row"><span class="l">${x.l}</span>
+        <span class="wf-bar"><span class="${cls}" style="left:0;width:${w}%"></span></span>
+        <span class="v ${x.base?'':(x.v>=0?'pos':'neg')}">${x.base?money2(x.v):(x.v>=0?'+':'')+money2(x.v)}</span></div>`;
+    }).join('');
+  } else {
+    wf = `<div style="font-size:12px;color:#6D6E71;padding:8px 0">A prior-year window is needed to split the change into drivers. Pick a month, quarter, or year-to-date period that has history behind it.</div>`;
+  }
+
+  // --- top movers by override, vs prior year ---
+  let movers='';
+  if(W.pyOk){
+    const key = S.level==='agent'?R_AGT:(S.filter.region!==null||S.level!=='region'?R_BRD:R_REG);
+    const names = key===R_AGT?DIM.agent:(key===R_BRD?DIM.brand:DIM.region);
+    const cm={},pm={};
+    for(const r of slice(W.start,W.end)) cm[r[key]]=(cm[r[key]]||0)+r[R_OV];
+    for(const r of slice(W.pyStart,W.pyEnd)) pm[r[key]]=(pm[r[key]]||0)+r[R_OV];
+    const keys=[...new Set([...Object.keys(cm),...Object.keys(pm)])];
+    const rows=keys.map(k=>({k, d:(cm[k]||0)-(pm[k]||0)}))
+      .sort((a,b)=>Math.abs(b.d)-Math.abs(a.d)).slice(0,6);
+    movers = rows.map(r=>`<div class="rowline"><span class="who">${names[r.k]}</span>
+      <span class="n ${r.d>=0?'pos':'neg'}">${r.d>=0?'+':''}${money2(r.d)}</span></div>`).join('')
+      || `<div style="font-size:12px;color:#6D6E71">No activity in this window.</div>`;
+  } else {
+    movers = `<div style="font-size:12px;color:#6D6E71;padding:8px 0">Prior-year history is not available for this period, so movement cannot be measured.</div>`;
+  }
+
+  el.innerHTML = `
+  <div class="panel">
+    <h3>Single-pay mix</h3>
+    <div class="p-sub">Share of sales dollars written on a one-payment plan. A rising mix is unfavourable — shifting business to single pay earns less commission for the agent and less override for Landmark, so growth here shows red.</div>
+    <div><span class="big">${pct(agg(slice(W.start,W.end)).spMix)}</span>
+      <span style="font-size:11.5px;color:#6D6E71"> in ${W.label}</span></div>
+    <div style="font-size:11.5px;margin-top:6px" class="${spShift>=0?'neg':'pos'}">
+      ${spShift>=0?'▲':'▼'} ${Math.abs(spShift*100).toFixed(1)} pts since early ${ALLMONTHS[0].slice(0,4)}${spShift>=0?' — unfavourable':' — favourable'}</div>
+    ${spPY!=null?`<div style="font-size:11.5px;margin-top:3px" class="${spPY>=0?'neg':'pos'}">
+      ${spPY>=0?'▲':'▼'} ${Math.abs(spPY*100).toFixed(1)} pts vs ${W.pyLabel}</div>`:''}
+    ${sparkline(spSeries,{fill:'#6D6E71'})}
+  </div>
+
+  <div class="panel">
+    <h3>OAP attachment</h3>
+    <div class="p-sub">OAP policies for every non-OAP policy written. Measured on all policies regardless of the OAP toggle, since the ratio is about OAP itself.</div>
+    <div><span class="big">${pct(attCur.attach)}</span>
+      <span style="font-size:11.5px;color:#6D6E71"> = ${num(attCur.oapN)} OAP / ${num(attCur.nonOapN)} non-OAP</span></div>
+    <div style="font-size:11.5px;margin-top:6px;color:#6D6E71">
+      Worth ${money2(attCur.oapN*META.oapOverrideFlat)} of override at $${num(META.oapOverrideFlat)} per policy</div>
+    ${sparkline(attSeries)}
+  </div>
+
+  <div class="panel">
+    <h3>Override drivers</h3>
+    <div class="p-sub">How Landmark's override moved against ${W.pyOk?W.pyLabel:'the prior year'} — split into volume, rate and mix, and OAP count.</div>
+    <div class="wf">${wf}</div>
+  </div>
+
+  <div class="panel">
+    <h3>Biggest override movers</h3>
+    <div class="p-sub">Change in Landmark override versus ${W.pyOk?W.pyLabel:'prior year'}, largest absolute swings first.</div>
+    ${movers}
+  </div>
+
+  <div class="panel">
+    <h3>Override rate spread</h3>
+    <div class="p-sub">Override earned per dollar of sales, by brand, in the selected period. A wide spread means the mix of pay plans and ages differs sharply between brands.</div>
+    <div id="spread"></div>
+  </div>
+
+  <div class="panel wins">
+    <h3>Genuine wins</h3>
+    <div class="p-sub">The strongest, defensible positives in ${W.label}. Each one is calculated from this period, not carried over.</div>
+    <div id="wins"></div>
+  </div>`;
+
+  // override rate spread by brand
+  {
+    const rows=slice(W.start,W.end), by={};
+    for(const r of rows){ (by[r[R_BRD]]=by[r[R_BRD]]||[]).push(r); }
+    const list=Object.entries(by).map(([k,rs])=>{const a=agg(rs);return {k:+k,rate:a.ovRate,sales:a.sales};})
+      .filter(x=>x.sales>0).sort((a,b)=>b.rate-a.rate);
+    const mx=Math.max(...list.map(x=>x.rate),0.001);
+    document.getElementById('spread').innerHTML = list.slice(0,7).map(x=>
+      `<div class="rowline"><span class="who">
+         <span class="mini"><i style="width:${(x.rate/mx*100).toFixed(0)}%"></i></span>${DIM.brand[x.k]}</span>
+       <span class="n">${pct(x.rate,2)}</span></div>`).join('')
+       || `<div style="font-size:12px;color:#6D6E71">No sales in this window.</div>`;
+  }
+  // genuine wins - computed for the selected period, strongest first
+  {
+    const wins=[];
+    if(W.pyOk && p){
+      const dS=p.sales? (c.sales-p.sales)/p.sales : null;
+      const dO=p.ov?    (c.ov-p.ov)/p.ov       : null;
+      const dN=p.n?     (c.n-p.n)/p.n          : null;
+      if(dS!=null && dS>0)
+        wins.push({h:`Volume up ${pct(dS)}`,
+          d:`${money2(c.sales)} against ${money2(p.sales)} in ${W.pyLabel}, on ${num(c.n-p.n)} more policies.`});
+      if(dO!=null && dS!=null && dO>dS && dO>0)
+        wins.push({h:`Override outgrew sales`,
+          d:`Landmark override rose ${pct(dO)} while sales rose ${pct(dS)}, so the override rate expanded to ${pct(c.ovRate,2)}. Growth is coming with better margin, not just more volume.`});
+      else if(dO!=null && dO>0)
+        wins.push({h:`Override up ${pct(dO)}`,
+          d:`${money2(c.ov)} of override against ${money2(p.ov)} in ${W.pyLabel}.`});
+      var dNsave = dN;
+    }
+    // OAP attachment strength on national leads - the standout, and it holds regardless of prior year
+    const bothR = slice(W.start,W.end,{ignoreScope:true,ignoreOap:true});
+    const natA = agg(bothR.filter(r=>r[R_NL]===NL_NATIONAL));
+    const locA = agg(bothR.filter(r=>r[R_NL]===NL_LOCAL));
+    if(natA.attach!=null && locA.attach!=null && locA.attach>0 && natA.attach>locA.attach*1.25){
+      wins.push({h:`National leads attach OAP ${(natA.attach/locA.attach).toFixed(1)}x harder`,
+        d:`${pct(natA.attach)} on national against ${pct(locA.attach)} on local — worth ${money2(natA.oapN*META.oapOverrideFlat)} of override at $${num(META.oapOverrideFlat)} per policy. See the lead source tab.`});
+    }
+    if(typeof dNsave!=='undefined' && dNsave!=null && dNsave>0)
+      wins.push({h:`${num(c.n)} policies written`,
+        d:`Up ${pct(dNsave)} on ${W.pyLabel}. Policy count is growing alongside dollars, so the gain is not a handful of large cases.`});
+    const el=document.getElementById('wins');
+    el.innerHTML = wins.length
+      ? wins.slice(0,3).map(w=>`<div class="win"><div class="wh">${w.h}</div><div class="wd">${w.d}</div></div>`).join('')
+      : `<div style="font-size:12px;color:#6D6E71">Nothing clears the bar for this period. A window with prior-year history behind it will surface more.</div>`;
+  }
+}
+
+/* ---------------- national vs local lead sources ---------------- */
+function renderLeadSource(W,c,p){
+  // the comparison itself must see both sides, so it ignores the national/local scope control
+  const both   = agg(slice(W.start,W.end,{ignoreScope:true}));
+  const bothPY = W.pyOk ? agg(slice(W.pyStart,W.pyEnd,{ignoreScope:true})) : null;
+
+  function card(elId, kind){
+    const nat = kind==='nat';
+    const sales = nat?both.natS:both.locS, n = nat?both.natN:both.locN;
+    const ov    = nat?both.natOv:both.locOv;
+    const avg   = nat?both.natAvg:both.locAvg;
+    const rate  = nat?both.natRate:both.locRate;
+    const attributed = both.natS+both.locS;
+    const share = attributed? sales/attributed : null;
+    const pySales = bothPY ? (nat?bothPY.natS:bothPY.locS) : null;
+    // single-pay mix and OAP attachment for this side only
+    const rows = slice(W.start,W.end,{ignoreScope:true})
+                 .filter(r=>r[R_NL]===(nat?NL_NATIONAL:NL_LOCAL));
+    const a = agg(rows);
+    const el=document.getElementById(elId);
+    el.className='nlcard '+(nat?'nat':'loc');
+    el.innerHTML=`
+      <div class="tag">${nat?'Precoa funded':'Funeral home generated'}</div>
+      <h3>${nat?'National lead sources':'Local lead sources'}</h3>
+      <div class="nlhead">
+        <span class="amt">${money2(sales)}</span>
+        <span class="shr">${pct(share)} of attributed sales · ${num(n)} policies</span>
+      </div>
+      <div class="nlstats">
+        <div class="nlstat"><span>Average sale</span><b>${money(avg||0)}</b></div>
+        <div class="nlstat"><span>Landmark override</span><b>${money(ov)}</b></div>
+        <div class="nlstat"><span>Override rate</span><b>${pct(rate,2)}</b></div>
+        <div class="nlstat"><span>Single-pay mix</span><b>${pct(a.spMix)}</b></div>
+        <div class="nlstat"><span>OAP attachment</span><b>${pct(a.attach)}</b></div>
+        <div class="nlstat"><span>vs prior year</span><b>${
+          pySales? `<span class="${sales>=pySales?'pos':'neg'}">${sales>=pySales?'+':''}${pct((sales-pySales)/pySales)}</span>`
+                 : '<span style="font-weight:400;color:#6D6E71">—</span>'}</b></div>
+      </div>`;
+  }
+  card('nlNat','nat'); card('nlLoc','loc');
+
+  /* ---- monthly 100% stacked mix ---- */
+  {
+    const Wd=720, Ht=210, L=8, Rt=8, T=8, B=30;
+    const iw=Wd-L-Rt, ih=Ht-T-B;
+    const buckets={}; for(const mo of ALLMONTHS) buckets[mo]={nat:0,loc:0,un:0};
+    for(const r of D){
+      if(!S.oap && r[R_OAP]) continue;
+      if(S.filter.region!==null && r[R_REG]!==S.filter.region) continue;
+      if(S.filter.brand!==null && r[R_BRD]!==S.filter.brand) continue;
+      const b=buckets[r[R_DATE].slice(0,7)];
+      if(r[R_NL]===NL_NATIONAL) b.nat+=r[R_SAL];
+      else if(r[R_NL]===NL_LOCAL) b.loc+=r[R_SAL]; else b.un+=r[R_SAL];
+    }
+    const step=iw/ALLMONTHS.length, bw=Math.min(step*0.7,26);
+    let g='';
+    ALLMONTHS.forEach((mo,i)=>{
+      const b=buckets[mo], tot=b.nat+b.loc+b.un;
+      const x=L+step*i+(step-bw)/2;
+      const on = mo>=W.start.slice(0,7) && mo<=W.end.slice(0,7);
+      if(!tot){ return; }
+      let y=T;
+      [[b.nat,'#1A3666'],[b.loc,'#87BD67'],[b.un,'#C6CDD8']].forEach(([v,col])=>{
+        if(!v) return; const h=v/tot*ih;
+        g+=`<rect x="${x}" y="${y}" width="${bw}" height="${h}" fill="${col}" opacity="${on?1:.42}"/>`;
+        y+=h;
+      });
+      const share=(b.nat+b.loc)? b.nat/(b.nat+b.loc):0;
+      g+=`<text x="${x+bw/2}" y="${T+ih+13}" text-anchor="middle" font-size="9"
+           fill="${on?'#0E1F3D':'#9AA4B2'}" font-weight="${on?600:400}" font-family="Inter,sans-serif">${MONTHS[+mo.slice(5,7)-1].slice(0,1)}</text>`
+       + `<text x="${x+bw/2}" y="${T+ih+25}" text-anchor="middle" font-size="8.5"
+           fill="${on?'#1A3666':'#B4BCC7'}" font-family="Inter,sans-serif">${Math.round(share*100)}</text>`;
+      g+=`<rect class="mixhit" data-m="${mo}" x="${L+step*i}" y="${T}" width="${step}" height="${ih}" fill="transparent"/>`;
+    });
+    g+=`<text x="${L}" y="${T+ih+25}" font-size="8" fill="#6D6E71" font-family="Inter,sans-serif"></text>`;
+    const svg=document.getElementById('mixSvg'); svg.innerHTML=g;
+    const tip=document.getElementById('tip');
+    svg.querySelectorAll('.mixhit').forEach(h=>{
+      h.addEventListener('mousemove',e=>{
+        const b=buckets[h.dataset.m], tot=b.nat+b.loc+b.un;
+        tip.innerHTML=`<b>${fmtMonth(h.dataset.m)}</b>`
+          +`National ${money(b.nat)} (${pct(tot?b.nat/tot:null,0)})<s>Local ${money(b.loc)}`
+          +(b.un?` · Unattributed ${money(b.un)}`:'')+`</s>`;
+        tip.style.opacity=1;
+        tip.style.left=Math.min(e.clientX+14, window.innerWidth-210)+'px';
+        tip.style.top=(e.clientY-56)+'px';
+      });
+      h.addEventListener('mouseleave',()=>tip.style.opacity=0);
+    });
+  }
+
+  /* ---- national share by brand, against the leader ---- */
+  {
+    const rows=slice(W.start,W.end,{ignoreScope:true});
+    const by={};
+    for(const r of rows){
+      const o=by[r[R_BRD]]=by[r[R_BRD]]||{nat:0,loc:0,ov:0,sales:0,natN:0,n:0};
+      if(r[R_NL]===NL_NATIONAL){o.nat+=r[R_SAL];o.natN++;}
+      else if(r[R_NL]===NL_LOCAL) o.loc+=r[R_SAL];
+      o.ov+=r[R_OV]; o.sales+=r[R_SAL]; o.n++;
+    }
+    const list=Object.entries(by).map(([k,o])=>({k:+k,
+        share:(o.nat+o.loc)? o.nat/(o.nat+o.loc):0, sales:o.sales, natN:o.natN,
+        ovRate:o.sales?o.ov/o.sales:0}))
+      .filter(x=>x.sales>0).sort((a,b)=>b.share-a.share);
+    const lead=list.length?list[0].share:0;
+    document.getElementById('brandAdopt').innerHTML = list.length? list.map(x=>{
+      const gap=lead-x.share;
+      return `<div class="adopt${x.natN===0?' zero':''}">
+        <span class="who" title="${DIM.brand[x.k]}">${DIM.brand[x.k]}</span>
+        <span class="bar"><i style="width:${(x.share*100).toFixed(1)}%"></i>
+          <u style="left:${(lead*100).toFixed(1)}%"></u></span>
+        <span class="v">${pct(x.share,0)}</span>
+        <span class="gap">${x.natN===0?'no flow':(gap>0.005?pct(gap,0)+' to go':'leader')}</span>
+      </div>`;}).join('')
+      + `<div style="font-size:11px;color:#6D6E71;margin-top:9px">Dashed line marks the leading brand at ${pct(lead,0)}. Bars show national share of sales; the right column is the gap to that leader.</div>`
+      : `<div style="font-size:12px;color:#6D6E71">No sales in this window.</div>`;
+  }
+
+}
+
+/* ---------------- breakdown table ---------------- */
+const COLS=[
+  {k:'name', t:'', f:x=>x.name},
+  {k:'sales',t:'Total sales', f:x=>money(x.a.sales)},
+  {k:'share',t:'% of total', f:x=>pct(x.share)},
+  {k:'n',    t:'Policies',   f:x=>num(x.a.n)},
+  {k:'avg',  t:'Avg sale',   f:x=>money(x.a.avg)},
+  {k:'ac',   t:'Agent comm', f:x=>money(x.a.ac)},
+  {k:'ov',   t:'Landmark override', f:x=>money(x.a.ov)},
+  {k:'ovRate',t:'Override rate', f:x=>pct(x.a.ovRate,2)},
+  {k:'spMix',t:'Single-pay mix', f:x=>pct(x.a.spMix)},
+  {k:'pyd',  t:'Sales vs PY',f:x=>x.pyd==null?'—':`<span class="${x.pyd>=0?'pos':'neg'}">${x.pyd>=0?'+':''}${pct(x.pyd)}</span>`},
+];
+
+function renderTable(W){
+  const key = {region:R_REG, brand:R_BRD, fh:R_FH, agent:R_AGT, cls:R_CLS, src:R_SRC}[S.level];
+  const names = {region:DIM.region, brand:DIM.brand, fh:DIM.fh, agent:DIM.agent,
+                 cls:DIM.cls, src:DIM.src}[S.level];
+  const rows=slice(W.start,W.end);
+  const pyRows = W.pyOk? slice(W.pyStart,W.pyEnd) : [];
+  const by={}, pyBy={};
+  for(const r of rows) (by[r[key]]=by[r[key]]||[]).push(r);
+  for(const r of pyRows) pyBy[r[key]]=(pyBy[r[key]]||0)+r[R_SAL];
+  const tot=rows.reduce((a,r)=>a+r[R_SAL],0);
+
+  let list=Object.entries(by).map(([k,rs])=>{
+    const a=agg(rs), pv=pyBy[k];
+    let nm=names[k];
+    if(S.level==='cls'){
+      const c=DIM.clsNl[k];
+      const badge = c===NL_NATIONAL?'National':(c===NL_LOCAL?'Local':'Unattributed');
+      nm=`${nm} <span class="nlbadge ${c===NL_NATIONAL?'n':(c===NL_LOCAL?'l':'u')}">${badge}</span>`;
+    }
+    return {k:+k, name:nm, a, share: tot? a.sales/tot : 0,
+            pyd: (W.pyOk && pv) ? (a.sales-pv)/pv : null};
+  });
+  const sk=S.sortKey;
+  list.sort((x,y)=>{
+    let a,b;
+    if(sk==='name'){ a=names[x.k]; b=names[y.k]; return a.localeCompare(b)*S.sortDir*-1; }
+    if(sk==='share'){a=x.share;b=y.share}
+    else if(sk==='pyd'){a=x.pyd==null?-1e18:x.pyd;b=y.pyd==null?-1e18:y.pyd}
+    else {a=x.a[sk];b=y.a[sk]}
+    return (a-b)*S.sortDir;
+  });
+
+  const drillable = (S.level==='region') || (S.level==='brand');
+  const T=agg(rows);
+  const head = COLS.map(c=>{
+    const label = c.k==='name'
+      ? ({region:'Region',brand:'Brand (report funeral home)',fh:'Funeral home',agent:'Sales agent',
+          cls:'Lead category',src:'Lead source'})[S.level]
+      : c.t;
+    const ar = S.sortKey===c.k ? `<span class="ar">${S.sortDir<0?'▼':'▲'}</span>` : '';
+    return `<th data-k="${c.k}" tabindex="0">${label}${ar}</th>`;
+  }).join('');
+
+  const body = list.length ? list.map(x=>
+    `<tr class="${drillable?'drill':''}" data-k="${x.k}">`
+    + COLS.map(c=>`<td>${c.f(x)}</td>`).join('') + `</tr>`).join('')
+    : `<tr><td colspan="${COLS.length}" class="empty">No policies match this period and filter.</td></tr>`;
+
+  const pyTot = W.pyOk? pyRows.reduce((a,r)=>a+r[R_SAL],0) : null;
+  const foot = `<tr>
+    <td>${S.filter.brand!==null?DIM.brand[S.filter.brand]:(S.filter.region!==null?DIM.region[S.filter.region]+' region':META.fh1)} — total</td>
+    <td>${money(T.sales)}</td><td>${pct(tot?1:null)}</td><td>${num(T.n)}</td>
+    <td>${money(T.avg)}</td><td>${money(T.ac)}</td><td>${money(T.ov)}</td>
+    <td>${pct(T.ovRate,2)}</td><td>${pct(T.spMix)}</td>
+    <td>${(pyTot? `<span class="${T.sales>=pyTot?'pos':'neg'}">${T.sales>=pyTot?'+':''}${pct((T.sales-pyTot)/pyTot)}</span>`:'—')}</td></tr>`;
+
+  document.getElementById('tw').innerHTML =
+    `<table><thead><tr>${head}</tr></thead><tbody>${body}</tbody><tfoot>${foot}</tfoot></table>`;
+
+  document.querySelectorAll('#tw thead th').forEach(th=>{
+    const go=()=>{ const k=th.dataset.k;
+      if(S.sortKey===k) S.sortDir*=-1; else {S.sortKey=k; S.sortDir=-1;}
+      render(); };
+    th.addEventListener('click',go);
+    th.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});
+  });
+  if(drillable){
+    document.querySelectorAll('#tw tbody tr.drill').forEach(tr=>{
+      tr.addEventListener('click',()=>{
+        const k=+tr.dataset.k;
+        if(S.level==='region'){ S.filter.region=k; S.filter.brand=null; S.level='brand'; }
+        else { S.filter.brand=k; S.filter.region=DIM.brandParent[k]; S.level='fh'; }
+        syncTabs(); render();
+      });
+    });
+  }
+  renderCrumb();
+}
+
+function renderCrumb(){
+  const c=document.getElementById('crumb');
+  if(S.filter.region===null && S.filter.brand===null){ c.innerHTML=''; return; }
+  let t=`Filtered to `;
+  if(S.filter.brand!==null) t+=`<b>${DIM.brand[S.filter.brand]}</b> in ${DIM.region[S.filter.region]}`;
+  else t+=`<b>${DIM.region[S.filter.region]}</b> region`;
+  c.innerHTML=t+`<button id="clearF">Clear filter</button>`;
+  document.getElementById('clearF').onclick=()=>{
+    S.filter.region=null; S.filter.brand=null; render();
+  };
+}
+
+
+/* ---------------- wiring ---------------- */
+function syncPeriodPicker(){
+  const opts=periodOptions(S.basis), sel=document.getElementById('pickPeriod');
+  sel.innerHTML=opts.map(o=>`<option value="${o.v}">${o.t}</option>`).join('');
+  if(!opts.some(o=>o.v===S.period)) S.period=opts[0].v;
+  sel.value=S.period;
+  sel.disabled = (S.basis==='ttm');
+}
+function syncTabs(){
+  document.querySelectorAll('#tabs button').forEach(b=>
+    b.setAttribute('aria-pressed', String(b.dataset.l===S.level)));
+}
+document.querySelectorAll('#segBasis button').forEach(b=>{
+  b.addEventListener('click',()=>{
+    S.basis=b.dataset.b; S.period=null;
+    document.querySelectorAll('#segBasis button').forEach(x=>
+      x.setAttribute('aria-pressed', String(x===b)));
+    syncPeriodPicker(); render();
+  });
+});
+document.getElementById('pickPeriod').addEventListener('change',e=>{
+  S.period=e.target.value; render();
+});
+document.querySelectorAll('#segScope button').forEach(b=>{
+  b.addEventListener('click',()=>{
+    S.scope=b.dataset.s;
+    document.querySelectorAll('#segScope button').forEach(x=>
+      x.setAttribute('aria-pressed', String(x===b)));
+    render();
+  });
+});
+document.getElementById('oapTog').addEventListener('change',e=>{
+  S.oap=e.target.checked; render();
+});
+document.querySelectorAll('#tabs button').forEach(b=>{
+  b.addEventListener('click',()=>{
+    S.level=b.dataset.l;
+    if(S.level==='region'){ S.filter.region=null; S.filter.brand=null; }
+    if(S.level==='brand'){ S.filter.brand=null; }
+    S.sortKey='sales'; S.sortDir=-1;
+    syncTabs(); render();
+  });
+});
+
+document.querySelectorAll('#pagetabs button').forEach(b=>{
+  b.addEventListener('click',()=>{
+    const pg=b.dataset.p;
+    document.querySelectorAll('#pagetabs button').forEach(x=>
+      x.setAttribute('aria-pressed', String(x===b)));
+    document.getElementById('page-prod').hidden = (pg!=='prod');
+    document.getElementById('page-lead').hidden = (pg!=='lead');
+    window.scrollTo({top:0, behavior:'auto'});
+  });
+});
+
+syncPeriodPicker(); syncTabs(); render();
+</script>
